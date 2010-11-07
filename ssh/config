@@ -1,0 +1,181 @@
+host grails
+port 28822
+user ivan
+HostName www.greenrails.com
+
+host sustaina
+user sustaina
+HostName www.sustainablemarketing.com
+port 15554
+
+host railskits
+HostName railskits.com
+port 222
+user git
+
+host www2
+user ivan
+HostName www2.sustainablewebsites.com
+port 28822
+
+host deploy-www2
+user deploy
+HostName www.sustainablewebsites.com
+port 28822
+
+host deploy
+user deploy
+HostName www.sustainablewebsites.com
+port 28822
+
+host sustainw
+user sustainw
+HostName server.sustainablewebsites.com
+port 15554
+
+host earthp
+HostName server.sustainablewebsites.com
+user earthp
+port 15554
+
+host cadvbe
+HostName www.cadvbe.org
+user cadvbe
+port 15554
+
+host thirdc
+HostName www.thirdchakra.com
+user fiya
+port 15554
+
+host wedding
+HostName www.nicoleandivan.com
+user rusty
+port 15554
+
+host wildplanet
+HostName wildplanetadventures.com
+user wildjosh
+port 15554
+
+host home
+HostName home.comrala.com
+port 15554
+user ivan
+
+host comrala
+HostName www.comrala.com
+port 15554
+user comrala
+
+host gorilla
+HostName r8.nswebhost.com
+user gorilla
+port 15554
+
+host fts
+HostName ftburbandesign.com
+user ftbadmin
+
+host swcom13
+HostName r15.nswebhost.com
+user swcom13
+port 15554
+
+host swcom11
+HostName r8.nswebhost.com
+user swcom11
+port 15554
+
+host swcom7
+HostName r12.nswebhost.com
+user swcom7
+port 15554
+
+host seguin
+HostName www.seguinwoodworks.com
+user seguinw
+port 7978
+
+host nicoleandivan
+HostName www.nicoleandivan.com
+user rusty
+port 15554
+
+host ent
+HostName ent.local
+user ivan
+port 22
+
+host server
+HostName server.sustainablewebsites.com
+user root
+port 15554
+
+
+host nrb
+HostName 67.23.23.32
+user ivan
+port 22
+
+host nrbstaging
+HostName 174.143.213.97
+user ivan
+
+host ian
+HostName ianstorck.com
+user ianstorc
+port 15554
+
+host lqas
+HostName lqas.info
+user rails
+port 15554
+
+host gasdb
+HostName 184.106.196.162
+user ivans
+port 15554
+
+host ecop
+HostName cpanelstaging.sustainablewebsites.com
+user ecopren
+
+host d360staging
+HostName staging01.c44046.blueboxgrid.com
+user d360
+
+host d360
+HostName 67.214.208.68
+user d360
+
+host d3602
+HostName app02.c44046.blueboxgrid.com
+user d360
+
+host d360dmca
+HostName staging01.c44046.blueboxgrid.com
+user dmca
+
+host lqas.info
+HostName 184.106.225.72
+user rails
+port 15554
+
+host cpanelstaging
+HostName cpanelstaging.sustainablewebsites.com
+user root
+
+host gdd
+HostName greendegreedirectory.com
+user gwels
+
+host winecg
+HostName winecountryguide-demo.com
+user winecgc
+port 15554
+
+host ecolistic
+HostName server.sustainablewebsites.com
+user ecolist
+port 15554
