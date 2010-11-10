@@ -10,3 +10,12 @@ alias openports="sudo lsof -i -P | grep -i \"listen\""
 alias whoitunes="lsof -r 2 -n -P -F n -c iTunes -a -i TCP@\`hostname\`:3689"
 alias ll="ls -ltrahG"
 alias ls="ls -G"
+alias ss="./script/server"
+alias zipr="zip -r" #directory.zip directory
+alias tu='top -o cpu' # sorted by cpu
+alias tm='top -o vsize' #sorted by memory
+alias g="git status"
+
+function zipd {
+	zip -r $1.zip $2
+}
