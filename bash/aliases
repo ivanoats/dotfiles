@@ -5,6 +5,10 @@ function railsapp {
     rails $appname -m http://github.com/ryanb/rails-templates/raw/master/$template.rb $@
   }
 
+function zipd {
+    zip -r $1.zip $2
+}
+
 alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\   -f2"
 alias openports="sudo lsof -i -P | grep -i \"listen\""
 alias whoitunes="lsof -r 2 -n -P -F n -c iTunes -a -i TCP@\`hostname\`:3689"
@@ -15,7 +19,4 @@ alias zipr="zip -r" #directory.zip directory
 alias tu='top -o cpu' # sorted by cpu
 alias tm='top -o vsize' #sorted by memory
 alias g="git status"
-
-function zipd {
-	zip -r $1.zip $2
-}
+alias h="history"
