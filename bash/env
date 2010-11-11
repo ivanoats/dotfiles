@@ -12,3 +12,4 @@ export CAPP_BUILD="/Users/ivan/bin/cappucino"
 export GEM_EDITOR="mate"
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
+export HISTFILESIZE=3000
