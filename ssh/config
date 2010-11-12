@@ -179,3 +179,8 @@ host ecolistic
 HostName server.sustainablewebsites.com
 user ecolist
 port 15554
+
+host london
+HostName london.nswebhost.com
+user uk1sw
+port 15554
