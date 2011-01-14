@@ -184,3 +184,23 @@ host london
 HostName london.nswebhost.com
 user uk1sw
 port 15554
+
+host ritirisi
+HostName blog.ritirisi.com
+user ritirisi
+port 15554
+
+host jstorck
+HostName server.sustainablewebsites.com
+user jstorck
+port 15554
+
+host govfresh
+HostName server.sustainablewebsites.com
+user petaluma
+port 15554
+
+host rpn
+HostName server.sustainablewebsites.com
+user greenpu
+port 15554
