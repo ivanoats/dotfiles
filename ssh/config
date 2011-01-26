@@ -204,3 +204,8 @@ host rpn
 HostName server.sustainablewebsites.com
 user greenpu
 port 15554
+
+host bestbeaches
+HostName server.sustainablewebsites.com
+user dtaylor
+port 15554
