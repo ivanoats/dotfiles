@@ -138,8 +138,9 @@ user ivans
 port 15554
 
 host ecop
-HostName cpanelstaging.sustainablewebsites.com
+HostName server.sustainablewebsites.com
 user ecopren
+port 15554
 
 host d360staging
 HostName staging01.c44046.blueboxgrid.com
