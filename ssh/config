@@ -210,3 +210,8 @@ host bestbeaches
 HostName server.sustainablewebsites.com
 user dtaylor
 port 15554
+
+host swcom3
+HostName r9.nswebhost.com
+user swcom3
+port 15554
