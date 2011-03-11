@@ -24,3 +24,7 @@ alias tu='top -o cpu' # sorted by cpu
 alias tm='top -o vsize' #sorted by memory
 alias g="git status"
 alias h="history"
+alias sites="cd ~/Sites"
+alias projects="cd ~/Dropbox/Projects"
+alias dev="cd ~/Development"
+alias sites2="cd /Volumes/Macintosh\ HD\ 2/Sites"
