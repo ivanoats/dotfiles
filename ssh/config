@@ -215,3 +215,8 @@ host swcom3
 HostName r9.nswebhost.com
 user swcom3
 port 15554
+
+host loretta
+HostName server.sustainablewebsites.com
+user loretta
+port 15554
