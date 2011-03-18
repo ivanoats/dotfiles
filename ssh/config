@@ -206,6 +206,7 @@ HostName server.sustainablewebsites.com
 user greenpu
 port 15554
 
+# best-beaches.com
 host bestbeaches
 HostName server.sustainablewebsites.com
 user dtaylor
@@ -216,7 +217,14 @@ HostName r9.nswebhost.com
 user swcom3
 port 15554
 
+# mysiblingdolls.com
 host loretta
 HostName server.sustainablewebsites.com
 user loretta
+port 15554
+
+#north atlantic books nab.sustainablewebsites.com
+host nab 
+HostName server.sustainablewebsites.com
+user northat
 port 15554
