@@ -228,3 +228,9 @@ host nab
 HostName server.sustainablewebsites.com
 user northat
 port 15554
+
+#yesboston.org
+host yesboston
+HostName server.sustainablewebsites.com
+user bostyes
+port 15554
