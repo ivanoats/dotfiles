@@ -232,7 +232,8 @@ port 15554
 #ivanenviroman.com
 host ivanenviroman
 HostName www.ivanenviroman.com
-user www-data
+user ivan
+port 28822
 
 #yesboston.org
 host yesboston
