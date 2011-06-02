@@ -231,9 +231,9 @@ port 15554
 
 #ivanenviroman.com
 host ivanenviroman
-HostName www.ivanenviroman.com
-user ivan
-port 28822
+HostName server.sustainablewebsites.com
+user ivanes
+port 15554
 
 #yesboston.org
 host yesboston
