@@ -231,7 +231,7 @@ port 15554
 
 #ivanenviroman.com
 host ivanenviroman
-HostName www.ivanenviroman.com
+HostName server.sustainablewebsites.com
 user ivanes
 port 15554
 
