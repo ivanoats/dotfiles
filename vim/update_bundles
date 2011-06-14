@@ -3,7 +3,6 @@
 # Original: http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen
 
 git_bundles = [
-  "git://github.com/vim-bundles/fuzzyfinder.git",
   "git://github.com/scrooloose/nerdcommenter.git",
   "git://github.com/msanders/snipmate.vim.git",
   "git://github.com/tpope/vim-cucumber.git",
