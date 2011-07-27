@@ -13,6 +13,21 @@ search_gmail() {
   open "http://mail.google.com/mail/#search/$*"
 }
 
+function pvcp()
+{
+    SOURCE=$1
+
+    if [ -d $2 ]
+    then
+        DESTINATION=$2/`basename $SOURCE`
+    else
+        DESTINATION=$2
+    fi
+
+    pv ${SOURCE} | > ${DESTINATION}
+}
+
+
 alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\   -f2"
 alias openports="sudo lsof -i -P | grep -i \"listen\""
 alias whoitunes="lsof -r 2 -n -P -F n -c iTunes -a -i TCP@\`hostname\`:3689"
