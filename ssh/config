@@ -69,7 +69,7 @@ port 15554
 user comrala
 
 host gorilla
-HostName r8.nswebhost.com
+HostName server.sustainablewebsites.com
 user gorilla
 port 15554
 
@@ -239,4 +239,10 @@ port 15554
 host yesboston
 HostName server.sustainablewebsites.com
 user bostyes
+port 15554
+
+#partnership studio and twisp.partnershipstudio.com
+host partner
+HostName server.sustainablewebsites.com
+user partner
 port 15554
