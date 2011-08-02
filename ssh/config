@@ -246,3 +246,13 @@ host partner
 HostName server.sustainablewebsites.com
 user partner
 port 15554
+
+#uw c4c production
+host c4c
+HostName ovid.u.washington.edu
+user uwc4c
+
+#uw c4c staging etc
+host c4cstaging
+HostName ovid.u.washington.edu
+user dvipmgmt
