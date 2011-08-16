@@ -256,3 +256,8 @@ user uwc4c
 host c4cstaging
 HostName ovid.u.washington.edu
 user dvipmgmt
+
+#ivanoats uw 
+host ivanoats
+HostName ovid.u.washington.edu
+user ivanoats
