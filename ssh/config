@@ -266,3 +266,8 @@ user ivanoats
 host thuja
 HostName thuja.dyndns.org
 user ivan
+
+#ivan's iMac at home
+host esitka
+HostName sitka.ivanoats.members.mac.com
+user ivan
