@@ -261,3 +261,8 @@ user dvipmgmt
 host ivanoats
 HostName ovid.u.washington.edu
 user ivanoats
+
+#ivan's desk at uw
+host thuja
+HostName thuja.dyndns.org
+user ivan
