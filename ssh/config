@@ -256,3 +256,13 @@ user uwc4c
 host c4cstaging
 HostName ovid.u.washington.edu
 user dvipmgmt
+
+#ivanoats uw 
+host ivanoats
+HostName ovid.u.washington.edu
+user ivanoats
+
+#ivan's desk at uw
+host thuja
+HostName thuja.dyndns.org
+user ivan
