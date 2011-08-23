@@ -1,0 +1,7 @@
+set guifont=Anonymous\ Pro:h16
+nmap <silent> <C-D> :NERDTreeToggle<CR>
+imap <silent> <C-D> <Esc>:NERDTreeToggle<CR>
+nmap <C-a> ^
+imap <C-a> ^
+nmap <C-e> $
+imap <C-e> $
