@@ -9,7 +9,7 @@ export PROMPT_COMMAND='history -a; echo -ne "\033]0;${USER}@${HOSTNAME%%.*}: ${P
 shopt -s histappend
 export NARWHAL_ENGINE=jsc
 export CAPP_BUILD="/Users/ivan/bin/cappucino"
-export GEM_EDITOR="mate"
+export GEM_EDITOR="mvim"
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 export HISTFILESIZE=3000

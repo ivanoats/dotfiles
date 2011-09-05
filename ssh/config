@@ -266,3 +266,26 @@ user ivanoats
 host thuja
 HostName thuja.dyndns.org
 user ivan
+
+#ivan's iMac at home
+host esitka
+HostName sitka.ivanoats.members.mac.com
+user ivan
+
+#laptop in Dawn's office
+host c4calt
+HostName c4calt.dyndns.org
+user ivan
+port 15554
+
+#VM on server in Dawn's office
+host c4cvm
+HostName c4c.dyndns.org
+user ivan
+port 15554
+
+#VM server on thuja, Ivan's iMac
+host c4ci
+HostName c4c-ivan.dyndns.org
+user ivan
+port 15554
