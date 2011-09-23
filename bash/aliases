@@ -27,6 +27,7 @@ function pvcp()
     pv ${SOURCE} | > ${DESTINATION}
 }
 
+growl() { echo -e $'\e]9;'${1}'\007' ; return ; }
 
 alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\   -f2"
 alias openports="sudo lsof -i -P | grep -i \"listen\""
