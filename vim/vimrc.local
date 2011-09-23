@@ -1,8 +1,14 @@
-set guifont=Anonymous\ Pro:h16
+set guifont=Inconsolata:h16
 nmap <silent> <C-D> :NERDTreeToggle<CR>
 imap <silent> <C-D> <Esc>:NERDTreeToggle<CR>
 nmap <C-a> ^
 imap <C-a> ^
 nmap <C-e> $
 imap <C-e> $
-command W w !sudo tee % > /dev/null
+command! W w !sudo tee % > /dev/null
+set wrap
+if has("autocmd")
+  autocmd! bufwritepost .vimrc.local source ~/.vimrc.local
+endif
+
+nmap <leader>v :tabedit ~/.vimrc.local
