@@ -15,5 +15,4 @@ set wrap
 if has("autocmd")
   autocmd! bufwritepost .vimrc.local source ~/.vimrc.local
 endif
-
 nmap <leader>v :tabedit ~/.vimrc.local<CR>
