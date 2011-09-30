@@ -11,6 +11,7 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 nmap <D-O> ! open file:///%:p<CR>
 command! W w !sudo tee % > /dev/null
+command! Push Git push<CR>
 set wrap
 if has("autocmd")
   autocmd! bufwritepost .vimrc.local source ~/.vimrc.local
