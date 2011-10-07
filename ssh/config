@@ -278,8 +278,8 @@ HostName c4calt.dyndns.org
 user ivan
 port 15554
 
-#VM on server in Dawn's office
-host c4cvm
+#cloudfoundry server in Dawn's office
+host c4cloud
 HostName c4c.dyndns.org
 user ivan
 port 15554
