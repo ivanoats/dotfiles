@@ -289,3 +289,8 @@ host c4ci
 HostName c4c-ivan.dyndns.org
 user ivan
 port 15554
+
+#VM server on thuja, Ivan's iMac
+host c4chefserver
+HostName c4chefserver.dyndns.org
+user ivan
