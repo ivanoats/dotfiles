@@ -266,6 +266,7 @@ user ivanoats
 host thuja
 HostName thuja.dyndns.org
 user ivan
+port 15554
 
 #ivan's iMac at home
 host esitka
