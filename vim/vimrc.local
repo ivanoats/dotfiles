@@ -1,3 +1,4 @@
+colorscheme railscasts
 set guifont=Inconsolata:h16
 " nmap <silent> <C-D> :NERDTreeToggle<CR>
 " imap <silent> <C-D> <Esc>:NERDTreeToggle<CR>
