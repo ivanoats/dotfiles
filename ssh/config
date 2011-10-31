@@ -248,12 +248,12 @@ user partner
 port 15554
 
 #uw c4c production
-host c4c
+host ovid
 HostName ovid.u.washington.edu
 user uwc4c
 
 #uw c4c staging etc
-host c4cstaging
+host dvipmgmt
 HostName ovid.u.washington.edu
 user dvipmgmt
 
@@ -295,3 +295,8 @@ port 15554
 host c4chefserver
 HostName c4chefserver.dyndns.org
 user ivan
+
+#little linux box in dawn's office
+host c4cstaging
+HostName c4c.dyndns.org
+port 15554
