@@ -1,0 +1,5 @@
+--ignore-dir=cache
+--ignore-dir=log
+--type-add=ruby=.haml,.rake
+--type-add=css=.less,.scss
+--type-add=erb=.erb
