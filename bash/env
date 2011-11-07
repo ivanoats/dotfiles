@@ -13,6 +13,7 @@ export GEM_EDITOR="vico"
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 export HISTFILESIZE=3000
+export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 export MYICLOUD=102480994.members.btmm.icloud.com
 if [ -f `brew --prefix`/etc/bash_completion ]; then
    . `brew --prefix`/etc/bash_completion
