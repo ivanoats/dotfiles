@@ -300,3 +300,8 @@ user ivan
 host c4cstaging
 HostName c4c.dyndns.org
 port 15554
+
+#little linux laptop in ivan's cube
+host c4cmaple
+HostName c4cmaple.dyndns.org
+port 15554
