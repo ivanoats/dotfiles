@@ -1,4 +1,5 @@
-colorscheme railscasts
+set background=light
+colorscheme solarized
 set guifont=Inconsolata:h16
 " nmap <silent> <C-D> :NERDTreeToggle<CR>
 " imap <silent> <C-D> <Esc>:NERDTreeToggle<CR>
@@ -17,7 +18,7 @@ set wrap
 if has("autocmd")
   autocmd! bufwritepost .vimrc.local source ~/.vimrc.local
 endif
-nmap <leader>v :tabedit ~/.vimrc.local<CR>
+nmap <leader>v :tabedit ~/.vimrc.after<CR>
 command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
 function! s:RunShellCommand(cmdline)
   echo a:cmdline
