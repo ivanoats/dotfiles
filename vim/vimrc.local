@@ -48,3 +48,7 @@ com! DiffSaved call s:DiffWithSaved()
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
   \ | wincmd p | diffthis
 map! <Leader>rt :!ctags --exlude=*.js --extra=+f -R *<CR><CR>
+augroup VimperatorYPentadactyl
+  au! BufRead vimperator-*,pentadactyl-* nnoremap <buffer> ZZ :call FormFieldArchive() \| :silent write \| :bd \| :macaction hide:<CR>
+  au BufRead vimperator-*,pentadactyl-* imap <buffer> ZZ <Esc>ZZ
+augroup END
