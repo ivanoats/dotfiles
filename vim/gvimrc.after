@@ -1,0 +1,5 @@
+set transparency=0
+set guifont=Inconsolata:h16
+set guioptions=aAce
+set background=light
+colorscheme solarized
