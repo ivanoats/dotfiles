@@ -13,7 +13,7 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 nmap <D-O> ! open file:///%:p<CR>
 command! W w !sudo tee % > /dev/null
-command! Push :Git push<CR>
+command! Push Git push<CR>
 set wrap
 if has("autocmd")
   autocmd! bufwritepost .vimrc.local source ~/.vimrc.local
@@ -53,3 +53,6 @@ augroup VimperatorYPentadactyl
   au! BufRead vimperator-*,pentadactyl-* nnoremap <buffer> ZZ :call FormFieldArchive() \| :silent write \| :bd \| :macaction hide:<CR>
   au BufRead vimperator-*,pentadactyl-* imap <buffer> ZZ <Esc>ZZ
 augroup END
+command! -bar -nargs=1 OpenURL :!open <args>
+let g:rails_ctags_arguments='--languages=-javascript --exclude=.git --exclude=log ~/.rvm/gems/ruby-1.9.3-p0/*' 
+set colorcolumn=80
