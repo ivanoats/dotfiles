@@ -53,3 +53,4 @@ augroup VimperatorYPentadactyl
   au! BufRead vimperator-*,pentadactyl-* nnoremap <buffer> ZZ :call FormFieldArchive() \| :silent write \| :bd \| :macaction hide:<CR>
   au BufRead vimperator-*,pentadactyl-* imap <buffer> ZZ <Esc>ZZ
 augroup END
+source ~/.janus/autotag.vim
