@@ -308,5 +308,5 @@ port 15554
 
 #thewfund
 host wfund
-HostName thefund.com
+HostName thewfund.com
 port 15554
