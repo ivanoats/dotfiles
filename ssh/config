@@ -305,3 +305,8 @@ port 15554
 host c4cmaple
 HostName c4cmaple.dyndns.org
 port 15554
+
+#thewfund
+host wfund
+HostName thefund.com
+port 15554
