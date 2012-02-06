@@ -7,6 +7,7 @@ nmap <C-a> ^
 imap <C-a> ^
 nmap <C-e> $
 imap <C-e> $
+inoremap <D-CR> <C-O>o
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
