@@ -1,8 +1,8 @@
 if has("gui")
   set guifont="Inconsolata 12"
 endif
-if has("gui_mac")
-  set guifont="Inconsolata:h16"
+if has("gui_macvim")
+  set guifont=Inconsolata:h16
 endif
 if has("dos16") || has("dos32")
   let shell='command.com'
