@@ -310,3 +310,9 @@ port 15554
 host wfund
 HostName thewfund.com
 port 15554
+
+#trainingxchange uw
+host trainingx
+HostName 108.166.71.66
+#HostName trainingexchange.org
+port 15554
