@@ -316,3 +316,4 @@ host trainingx
 HostName 108.166.71.66
 #HostName trainingexchange.org
 port 15554
+user passenger
