@@ -2,5 +2,5 @@
 --ignore-dir=log
 --ignore-dir=.idea
 --type-add=ruby=.haml,.rake
---type-add=css=.less,.scss
+--type-add=css=.less,.scss,.sass
 --type-set=erb=.erb
