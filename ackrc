@@ -4,3 +4,4 @@
 --type-add=ruby=.haml,.rake
 --type-add=css=.less,.scss
 --type-set=erb=.erb
+--type-add=yaml=.yml
