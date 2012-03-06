@@ -59,3 +59,4 @@ command! -bar -nargs=1 OpenURL :!open <args>
 let g:rails_ctags_arguments='--languages=-javascript --exclude=.git --exclude=log ~/.rvm/gems/ruby-1.9.3-p0/*' 
 set colorcolumn=80
 language es_ES
+set mouse=a
