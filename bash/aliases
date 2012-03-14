@@ -82,6 +82,8 @@ alias ber="bundle exec rake"
 alias be="bundle exec"
 alias mark="ruby -e \" 2.times { 100.times { print '-' } }\" && clear"
 alias unixtime="ruby -e 'puts Time.now.to_i'"
+alias pcat="pygmentize"
+alias pcatr="pygmentize -l ruby"
 
 # LINUX ONLY
 if [ -a /etc/issue ]
