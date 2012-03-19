@@ -1,5 +1,4 @@
 set background=light
-set clipboard=unnamed
 colorscheme solarized
 " nmap <silent> <C-D> :NERDTreeToggle<CR>
 " imap <silent> <C-D> <Esc>:NERDTreeToggle<CR>
