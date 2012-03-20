@@ -36,8 +36,17 @@ BBLUE='\e[44m'
 BMAGENTA='\e[45m'
 BCYAN='\e[46m'
 BWHITE='\e[47m'
-#export PS1='\u@\h:\t:\W> '
 
-# Update the command prompt to be <user>:<current_directory>(git_branch) >
-# Note that the git branch is given a special color
-PS1="\A:\u@\H:\W \[$EYELLOW\]\$(vcprompt)\[$NO_COLOR\] → "
+# Set the base PS1
+export PS1="\A:\u@\H:\W$ "
+
+# Source the git bash completion file
+if [ -f ~/.git-completion.bash ]; then
+    source ~/.git-completion.bash
+    GIT_PS1_SHOWDIRTYSTATE=true
+    GIT_PS1_SHOWSTASHSTATE=true
+    GIT_PS1_SHOWUPSTREAM="auto"
+    PS1='\A:\u@\H:\[\033[32m\]$(__git_ps1 " (%s)")\[\033[00m\] \W$ '
+fi
+
+export PS1
