@@ -7,14 +7,10 @@ export LC_CTYPE=en_US.UTF-8  # for textmate svn compatibility
 unset HISTFILESIZE
 export PROMPT_COMMAND='history -a; echo -ne "\033]0;${USER}@${HOSTNAME%%.*}: ${PWD/#$HOME/~}\007"'
 shopt -s histappend
-export NARWHAL_ENGINE=jsc
-export CAPP_BUILD="/Users/ivan/bin/cappucino"
 export GEM_OPEN_EDITOR="mate"
 export CLICOLOR=1
-#export LSCOLORS=Gxfxcxdxbxegedabagacad
 export HISTFILESIZE=3000
-export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
-export TERM=xterm
+export TERM=xterm-256color
 export MYICLOUD=102480994.members.btmm.icloud.com
 if [ -f `brew --prefix`/etc/bash_completion ]; then
    . `brew --prefix`/etc/bash_completion
