@@ -63,7 +63,8 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
   alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
   alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
   alias stoppg="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
- alias sshkeycopy="cat ~/.ssh/id_rsa.pub | pbcopy"
+  alias lockscreen="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+  alias sshkeycopy="cat ~/.ssh/id_rsa.pub | pbcopy"
 fi
 alias zipr="zip -r" #directory.zip directory
 alias upstream="git rev-parse --abbrev-ref @{u}"
