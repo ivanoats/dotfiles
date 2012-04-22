@@ -252,6 +252,9 @@ host ovid
 HostName ovid.u.washington.edu
 user uwc4c
 
+host ovidnew
+HostName ovid01.u.washington.edu
+
 #uw c4c staging etc
 host dvipmgmt
 HostName ovid.u.washington.edu
