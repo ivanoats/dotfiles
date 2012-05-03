@@ -46,7 +46,7 @@ function! s:DiffWithSaved()
   exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
-command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
   \ | wincmd p | diffthis
 map! <Leader>5t :!ctags --exlude=*.js --extra=+f -R *<CR><CR>
 augroup VimperatorYPentadactyl
@@ -54,9 +54,16 @@ augroup VimperatorYPentadactyl
   au BufRead vimperator-*,pentadactyl-* imap <buffer> ZZ <Esc>ZZ
 augroup END
 source ~/.janus/autotag.vim
-command SpellCheck setlocal spell spelllang=en_us
+command! SpellCheck setlocal spell spelllang=en_us
 command! -bar -nargs=1 OpenURL :!open <args>
 let g:rails_ctags_arguments='--languages=-javascript --exclude=.git --exclude=log ~/.rvm/gems/ruby-1.9.3-p0/*' 
 set colorcolumn=80
 language es_ES
-set mouse=a
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd BufWritePre *.rb :call <SID>StripTrailingWhitespaces()

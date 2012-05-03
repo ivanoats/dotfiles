@@ -253,6 +253,7 @@ HostName ovid.u.washington.edu
 user uwc4c
 
 host ovidnew
+user uwc4c
 HostName ovid01.u.washington.edu
 
 #uw c4c staging etc
@@ -262,7 +263,7 @@ user dvipmgmt
 
 #ivanoats uw 
 host ivanoats
-HostName ovid.u.washington.edu
+HostName ovid01.u.washington.edu
 user ivanoats
 
 #ivan's desk at uw
