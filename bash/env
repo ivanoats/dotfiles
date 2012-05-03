@@ -13,6 +13,7 @@ export CLICOLOR=1
 export HISTFILESIZE=3000
 export TERM=xterm-256color
 export MYICLOUD=102480994.members.btmm.icloud.com
+export PGDATA=/usr/local/var/postgres
 if [ -f `brew --prefix`/etc/bash_completion ]; then
    . `brew --prefix`/etc/bash_completion
 fi
