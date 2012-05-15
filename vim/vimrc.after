@@ -67,3 +67,7 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 autocmd BufWritePre *.rb :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.yaml :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.feature :call <SID>StripTrailingWhitespaces()
+
+set clipboard=unnamed
