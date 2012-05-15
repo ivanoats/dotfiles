@@ -8,7 +8,7 @@ export LC_CTYPE=en_US.UTF-8  # for textmate svn compatibility
 unset HISTFILESIZE
 export PROMPT_COMMAND='history -a; echo -ne "\033]0;${USER}@${HOSTNAME%%.*}: ${PWD/#$HOME/~}\007"'
 shopt -s histappend
-export GEM_OPEN_EDITOR="mate"
+export GEM_OPEN_EDITOR="vim"
 export CLICOLOR=1
 export HISTFILESIZE=3000
 export TERM=xterm-256color
