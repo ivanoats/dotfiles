@@ -88,7 +88,7 @@ alias mark="ruby -e \" 2.times { 100.times { print '-' } }\" && clear"
 alias unixtime="ruby -e 'puts Time.now.to_i'"
 alias pcat="pygmentize"
 alias pcatr="pygmentize -l ruby"
-
+alias pgdbs='psql -c "select datname from pg_database;"'
 # LINUX ONLY
 if [ -a /etc/issue ]
   then
