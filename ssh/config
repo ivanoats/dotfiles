@@ -326,3 +326,8 @@ HostName 108.166.71.66
 #HostName trainingexchange.org
 port 15554
 user passenger
+
+host ccac
+HostName ccacaptioning.org
+port 15554
+user ccacweb
