@@ -326,3 +326,8 @@ HostName 108.166.71.66
 #HostName trainingexchange.org
 port 15554
 user passenger
+
+#ubuntu desktop vm on ivans iMac
+host staging
+HostName staging.uwc4c.com
+port 15554
