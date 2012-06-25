@@ -249,19 +249,15 @@ port 15554
 
 #uw c4c production
 host ovid
-HostName ovid.u.washington.edu
-user uwc4c
-
-host ovidnew
-user uwc4c
 HostName ovid01.u.washington.edu
+user uwc4c
 
 #uw c4c staging etc
 host dvipmgmt
-HostName ovid.u.washington.edu
+HostName ovid01.u.washington.edu
 user dvipmgmt
 
-#ivanoats uw 
+#ivanoats uw
 host ivanoats
 HostName ovid01.u.washington.edu
 user ivanoats
@@ -283,12 +279,6 @@ HostName c4calt.dyndns.org
 user ivan
 port 15554
 
-#cloudfoundry server in Dawn's office
-host c4cloud
-HostName c4c.dyndns.org
-user ivan
-port 15554
-
 #VM server on thuja, Ivan's iMac
 host c4ci
 HostName c4c-ivan.dyndns.org
@@ -305,7 +295,7 @@ host c4cstaging
 HostName c4c.dyndns.org
 port 15554
 
-#little linux laptop in ivan's cube
+#little linux laptop in dawns's office
 host c4cmaple
 HostName c4cmaple.dyndns.org
 port 15554
@@ -327,7 +317,18 @@ HostName 108.166.71.66
 port 15554
 user passenger
 
+<<<<<<< HEAD
 #ubuntu desktop vm on ivans iMac
 host staging
 HostName staging.uwc4c.com
 port 15554
+
+#techtran UW
+host techtran
+HostName ovid01.u.washington.edu
+user techtran
+
+host ccac
+HostName ccacaptioning.org
+port 15554
+user ccacweb
