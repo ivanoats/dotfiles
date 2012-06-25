@@ -1,6 +1,10 @@
 --ignore-dir=cache
 --ignore-dir=log
 --ignore-dir=.idea
+--ignore-dir=tmp
+--ignore-dir=doc
+--ignore-dir=coverage
+--ignore-dir=app/assets/javascripts/wymeditor
 --type-add=ruby=.haml,.rake
 --type-add=css=.less,.scss,.sass
 --type-set=erb=.erb
