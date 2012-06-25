@@ -317,7 +317,6 @@ HostName 108.166.71.66
 port 15554
 user passenger
 
-<<<<<<< HEAD
 #ubuntu desktop vm on ivans iMac
 host staging
 HostName staging.uwc4c.com
