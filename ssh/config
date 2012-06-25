@@ -321,3 +321,8 @@ user passenger
 host techtran
 HostName ovid01.u.washington.edu
 user techtran
+
+host ccac
+HostName ccacaptioning.org
+port 15554
+user ccacweb
