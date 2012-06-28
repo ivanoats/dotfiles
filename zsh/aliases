@@ -38,11 +38,11 @@ function pvcp()
 
 growl() { echo -e $'\e]9;'${1}'\007' ; return ; }
 
-alias openports="sudo lsof -i -P | grep -i \"listen\""
 
 # MAC OS X ONLY
 if [[ $OSTYPE != 'linux-gnu' ]]; then
   alias tu='top -o cpu' # sorted by cpu
+  alias openports="sudo lsof -i -P | grep -i \"listen\""
   alias tm='top -o vsize' #sorted by memory
   alias whoitunes="lsof -r 2 -n -P -F n -c iTunes -a -i TCP@\`hostname\`:3689"
   alias ls="ls -G"
@@ -83,7 +83,7 @@ alias pcat="pygmentize"
 alias pcatr="pygmentize -l ruby"
 alias pgdbs='psql -c "select datname from pg_database;"'
 # LINUX ONLY
-if [ -a /etc/issue ]
+if [[ -a /etc/issue ]];
   then
     alias pbcopy='xclip -selection clipboard'
     alias pbpaste='xclip -selection clipboard -o'

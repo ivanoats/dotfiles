@@ -1,4 +1,4 @@
-set background=light
+set background=dark
 colorscheme solarized
 " nmap <silent> <C-D> :NERDTreeToggle<CR>
 " imap <silent> <C-D> <Esc>:NERDTreeToggle<CR>
@@ -48,7 +48,7 @@ endfunction
 com! DiffSaved call s:DiffWithSaved()
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
   \ | wincmd p | diffthis
-map! <Leader>5t :!ctags --exlude=*.js --extra=+f -R *<CR><CR>
+map! <Leader>ht :!ctags --exclude=*.js --extra=+f -R *<CR><CR>
 augroup VimperatorYPentadactyl
   au! BufRead vimperator-*,pentadactyl-* nnoremap <buffer> ZZ :call FormFieldArchive() \| :silent write \| :bd \| :macaction hide:<CR>
   au BufRead vimperator-*,pentadactyl-* imap <buffer> ZZ <Esc>ZZ
@@ -68,5 +68,30 @@ endfun
 autocmd BufWritePre *.rb :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.yaml :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.feature :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.erb :call <SID>StripTrailingWhitespaces()
 
 set clipboard=unnamed
+
+function! s:FoldItBlock()
+  let start = search('^\s*\(it\|specify\|describe\|scenario\|before\).*do\s*$', 'We')
+  let end   = search('end', 'We')
+  let cmd = (start+1).','.(end).'fold'
+  if (start > 0) && (start < end)
+    execute cmd
+    return 1
+  else
+    return 0
+  endif
+endfunction
+
+function! FoldAllItBlocks()
+  let position = line('.')
+  exe cursor(1,1)
+  let result = 1
+
+  while result == 1
+    let result = s:FoldItBlock()
+  endwhile
+
+  call cursor(position, 1)
+endfunction
