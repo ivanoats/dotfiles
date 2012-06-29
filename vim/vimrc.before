@@ -1,3 +1,4 @@
+set shell=bash
 call janus#disable_plugin('hammer')
 "if has("gui_macvim")
 "    call janus#disable_plugin('nerdtree')
