@@ -97,3 +97,7 @@ function! FoldAllItBlocks()
   call cursor(position, 1)
 endfunction
 let g:ctrlp_dotfiles=1
+
+"enable ruby folding, default to unfolded
+let ruby_fold=1
+set foldlevelstart=99
