@@ -1,4 +1,4 @@
-set background=dark
+set background=light
 colorscheme solarized
 " nmap <silent> <C-D> :NERDTreeToggle<CR>
 " imap <silent> <C-D> <Esc>:NERDTreeToggle<CR>
@@ -96,3 +96,4 @@ function! FoldAllItBlocks()
 
   call cursor(position, 1)
 endfunction
+let g:ctrlp_dotfiles=1
