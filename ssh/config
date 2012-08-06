@@ -331,3 +331,13 @@ host ccac
 HostName ccacaptioning.org
 port 15554
 user ccacweb
+
+host c4cprod
+HostName c4c.uwc4c.com
+port 15554
+user passenger
+
+host c4civan
+HostName c4c.uwc4c.com
+port 15554
+user ivan
