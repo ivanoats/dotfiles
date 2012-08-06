@@ -58,6 +58,7 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
   alias stoppg="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
   alias lockscreen="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
   alias sshkeycopy="cat ~/.ssh/id_rsa.pub | pbcopy"
+  alias mvim="open -a MacVim"
 fi
 alias pdbs="psql -l"
 alias retag="ctags --exclude=*.js --extra=+f -R *"
