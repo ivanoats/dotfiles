@@ -101,3 +101,8 @@ let g:ctrlp_dotfiles=1
 "enable ruby folding, default to unfolded
 let ruby_fold=1
 set foldlevelstart=99
+
+"coffeescritp folding
+au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+
