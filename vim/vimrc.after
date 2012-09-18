@@ -13,7 +13,7 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 nmap <D-O> ! open file:///%:p<CR>
 command! W w !sudo tee % > /dev/null
-command! Push Git push<CR>
+command! Push !git push
 set wrap
 if has("autocmd")
   autocmd! bufwritepost .vimrc.after source ~/.vimrc.after
@@ -58,7 +58,6 @@ command! SpellCheck setlocal spell spelllang=en_us
 command! -bar -nargs=1 OpenURL :!open <args>
 let g:rails_ctags_arguments='--languages=-javascript --exclude=.git --exclude=log ~/.rvm/gems/ruby-1.9.3-p0/*' 
 set colorcolumn=80
-language es_ES
 fun! <SID>StripTrailingWhitespaces()
     let l = line(".")
     let c = col(".")
@@ -70,6 +69,8 @@ autocmd BufWritePre *.rb :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.yaml :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.feature :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.erb :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre Cheffile :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre Rakefile :call <SID>StripTrailingWhitespaces()
 
 set clipboard=unnamed
 
@@ -102,7 +103,38 @@ let g:ctrlp_dotfiles=1
 let ruby_fold=1
 set foldlevelstart=99
 
-"coffeescritp folding
+
+"coffeescript folding
 au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
+" On enter update/create tags
+autocmd VimEnter * call UpdateOrCreateTagsFile()
+
+" On write just update tags of this file
+autocmd BufWritePost *.rb call writefile(split(system("sort -u <(touch tags && grep -v " . expand('%:%') . " tags) <(ctags --language-force=ruby -u -f - " . shellescape(expand('%:%')) . " | grep " . expand('%:r') . ")"),"\n"),"tags")
+ 
+" Create tagsfile (if it doesn't exist)
+" or update tags file if it is too old
+" currently doesn't handle same-name classes well ...
+fun! UpdateOrCreateTagsFile()
+  let mtime_tags = getftime("tags")
+  let mtime_gemfile = getftime("Gemfile.lock")
+
+  if mtime_gemfile > 0 && (mtime_tags == -1 || mtime_gemfile > mtime_tags)
+    echom "Generating tags as Gemfile.lock is newer than tags"
+    let tempfile = tempname()
+    call writefile(["#!/bin/bash","ctags -R --language-force=ruby -u -f tags", "rm $0"], tempfile)
+    silent! execute ":!bash " . tempfile . " &"
+  endif
+endfun
+
+let g:syntastic_ruby_exec='/Users/ivan/.rvm/rubies/ruby-1.9.3-p194/bin/ruby'
+let g:ctrlp_custom_ignore = {'dir': '\.git$\|\.hg$\|\.svn$\|doc$\|coverage$\|\.chef$','file': '.DS_Store'}
+
+fun! PullAndRefresh()
+  !git pull
+  bufdo e!
+endfun
+
+nmap <leader>:gp call PullAndRefresh()
