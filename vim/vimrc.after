@@ -137,4 +137,4 @@ fun! PullAndRefresh()
   bufdo e!
 endfun
 
-nmap <leader>:gp call PullAndRefresh()
+nmap <leader>gr call PullAndRefresh()
