@@ -1,4 +1,4 @@
-set background=light
+set background=dark
 colorscheme solarized
 " nmap <silent> <C-D> :NERDTreeToggle<CR>
 " imap <silent> <C-D> <Esc>:NERDTreeToggle<CR>
@@ -48,12 +48,12 @@ endfunction
 com! DiffSaved call s:DiffWithSaved()
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
   \ | wincmd p | diffthis
-map! <Leader>ht :!ctags --exclude=*.js --extra=+f -R *<CR><CR>
+nmap <Leader>ht :!ctags --exclude=*.js --extra=+f -R *<CR><CR>
+nmap <Leader>h :noh<CR>
 augroup VimperatorYPentadactyl
   au! BufRead vimperator-*,pentadactyl-* nnoremap <buffer> ZZ :call FormFieldArchive() \| :silent write \| :bd \| :macaction hide:<CR>
   au BufRead vimperator-*,pentadactyl-* imap <buffer> ZZ <Esc>ZZ
 augroup END
-source ~/.janus/autotag.vim
 command! SpellCheck setlocal spell spelllang=en_us
 command! -bar -nargs=1 OpenURL :!open <args>
 let g:rails_ctags_arguments='--languages=-javascript --exclude=.git --exclude=log ~/.rvm/gems/ruby-1.9.3-p0/*' 
