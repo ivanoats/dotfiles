@@ -68,35 +68,6 @@ HostName www.comrala.com
 port 15554
 user comrala
 
-host gorilla
-HostName server.sustainablewebsites.com
-user gorilla
-port 15554
-
-host fts
-HostName ftburbandesign.com
-user ftbadmin
-
-host swcom13
-HostName r15.nswebhost.com
-user swcom13
-port 15554
-
-host swcom11
-HostName r8.nswebhost.com
-user swcom11
-port 15554
-
-host swcom7
-HostName r12.nswebhost.com
-user swcom7
-port 15554
-
-host seguin
-HostName www.seguinwoodworks.com
-user seguinw
-port 7978
-
 host nicoleandivan
 HostName www.nicoleandivan.com
 user rusty
@@ -106,15 +77,6 @@ host server
 HostName server.sustainablewebsites.com
 user root
 port 15554
-
-host nrb
-HostName 67.23.23.32
-user ivan
-port 22
-
-host nrbstaging
-HostName 174.143.213.97
-user ivan
 
 host ian
 HostName server.sustainablewebsites.com
@@ -126,48 +88,14 @@ HostName lqas.info
 user rails
 port 15554
 
-host gasdb
-HostName 184.106.196.162
-user ivans
-port 15554
-
 host ecop
 HostName server.sustainablewebsites.com
 user ecopren
 port 15554
 
-host d360staging
-HostName staging01.c44046.blueboxgrid.com
-user d360
-
-host d360
-HostName 67.214.208.68
-user d360
-
-host d3602
-HostName app02.c44046.blueboxgrid.com
-user d360
-
-host d360dmca
-HostName staging01.c44046.blueboxgrid.com
-user dmca
-
 host lqas.info
 HostName 184.106.225.72
 user rails
-port 15554
-
-host cpanelstaging
-HostName cpanelstaging.sustainablewebsites.com
-user root
-
-host gdd
-HostName greendegreedirectory.com
-user gwels
-
-host winecg
-HostName winecountryguide-demo.com
-user winecgc
 port 15554
 
 host ecolistic
@@ -200,21 +128,9 @@ HostName server.sustainablewebsites.com
 user greenpu
 port 15554
 
-# best-beaches.com
-host bestbeaches
-HostName server.sustainablewebsites.com
-user dtaylor
-port 15554
-
 host swcom3
 HostName r9.nswebhost.com
 user swcom3
-port 15554
-
-# mysiblingdolls.com
-host loretta
-HostName server.sustainablewebsites.com
-user loretta
 port 15554
 
 #north atlantic books nab.sustainablewebsites.com
@@ -331,3 +247,18 @@ host ccac
 HostName ccacaptioning.org
 port 15554
 user ccacweb
+
+host c4cprod
+HostName c4c.uwc4c.com
+port 15554
+user passenger
+
+host c4civan
+HostName c4c.uwc4c.com
+port 15554
+user ivan
+
+host g
+HostName g.greenrails.com
+port 15554
+user ivan

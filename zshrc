@@ -29,7 +29,7 @@ ZSH_THEME="ivanoats"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby knife brew vagrant rake github)
+plugins=(git osx ruby knife brew bundler vagrant rake gpg-agent cloudapp)
 
 source $ZSH/oh-my-zsh.sh
 

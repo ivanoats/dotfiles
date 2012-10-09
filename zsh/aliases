@@ -1,18 +1,18 @@
-function define_vim_wrappers()
-{
-  vim_commands=(
-    eview evim gview gvim gvimdiff gvimtutor rgview
-    rgvim rview rvim vim vimdiff vimtutor xxd mvim
-  )
-
-  for cmd in ${vim_commands[@]}; do
-    cmd_path=`/usr/bin/env which -a "${cmd}" 2>/dev/null | grep '^/'`
-    if [ -x "${cmd_path}" ]; then
-      eval "function ${cmd} () { (unset GEM_HOME; unset GEM_PATH; $cmd_path \$@) }"
-    fi
-  done
-}
-define_vim_wrappers
+# function define_vim_wrappers()
+# {
+#   vim_commands=(
+#     eview evim gview gvim gvimdiff gvimtutor rgview
+#     rgvim rview rvim vim vimdiff vimtutor xxd mvim
+#   )
+# 
+#   for cmd in ${vim_commands[@]}; do
+#     cmd_path=`/usr/bin/env which -a "${cmd}" 2>/dev/null | grep '^/'`
+#     if [ -x "${cmd_path}" ]; then
+#       eval "function ${cmd} () { (unset GEM_HOME; unset GEM_PATH; $cmd_path \$@) }"
+#     fi
+#   done
+# }
+# define_vim_wrappers
 
 function zipd {
     zip -r $1.zip $2
@@ -58,6 +58,8 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
   alias stoppg="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
   alias lockscreen="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
   alias sshkeycopy="cat ~/.ssh/id_rsa.pub | pbcopy"
+  alias rkhunter="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin sudo rkhunter --check"
+  alias mvim="open -a MacVim"
 fi
 alias pdbs="psql -l"
 alias retag="ctags --exclude=*.js --extra=+f -R *"
