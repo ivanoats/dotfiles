@@ -39,4 +39,3 @@ export PATH=.:/Users/ivan/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bi
 . ~/bin/dotfiles/zsh/env
 . ~/bin/dotfiles/zsh/aliases
 
-export CC=/usr/bin/gcc-4.2
