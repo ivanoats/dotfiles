@@ -211,6 +211,10 @@ host c4cstaging
 HostName c4c.dyndns.org
 port 15554
 
+host willow
+HostName willow.uwc4c.com
+port 15554
+
 #little linux laptop in dawns's office
 host c4cmaple
 HostName c4cmaple.dyndns.org
@@ -262,3 +266,8 @@ host g
 HostName g.greenrails.com
 port 15554
 user ivan
+
+host localhost3000
+HostName server.sustainablewebsites.com
+port 15554
+user locorail
