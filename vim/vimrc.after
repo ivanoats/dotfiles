@@ -138,3 +138,4 @@ fun! PullAndRefresh()
 endfun
 
 nmap <leader>gr call PullAndRefresh()
+set mouse=r

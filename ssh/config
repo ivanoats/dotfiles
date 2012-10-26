@@ -208,6 +208,7 @@ user ivan
 
 #little linux box in dawn's office
 host c4cstaging
+host willow
 HostName c4c.dyndns.org
 port 15554
 
@@ -244,7 +245,7 @@ HostName ovid01.u.washington.edu
 user techtran
 
 host ccac
-HostName ccacaptioning.org
+HostName server.sustainablewebsites.com
 port 15554
 user ccacweb
 
