@@ -15,17 +15,17 @@ user git
 
 host www2
 user ivan
-HostName www2.sustainablewebsites.com
+HostName 209.20.76.171
 port 28822
 
 host deploy-www2
 user deploy
-HostName www.sustainablewebsites.com
+HostName 209.20.76.171
 port 28822
 
 host deploy
 user deploy
-HostName www.sustainablewebsites.com
+HostName 209.20.76.171
 port 28822
 
 host sustainw
