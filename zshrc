@@ -33,6 +33,12 @@ plugins=(git osx ruby knife brew bundler vagrant rake gpg-agent cloudapp)
 
 source $ZSH/oh-my-zsh.sh
 
+# Amazon ec2
+export JAVA_HOME="$(/usr/libexec/java_home)"
+export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
+export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
+export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
+
 # Customize to your needs...
 export PATH=.:/Users/ivan/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/Users/ivan/.rvm/bin
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
@@ -40,3 +46,6 @@ export PATH=.:/Users/ivan/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bi
 . ~/bin/dotfiles/zsh/aliases
 
 export CC=/usr/bin/gcc-4.2
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

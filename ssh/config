@@ -134,7 +134,7 @@ user swcom3
 port 15554
 
 #north atlantic books nab.sustainablewebsites.com
-host nab 
+host nab
 HostName server.sustainablewebsites.com
 user northat
 port 15554
@@ -146,10 +146,14 @@ user editors
 port 15554
 
 #ivanenviroman.com
+#host ivanenviroman
+#HostName server.sustainablewebsites.com
+#user ivanes
+#port 15554
+
 host ivanenviroman
-HostName server.sustainablewebsites.com
+HostName ivanenviroman.com
 user ivanes
-port 15554
 
 #yesboston.org
 host yesboston
@@ -272,3 +276,7 @@ host localhost3000
 HostName server.sustainablewebsites.com
 port 15554
 user locorail
+
+host apps
+HostName apps.sustainablewebsites.com
+port 15554

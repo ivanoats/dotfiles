@@ -1,4 +1,4 @@
-set background=dark
+set background=light
 colorscheme solarized
 " nmap <silent> <C-D> :NERDTreeToggle<CR>
 " imap <silent> <C-D> <Esc>:NERDTreeToggle<CR>
@@ -140,3 +140,4 @@ endfun
 nmap <leader>gr call PullAndRefresh()
 set mouse=r
 let g:neocomplcache_enable_at_startup = 1
+nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
