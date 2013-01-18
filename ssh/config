@@ -83,11 +83,6 @@ HostName server.sustainablewebsites.com
 user ianstorc
 port 15554
 
-host lqas
-HostName lqas.info
-user rails
-port 15554
-
 host ecop
 HostName server.sustainablewebsites.com
 user ecopren
@@ -213,7 +208,7 @@ user ivan
 #little linux box in dawn's office
 host c4cstaging
 host willow
-HostName c4c.dyndns.org
+HostName willow.uwc4c.com
 port 15554
 
 host willow
