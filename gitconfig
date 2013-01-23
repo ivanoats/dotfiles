@@ -27,3 +27,5 @@
 	tool = Kaleidoscope
 [github]
 	user = ivanoats
+[push]
+	default = simple
