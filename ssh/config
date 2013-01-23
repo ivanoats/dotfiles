@@ -253,8 +253,7 @@ HostName ovid01.u.washington.edu
 user techtran
 
 host ccac
-HostName server.sustainablewebsites.com
-port 15554
+HostName captionmatch.com
 user ccacweb
 
 host c4cprod
