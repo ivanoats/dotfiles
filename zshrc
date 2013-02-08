@@ -8,8 +8,8 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="ivanoats"
 
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="subl ~/.zshrc"
+alias ohmyzsh="subl ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -31,7 +31,21 @@ ZSH_THEME="ivanoats"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git osx ruby knife brew bundler vagrant rake gpg-agent cloudapp)
 
+# load up oh my zsh
 source $ZSH/oh-my-zsh.sh
+
+# try to make ssh agent work better
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+
+# set 4.2 to the default gcc since I only compile shit for rubygems
+export CC=/usr/bin/gcc-4.2
+
+# use keychain for a long running ssh agent process
+eval `keychain --eval --agents ssh --inherit any id_dsa`
+
+# env vars and aliases
+. ~/bin/dotfiles/zsh/env
+. ~/bin/dotfiles/zsh/aliases
 
 # Amazon ec2
 export JAVA_HOME="$(/usr/libexec/java_home)"
@@ -40,12 +54,5 @@ export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
 export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
 
 # Customize to your needs...
-export PATH=.:/Users/ivan/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/Users/ivan/.rvm/bin
+export PATH=.:/Users/ivan/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/Users/ivan/.rvm/bin:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-. ~/bin/dotfiles/zsh/env
-. ~/bin/dotfiles/zsh/aliases
-
-export CC=/usr/bin/gcc-4.2
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
