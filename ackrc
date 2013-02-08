@@ -9,3 +9,4 @@
 --type-add=css=.less,.scss,.sass
 --type-set=erb=.erb
 --type-add=yaml=.yml
+--type=nosql

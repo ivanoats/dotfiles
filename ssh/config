@@ -153,6 +153,11 @@ port 15554
 
 host ivanenviroman
 HostName ivanenviroman.com
+user ivan
+port 28822
+
+host localhost3000
+HostName localhost3000.org
 user ivanes
 
 #yesboston.org
@@ -271,11 +276,14 @@ HostName g.greenrails.com
 port 15554
 user ivan
 
-host localhost3000
-HostName server.sustainablewebsites.com
-port 15554
-user locorail
-
 host apps
 HostName apps.sustainablewebsites.com
 port 15554
+
+host knoqdev2
+HostName dev2.knoq.com
+user knoq
+
+host knoq_production
+HostName knoq.com
+user knoq
