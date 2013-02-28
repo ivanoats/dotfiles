@@ -1,67 +1,7 @@
-host greenrails
-port 28822
-user ivan
-HostName www.greenrails.com
-
-host grails
-port 28822
-user ivan
-HostName www.greenrails.com
-
-host sustaina
-user sustaina
-HostName www.sustainablemarketing.com
-port 15554
-
-host railskits
-HostName railskits.com
-port 222
-user git
-
 host www2
 user ivan
 HostName 209.20.76.171
 port 28822
-
-host deploy-www2
-user deploy
-HostName 209.20.76.171
-port 28822
-
-host deploy
-user deploy
-HostName 209.20.76.171
-port 28822
-
-host sustainw
-user sustainw
-HostName server.sustainablewebsites.com
-port 15554
-
-host earthp
-HostName server.sustainablewebsites.com
-user earthp
-port 15554
-
-host cadvbe
-HostName www.cadvbe.org
-user cadvbe
-port 15554
-
-host thirdc
-HostName www.thirdchakra.com
-user fiya
-port 15554
-
-host wedding
-HostName www.nicoleandivan.com
-user rusty
-port 15554
-
-host wildplanet
-HostName wildplanetadventures.com
-user wildjosh
-port 15554
 
 host home
 HostName home.comrala.com
@@ -78,99 +18,13 @@ HostName www.nicoleandivan.com
 user rusty
 port 15554
 
-host server
-HostName server.sustainablewebsites.com
-user root
-port 15554
-
-host ian
-HostName server.sustainablewebsites.com
-user ianstorc
-port 15554
-
-host ecop
-HostName server.sustainablewebsites.com
-user ecopren
-port 15554
-
-host lqas.info
-HostName 184.106.225.72
-user rails
-port 15554
-
-host ecolistic
-HostName server.sustainablewebsites.com
-user ecolist
-port 15554
-
-host london
-HostName london.nswebhost.com
-user uk1sw
-port 15554
-
-host ritirisi
-HostName blog.ritirisi.com
-user ritirisi
-port 15554
-
-host jstorck
-HostName server.sustainablewebsites.com
-user jstorck
-port 15554
-
-host govfresh
-HostName server.sustainablewebsites.com
-user petaluma
-port 15554
-
-host rpn
-HostName server.sustainablewebsites.com
-user greenpu
-port 15554
-
-host swcom3
-HostName r9.nswebhost.com
-user swcom3
-port 15554
-
-#north atlantic books nab.sustainablewebsites.com
-host nab
-HostName server.sustainablewebsites.com
-user northat
-port 15554
-
-#edibleseattle.com
-host edibleseattle
-HostName server.sustainablewebsites.com
-user editors
-port 15554
-
-#ivanenviroman.com
-#host ivanenviroman
-#HostName server.sustainablewebsites.com
-#user ivanes
-#port 15554
-
 host ivanenviroman
 HostName ivanenviroman.com
 user ivan
-port 28822
 
 host localhost3000
 HostName localhost3000.org
 user ivanes
-
-#yesboston.org
-host yesboston
-HostName server.sustainablewebsites.com
-user bostyes
-port 15554
-
-#partnership studio and twisp.partnershipstudio.com
-host partner
-HostName server.sustainablewebsites.com
-user partner
-port 15554
 
 #uw c4c production
 host ovid
@@ -198,18 +52,6 @@ host sitka
 HostName sitka.102480994.members.btmm.icloud.com
 user ivan
 
-#laptop in Dawn's office
-host c4calt
-HostName c4calt.dyndns.org
-user ivan
-port 15554
-
-#VM server on thuja, Ivan's iMac
-host c4ci
-HostName c4c-ivan.dyndns.org
-user ivan
-port 15554
-
 #VM server on thuja, Ivan's iMac
 host c4chefserver
 HostName c4chefserver.uwc4c.com
@@ -223,11 +65,6 @@ port 15554
 
 host willow
 HostName willow.uwc4c.com
-port 15554
-
-#little linux laptop in dawns's office
-host c4cmaple
-HostName c4cmaple.dyndns.org
 port 15554
 
 #thewfund
@@ -271,11 +108,6 @@ HostName c4c.uwc4c.com
 port 15554
 user ivan
 
-host g
-HostName g.greenrails.com
-port 15554
-user ivan
-
 host apps
 HostName apps.sustainablewebsites.com
 port 15554
@@ -287,3 +119,6 @@ user knoq
 host knoq_production
 HostName knoq.com
 user knoq
+
+host wow
+HostName wow.sustainablewebsites.com
