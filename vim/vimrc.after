@@ -3,9 +3,9 @@ colorscheme solarized
 " nmap <silent> <C-D> :NERDTreeToggle<CR>
 " imap <silent> <C-D> <Esc>:NERDTreeToggle<CR>
 nmap <C-a> ^
-imap <C-a> ^
+imap <C-a> <C-o>^
 nmap <C-e> $
-imap <C-e> $
+imap <C-e> <C-o>$
 inoremap <D-CR> <C-O>o
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -57,6 +57,7 @@ augroup END
 command! SpellCheck setlocal spell spelllang=en_us
 command! -bar -nargs=1 OpenURL :!open <args>
 let g:rails_ctags_arguments='--languages=-javascript --exclude=.git --exclude=log ~/.rvm/gems/ruby-1.9.3-p286/*' 
+let g:neocomplcache_enable_at_startup = 1
 set colorcolumn=80
 fun! <SID>StripTrailingWhitespaces()
     let l = line(".")
