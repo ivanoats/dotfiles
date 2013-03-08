@@ -85,7 +85,7 @@ port 15554
 user passenger
 
 #ubuntu desktop vm on ivans iMac
-host staging
+host thujastaging
 HostName staging.uwc4c.com
 port 15554
 
@@ -100,6 +100,11 @@ user ccacweb
 
 host c4cprod
 HostName c4c.uwc4c.com
+port 15554
+user passenger
+
+host c4cstaging
+HostName 198.101.232.30 # staging.uwc4c.com
 port 15554
 user passenger
 
