@@ -104,7 +104,7 @@ port 15554
 user passenger
 
 host c4cstaging
-HostName 198.101.232.30 # staging.uwc4c.com
+HostName 198.101.232.30
 port 15554
 user passenger
 
