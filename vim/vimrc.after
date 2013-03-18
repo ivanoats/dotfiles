@@ -56,7 +56,7 @@ augroup VimperatorYPentadactyl
 augroup END
 command! SpellCheck setlocal spell spelllang=en_us
 command! -bar -nargs=1 OpenURL :!open <args>
-let g:rails_ctags_arguments='--languages=-javascript --exclude=.git --exclude=log ~/.rvm/gems/ruby-1.9.3-p286/*' 
+let g:rails_ctags_arguments='--languages=-javascript --exclude=.git --exclude=log ~/.rvm/gems/ruby-1.9.3-p392/*'
 let g:neocomplcache_enable_at_startup = 1
 set colorcolumn=80
 fun! <SID>StripTrailingWhitespaces()
@@ -104,6 +104,13 @@ let g:ctrlp_dotfiles=1
 let ruby_fold=1
 set foldlevelstart=99
 
+"ruby
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+"improve autocomplete menu color
+highlight Pmenu ctermbg=238 gui=bold
 
 "coffeescript folding
 au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
@@ -130,7 +137,7 @@ fun! UpdateOrCreateTagsFile()
   endif
 endfun
 
-let g:syntastic_ruby_exec='/Users/ivan/.rvm/rubies/ruby-1.9.3-p194/bin/ruby'
+let g:syntastic_ruby_exec='/Users/ivan/.rvm/rubies/ruby-1.9.3-p392/bin/ruby'
 let g:ctrlp_custom_ignore = {'dir': '\.git$\|\.hg$\|\.svn$\|doc$\|coverage$\|\.chef$','file': '.DS_Store'}
 
 fun! PullAndRefresh()
@@ -140,5 +147,5 @@ endfun
 
 nmap <leader>gr call PullAndRefresh()
 set mouse=r
-let g:neocomplcache_enable_at_startup = 1
+"let g:neocomplcache_enable_at_startup = 1
 nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
