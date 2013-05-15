@@ -84,6 +84,7 @@ alias pcat="pygmentize"
 alias pcatr="pygmentize -l ruby"
 alias pgdbs='psql -c "select datname from pg_database;"'
 alias gitlog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+alias git="hub"
 # LINUX ONLY
 if [[ -a /etc/issue ]];
   then
