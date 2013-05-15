@@ -58,7 +58,7 @@ HostName c4chefserver.uwc4c.com
 user ivan
 
 #little linux box in dawn's office
-host c4cstaging
+host oldc4cstaging
 host willow
 HostName willow.uwc4c.com
 port 15554
@@ -127,3 +127,8 @@ user knoq
 
 host wow
 HostName wow.sustainablewebsites.com
+
+host openvbx
+HostName 192.249.63.121
+port 15554
+user ivan
