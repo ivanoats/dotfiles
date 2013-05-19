@@ -40,7 +40,7 @@ alias ohmyzsh="subl ~/.oh-my-zsh"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby knife brew bundler vagrant rake gpg-agent cloudapp)
+plugins=(git osx ruby knife brew rvm vagrant rake gpg-agent cloudapp)
 
 # load up oh my zsh
 source $ZSH/oh-my-zsh.sh
@@ -69,6 +69,4 @@ export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
 export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
 
 # Customize to your needs...
-export PATH=.:./bin:/Users/ivan/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/Users/ivan/Library/Python/2.7/bin:$PATH
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=.:./bin:$HOME/.rvm/bin:/Users/ivan/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/Users/ivan/Library/Python/2.7/bin:$PATH
