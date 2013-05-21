@@ -2,6 +2,7 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+set rtp+=/Users/ivan/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
 
 Bundle 'gmarik/vundle'
 let g:vundle_default_git_proto = 'git'
@@ -55,11 +56,13 @@ map <C-l> <C-w>l
 nmap <D-O> ! open file:///%:p<CR>
 nmap <Leader>h :noh<CR>
 command! W w !sudo tee % > /dev/null
+set directory=/tmp
 set wrap
 syntax enable
 set number
 set ruler
 set encoding=utf-8
+set laststatus=2
 
 set nowrap
 set tabstop=2
@@ -137,4 +140,3 @@ fun! UpdateOrCreateTagsFile()
   endif
 endfun
 
-set rtp+=/Users/ivan/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim

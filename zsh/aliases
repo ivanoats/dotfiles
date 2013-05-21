@@ -38,7 +38,6 @@ function pvcp()
 
 growl() { echo -e $'\e]9;'${1}'\007' ; return ; }
 
-
 # MAC OS X ONLY
 if [[ $OSTYPE != 'linux-gnu' ]]; then
   alias tu='top -o cpu' # sorted by cpu
@@ -61,6 +60,7 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
   alias vi='mvim -v'
   alias vim='mvim -v'
 fi
+alias git='hub'
 alias pdbs="psql -l"
 alias retag="ctags --exclude=*.js --extra=+f -R *"
 alias zipr="zip -r" #directory.zip directory
