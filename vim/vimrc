@@ -44,11 +44,11 @@ Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'Valloric/YouCompleteMe'
 
+set shell=bash
+
 filetype plugin indent on
 set background=light
 colorscheme solarized
-" nmap <silent> <C-D> :NERDTreeToggle<CR>
-" imap <silent> <C-D> <Esc>:NERDTreeToggle<CR>
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
