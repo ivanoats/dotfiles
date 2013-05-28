@@ -69,6 +69,6 @@ export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
 export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
 
 # Customize to your needs...
-export PATH=.:./bin:$HOME/.rvm/bin:/Users/ivan/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/Users/ivan/Library/Python/2.7/bin:$PATH
+export PATH=.:./bin:$HOME/.rvm/bin:/Users/ivan/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/Users/ivan/Library/Python/2.7/bin:$PATH
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
