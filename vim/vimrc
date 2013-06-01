@@ -44,6 +44,8 @@ Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/closetag.vim'
+Bundle 'FredKSchott/CoVim'
+Bundle 'mattn/webapi-vim'
 
 set shell=bash
 
