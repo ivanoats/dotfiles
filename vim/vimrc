@@ -124,7 +124,7 @@ set clipboard=unnamed
 
 let g:ctrlp_custom_ignore = {'dir': '\.git$\|\.hg$\|\.svn$\|doc$\|coverage$\|\.chef$','file': '.DS_Store'}
 let g:syntastic_ruby_exec='/Users/ivan/.rvm/bin/ruby'
-
+let g:EclimCompletionMethod = 'omnifunc'
 " On enter update/create tags
 autocmd VimEnter * call UpdateOrCreateTagsFile()
 
