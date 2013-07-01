@@ -34,8 +34,10 @@ plugins=(git osx ruby knife brew bundler vagrant rake gpg-agent cloudapp)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=.:/Users/ivan/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/Users/ivan/.rvm/bin
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+export PATH=.:/Users/ivan/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH="$HOME/.rbenv/bin:$PATH"
+
 . ~/bin/dotfiles/zsh/env
 . ~/bin/dotfiles/zsh/aliases
 
+eval "$(rbenv init -)"

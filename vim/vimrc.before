@@ -1,6 +1,0 @@
-set shell=bash
-call janus#disable_plugin('hammer')
-call janus#disable_plugin('headlights')
-"if has("gui_macvim")
-"    call janus#disable_plugin('nerdtree')
-"endif

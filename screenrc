@@ -1,7 +1,0 @@
-# turn on to use mac scrollbars
-termcapinfo xterm* ti@:te@
-defscrollback 4096
-backtick 0 60 60 whoami
-hardstatus alwayslastline
-hardstatus string '%{= kG}[ %{G}%0`@%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
-autodetach on
