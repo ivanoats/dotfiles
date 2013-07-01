@@ -1,0 +1,39 @@
+[user]
+	name = Ivan Storck
+	email = ivanoats@gmail.com
+[core]
+	quotepath = false
+	excludesfile = /Users/ivan/.gitignore
+[pivotal]
+	api-token = ac7479e00f64aab931f3826d920b5af0
+	full-name = Ivan Storck
+[web]
+	browser = open
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[color]
+	ui = auto
+[alias]
+	wtf = !git-wtf
+	switch = !legit switch \"$@\"
+	branches = !legit branches
+	sprout = !legit sprout \"$@\"
+	unpublish = !legit unpublish \"$@\"
+	harvest = !legit harvest \"$@\"
+	sync = !legit sync \"$@\"
+	publish = !legit publish \"$@\"
+	graft = !legit graft \"$@\"
+[difftool "Kaleidoscope"]
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
+[github]
+	user = ivanoats
+[push]
+	default = simple

@@ -1,9 +1,9 @@
-#set -o vi   #vi line editing mode 
+#set -o vi   #vi line editing mode
 export WWW_HOME=http://www.google.com
 export EDITOR="vim -f"
 export NODE_PATH=/usr/local/lib/node_modules
 export LC_CTYPE=en_US.UTF-8  # for textmate svn compatibility
-export GEM_OPEN_EDITOR="vim"
+export GEM_OPEN_EDITOR="subl"
 export CLICOLOR=1
 export HISTFILESIZE=3000
 export TERM=xterm-256color
