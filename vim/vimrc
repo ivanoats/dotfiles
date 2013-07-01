@@ -1,0 +1,148 @@
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+set rtp+=/Users/ivan/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+
+Bundle 'gmarik/vundle'
+let g:vundle_default_git_proto = 'git'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'mileszs/ack.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-rvm'
+Bundle 'tpope/vim-bundler'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'skwp/vim-rspec'
+Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'git://github.com/mileszs/ack.vim.git'
+Bundle 'jeetsukumaran/vim-buffergator'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'mattn/gist-vim'
+Bundle 'edsono/vim-matchit'
+Bundle 'ervandew/supertab'
+Bundle 'majutsushi/tagbar'
+Bundle 'skalnik/vim-vroom'
+Bundle 'danchoi/ri.vim'
+" no longer necessary? Bundle 'vim-scripts/rubycomplete.vim'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'vim-scripts/closetag.vim'
+Bundle 'FredKSchott/CoVim'
+Bundle 'mattn/webapi-vim'
+Bundle 'Raimondi/delimitMate'
+
+set shell=bash
+
+filetype plugin indent on
+set background=light
+colorscheme solarized
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+nmap <D-O> ! open file:///%:p<CR>
+nmap <Leader>h :noh<CR>
+command! W w !sudo tee % > /dev/null
+set directory=/tmp
+set wrap
+syntax enable
+set number
+set ruler
+set encoding=utf-8
+set laststatus=2
+
+set nowrap
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set list
+set backspace=indent,eol,start
+
+" List chars
+set listchars=""                  " Reset the listchars
+set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
+set listchars+=trail:.            " show trailing spaces as dots
+set listchars+=extends:>          " The character to show in the last column when wrap is
+                                  " off and the line continues beyond the right of the screen
+set listchars+=precedes:<         " The character to show in the last column when wrap is
+                                  " off and the line continues beyond the right of the screen
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+if has("autocmd")
+  autocmd! bufwritepost .vimrc source ~/.vimrc
+  " Make sure all mardown files have the correct filetype set and setup wrapping
+  au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
+  "not sure what below does
+  "au FileType markdown call s:setupWrapping()
+
+  " Treat JSON files like JavaScript
+  au BufNewFile,BufRead *.json set ft=javascript
+endif
+
+nmap <leader>v :tabedit ~/.vimrc<CR>
+nmap <leader>n :NERDTreeToggle<CR>
+
+set colorcolumn=80
+
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd BufWritePre *.rb :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.yaml :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.feature :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.erb :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.html :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.js :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre Cheffile :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre Rakefile :call <SID>StripTrailingWhitespaces()
+au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+set clipboard=unnamed
+
+let g:ctrlp_custom_ignore = {'dir': '\.git$\|\.hg$\|\.svn$\|doc$\|coverage$\|\.chef$','file': '.DS_Store'}
+let g:syntastic_ruby_exec='/Users/ivan/.rvm/bin/ruby'
+let g:EclimCompletionMethod = 'omnifunc'
+" On enter update/create tags
+autocmd VimEnter * call UpdateOrCreateTagsFile()
+
+" On write just update tags of this file
+"autocmd BufWritePost *.rb call writefile(split(system("sort -u <(touch tags && grep -v " . expand('%:%') . " tags) <(ctags --language-force=ruby -u -f - " . shellescape(expand('%:%')) . " | grep " . expand('%:r') . ")"),"\n"),"tags")
+
+" Create tagsfile (if it doesn't exist)
+" or update tags file if it is too old
+" currently doesn't handle same-name classes well ...
+fun! UpdateOrCreateTagsFile()
+  let mtime_tags = getftime("tags")
+  let mtime_gemfile = getftime("Gemfile.lock")
+
+  if mtime_gemfile > 0 && (mtime_tags == -1 || mtime_gemfile > mtime_tags)
+    echom "Generating tags as Gemfile.lock is newer than tags"
+    let tempfile = tempname()
+    call writefile(["#!/bin/bash","ctags -R --language-force=ruby -u -f tags", "rm $0"], tempfile)
+    silent! execute ":!bash " . tempfile . " &"
+  endif
+endfun
+

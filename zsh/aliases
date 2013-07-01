@@ -14,6 +14,11 @@
 # }
 # define_vim_wrappers
 
+function serve {
+  port="${1:-3000}"
+  ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => $port, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start"
+}
+
 function zipd {
     zip -r $1.zip $2
 }
@@ -38,7 +43,6 @@ function pvcp()
 
 growl() { echo -e $'\e]9;'${1}'\007' ; return ; }
 
-
 # MAC OS X ONLY
 if [[ $OSTYPE != 'linux-gnu' ]]; then
   alias tu='top -o cpu' # sorted by cpu
@@ -46,7 +50,6 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
   alias tm='top -o vsize' #sorted by memory
   alias whoitunes="lsof -r 2 -n -P -F n -c iTunes -a -i TCP@\`hostname\`:3689"
   alias ls="ls -G"
-  alias sites2="cd ~/Sites/sites2"
   alias sites="cd ~/Sites"
   alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\   -f2"
   alias hd2="cd /Volumes/Macintosh\ HD\ 2"
@@ -58,8 +61,10 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
   alias lockscreen="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
   alias sshkeycopy="cat ~/.ssh/id_rsa.pub | pbcopy"
   alias rkhunter="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin sudo rkhunter --check"
-  alias mvim="open -a MacVim"
+  alias vi='mvim -v'
+  alias vim='mvim -v'
 fi
+alias git='hub'
 alias pdbs="psql -l"
 alias retag="ctags --exclude=*.js --extra=+f -R *"
 alias zipr="zip -r" #directory.zip directory
@@ -69,7 +74,6 @@ alias g="git status"
 alias gitlog='git log --graph --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit --date=relative'
 alias h="history"
 alias proj="cd ~/Dropbox/Projects"
-alias dev="cd ~/Development"
 alias devruby="cd ~/dev/ruby && ls -ltrahG"
 alias devphp="cd ~/dev/php && ls -ltrahG"
 alias dbs="mysql -e 'show databases;'"
@@ -84,9 +88,11 @@ alias pcat="pygmentize"
 alias pcatr="pygmentize -l ruby"
 alias pgdbs='psql -c "select datname from pg_database;"'
 alias gitlog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+alias git="hub"
 # LINUX ONLY
 if [[ -a /etc/issue ]];
   then
     alias pbcopy='xclip -selection clipboard'
     alias pbpaste='xclip -selection clipboard -o'
 fi
+
