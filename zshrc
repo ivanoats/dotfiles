@@ -7,10 +7,6 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="ivanoats"
 
-# Example aliases
-alias zshconfig="subl ~/.zshrc"
-alias ohmyzsh="subl ~/.oh-my-zsh"
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -30,7 +26,7 @@ alias ohmyzsh="subl ~/.oh-my-zsh"
 # DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
@@ -40,13 +36,12 @@ alias ohmyzsh="subl ~/.oh-my-zsh"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby knife brew vagrant rake gpg-agent cloudapp)
+plugins=(git ruby knife brew vagrant rake gpg-agent rbenv)
 
 # load up oh my zsh
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=.:/Users/ivan/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH=.:/home/ivan/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
 
 eval "$(rbenv init -)"
@@ -60,14 +55,13 @@ eval "$(rbenv init -)"
 # env vars and aliases
 . ~/bin/dotfiles/zsh/env
 . ~/bin/dotfiles/zsh/aliases
-alias psql=/usr/local/bin/psql
 
 # powerline for mac
 # source ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # Amazon ec2
-export JAVA_HOME="$(/usr/libexec/java_home)"
-export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
-export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
-export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
+# export JAVA_HOME="$(/usr/libexec/java_home)"
+# export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
+# export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
+# export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
 
