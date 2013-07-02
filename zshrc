@@ -7,10 +7,6 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="ivanoats"
 
-# Example aliases
-alias zshconfig="subl ~/.zshrc"
-alias ohmyzsh="subl ~/.oh-my-zsh"
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -30,7 +26,7 @@ alias ohmyzsh="subl ~/.oh-my-zsh"
 # DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
@@ -57,7 +53,6 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 # env vars and aliases
 . ~/bin/dotfiles/zsh/env
 . ~/bin/dotfiles/zsh/aliases
-alias psql=/usr/local/bin/psql
 
 # powerline
 source ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
@@ -69,6 +64,5 @@ export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
 export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
 
 # Customize to your needs...
-export PATH=.:./bin:$HOME/.rvm/bin:/Users/ivan/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/Users/ivan/Library/Python/2.7/bin:$PATH
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
-
+export PATH=.:./bin:$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/Users/ivan/Library/Python/2.7/bin:$PATH
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
