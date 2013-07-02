@@ -63,6 +63,8 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
   alias rkhunter="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin sudo rkhunter --check"
   alias vi='mvim -v'
   alias vim='mvim -v'
+  alias zshconfig="vim ~/.zshrc"
+  alias ohmyzsh="vim ~/.oh-my-zsh"
 fi
 alias git='hub'
 alias pdbs="psql -l"
@@ -75,7 +77,7 @@ alias h="history"
 alias proj="cd ~/Dropbox/Projects"
 alias dbs="mysql -e 'show databases;'"
 alias dbusers="mysql -e 'connect mysql; select host, user from user;'"
-alias aliases="cat ~/bin/dotfiles/bash/aliases"
+alias aliases="cat ~/dotfiles/bash/aliases"
 alias sshc="less ~/.ssh/config"
 alias backtomymac="ssh -2 -6 sitka.102480994.members.btmm.icloud.com -v"
 alias ber="bundle exec rake"
