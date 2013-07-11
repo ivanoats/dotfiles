@@ -46,7 +46,7 @@ plugins=(git osx ruby knife brew vagrant rake gpg-agent cloudapp)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=.:/Users/ivan/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH=.:/home/ivan/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
 
 eval "$(rbenv init -)"
@@ -60,7 +60,6 @@ eval "$(rbenv init -)"
 # env vars and aliases
 . ~/bin/dotfiles/zsh/env
 . ~/bin/dotfiles/zsh/aliases
-alias psql=/usr/local/bin/psql
 
 # powerline for mac
 # source ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
