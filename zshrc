@@ -36,7 +36,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby knife brew vagrant rake gpg-agent cloudapp)
+plugins=(git osx ruby knife brew vagrant rake gpg-agent cloudapp rbenv)
 
 # load up oh my zsh
 source $ZSH/oh-my-zsh.sh
@@ -64,5 +64,6 @@ export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
 export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
 
 # Customize to your needs...
-export PATH=.:./bin:$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/Users/ivan/Library/Python/2.7/bin:$PATH
+export PATH=$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/usr/local/Cellar/git/latest/libexec/git-core:/Users/ivan/Library/Python/2.7/bin:$PATH
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export PATH=./bin:$PATH
