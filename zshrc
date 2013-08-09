@@ -36,7 +36,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby knife brew vagrant rake gpg-agent rbenv)
+plugins=(git ruby knife brew vagrant rake rbenv)
 
 # load up oh my zsh
 source $ZSH/oh-my-zsh.sh
@@ -65,3 +65,6 @@ eval "$(rbenv init -)"
 # export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
 # export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
 
+
+### Added by the Heroku Toolbelt
+export PATH="./bin:/usr/local/heroku/bin:$PATH"
