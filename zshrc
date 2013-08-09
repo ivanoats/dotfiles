@@ -42,8 +42,8 @@ plugins=(git ruby knife brew vagrant rake rbenv)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=.:/home/ivan/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH=.:$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH="./bin:$HOME/.rbenv/bin:$PATH"
 
 eval "$(rbenv init -)"
 
@@ -68,4 +68,4 @@ eval "$(rbenv init -)"
 
 
 ### Added by the Heroku Toolbelt
-export PATH="./bin:/usr/local/heroku/bin:$PATH"
+export PATH="/usr/local/heroku/bin:$PATH"
