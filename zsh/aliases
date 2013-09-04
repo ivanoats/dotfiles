@@ -71,13 +71,13 @@ alias pdbs="psql -l"
 alias retag="ctags --exclude=*.js --extra=+f -R *"
 alias zipr="zip -r" #directory.zip directory
 alias upstream="git rev-parse --abbrev-ref @{u}"
-alias ll="ls -ltrah"
+alias ll="ls -ltrahG"
 alias g="git status"
 alias h="history"
 alias proj="cd ~/Dropbox/Projects"
 alias dbs="mysql -e 'show databases;'"
 alias dbusers="mysql -e 'connect mysql; select host, user from user;'"
-alias aliases="cat ~/dotfiles/bash/aliases"
+alias aliases="cat ~/dotfiles/zsh/aliases"
 alias sshc="less ~/.ssh/config"
 alias backtomymac="ssh -2 -6 sitka.102480994.members.btmm.icloud.com -v"
 alias ber="bundle exec rake"
@@ -88,7 +88,6 @@ alias pcatr="pygmentize -l ruby"
 alias ccat="coderay"
 alias pgdbs='psql -c "select datname from pg_database;"'
 alias gitlog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
-alias git="hub"
 # LINUX ONLY
 if [[ -a /etc/issue ]];
   then
