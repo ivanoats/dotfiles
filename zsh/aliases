@@ -71,7 +71,7 @@ alias pdbs="psql -l"
 alias retag="ctags --exclude=*.js --extra=+f -R *"
 alias zipr="zip -r" #directory.zip directory
 alias upstream="git rev-parse --abbrev-ref @{u}"
-alias ll="ls -ltrah"
+alias ll="ls -ltrahG"
 alias g="git status"
 alias h="history"
 alias proj="cd ~/Dropbox/Projects"
