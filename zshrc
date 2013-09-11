@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+# Figure out OS type, Mac or Linux. Strip out version# from Darwin
+export OSTYPE_REAL=${OSTYPE//[0-9.]/}
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -36,7 +39,11 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby knife brew vagrant rake gpg-agent cloudapp rbenv)
+if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
+  plugins=(git ruby knife vagrant rake rbenv)
+else # Mac OS X
+  plugins=(git osx ruby knife brew vagrant rake gpg-agent cloudapp rbenv)
+fi
 
 # load up oh my zsh
 source $ZSH/oh-my-zsh.sh
@@ -55,15 +62,53 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 . ~/bin/dotfiles/zsh/aliases
 
 # powerline
-source /usr/local/lib/Python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
+  if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
+  fi
+  if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+    source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+  fi
+  if [[ -r /usr/local/java ]]; then
+    JAVA_HOME=/usr/local/java
+    PATH=$PATH:$JAVA_HOME/bin
+    JRE_HOME=/usr/local/java
+    PATH=$PATH:$JRE_HOME/bin
+    export JAVA_HOME
+    export JRE_HOME
+    export PATH
+  fi
+else # Mac OS X
+  # tsuga - powerline is in ~/Library
+  if [[ -r ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+    source ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
+    export PATH=$PATH:/Users/ivan/Library/Python/2.7/bin
+  fi
+  # leaf - powerline is in /usr/local
+  if [[ -r /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+    source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+  fi
+fi
 
 # Amazon ec2
-export JAVA_HOME="$(/usr/libexec/java_home)"
-#export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
-#export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
-#export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
-#
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+  export JAVA_HOME="$(/usr/libexec/java_home)"
+fi
+
+/bin/ls $HOME/.ec2/pk-*.pem >/dev/null 2>/dev/null
+if [[ $? -lt 1 ]]; then
+  export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
+  export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
+  if [[ $OSTYPE_REAL == 'darwin' ]]; then
+    export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
+  fi
+fi
+
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+  export PATH=$PATH:/usr/local/Cellar/git/latest/libexec/git-core
+fi
+
 # Customize to your needs...
-export PATH=$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/usr/local/Cellar/git/latest/libexec/git-core:$PATH
+export PATH=$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH=./bin:$PATH
