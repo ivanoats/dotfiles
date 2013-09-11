@@ -55,15 +55,15 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 . ~/bin/dotfiles/zsh/aliases
 
 # powerline
-source ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
+source /usr/local/lib/Python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # Amazon ec2
 export JAVA_HOME="$(/usr/libexec/java_home)"
-export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
-export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
-export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
-
+#export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
+#export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
+#export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
+#
 # Customize to your needs...
-export PATH=$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/usr/local/Cellar/git/latest/libexec/git-core:/Users/ivan/Library/Python/2.7/bin:$PATH
+export PATH=$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/usr/local/Cellar/git/latest/libexec/git-core:$PATH
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH=./bin:$PATH
