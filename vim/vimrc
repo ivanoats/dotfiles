@@ -56,7 +56,7 @@ Bundle 'mattn/webapi-vim'
 Bundle 'Raimondi/delimitMate'
 
 set shell=bash
-
+set completeopt+=preview
 filetype plugin indent on
 set background=light
 colorscheme solarized

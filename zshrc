@@ -79,8 +79,15 @@ if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
     export PATH
   fi
 else # Mac OS X
-  export PATH=$PATH:/Users/ivan/Library/Python/2.7/bin
-  source ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh;
+  # tsuga - powerline is in ~/Library
+  if [[ -r ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+    source ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
+    export PATH=$PATH:/Users/ivan/Library/Python/2.7/bin
+  fi
+  # leaf - powerline is in /usr/local
+  if [[ -r /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+    source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+  fi
 fi
 
 # Amazon ec2
