@@ -67,6 +67,7 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
   alias ohmyzsh="vim ~/.oh-my-zsh"
 fi
 alias git='hub'
+alias bower='noglob bower'
 alias pdbs="psql -l"
 alias retag="ctags --exclude=*.js --extra=+f -R *"
 alias zipr="zip -r" #directory.zip directory
