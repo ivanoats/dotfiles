@@ -66,3 +66,6 @@ export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
 # Customize to your needs...
 export PATH=.:./bin:$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/Users/ivan/Library/Python/2.7/bin:$PATH
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# added by travis gem
+source /Users/ivan/.travis/travis.sh
