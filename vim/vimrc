@@ -2,7 +2,14 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-set rtp+=/Users/ivan/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+
+" this should be dependent on OS TYPE
+let ostype_real = system('echo $OSTYPE_REAL')
+if ostype_real == "Darwin"
+  set rtp+=/Users/ivan/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+else
+  set rtp+=/home/ivan/.local/lib/python2.7/site-packages/powerline/bindings/vim
+end
 
 Bundle 'gmarik/vundle'
 let g:vundle_default_git_proto = 'git'
@@ -42,14 +49,14 @@ Bundle 'danchoi/ri.vim'
 " no longer necessary? Bundle 'vim-scripts/rubycomplete.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/closetag.vim'
 "Bundle 'FredKSchott/CoVim'
 Bundle 'mattn/webapi-vim'
 Bundle 'Raimondi/delimitMate'
 
 set shell=bash
-
+set completeopt+=preview
 filetype plugin indent on
 set background=light
 colorscheme solarized
@@ -124,7 +131,9 @@ set clipboard=unnamed
 
 let g:ctrlp_custom_ignore = {'dir': '\.git$\|\.hg$\|\.svn$\|doc$\|coverage$\|\.chef$','file': '.DS_Store'}
 let g:syntastic_ruby_exec='/Users/ivan/.rvm/bin/ruby'
-let g:EclimCompletionMethod = 'omnifunc'
+" waiting until eclipse has ruby 1.9 syntax support
+"let g:EclimCompletionMethod = 'omnifunc'
+"
 " On enter update/create tags
 autocmd VimEnter * call UpdateOrCreateTagsFile()
 
