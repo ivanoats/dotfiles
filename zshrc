@@ -115,6 +115,10 @@ fi
 # Customize to your needs...
 export PATH=$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# added by travis gem
+source /Users/ivan/.travis/travis.sh
+
 export PATH=./bin:$PATH
 
 # added by travis gem
