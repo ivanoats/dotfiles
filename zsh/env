@@ -6,6 +6,8 @@ export HISTFILESIZE=3000
 export TERM=xterm-256color
 export WUNDERAPI=e6a4bb57676626e0
 export MYICLOUD=102480994.members.btmm.icloud.com
+export CF_AWS_SECRET=UIX7kNoaetsceMbIDFgSQ5aYnFjWLP7EI+3nPWqc
+export CF_AWS_KEY=AKIAJCQIWIB22MU25A7Q
 if [[ ${OSTYPE//[0-9.]/} == 'darwin' ]]; then
   export RBENV_ROOT=/usr/local/var/rbenv
   export EDITOR="mvim -vf"
