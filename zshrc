@@ -13,6 +13,10 @@ ZSH_THEME="ivanoats"
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
+# auto complete ..
+autoload -Uz compinit
+compinit
+
 # Comment this out to disable weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
 
@@ -112,3 +116,6 @@ fi
 export PATH=$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH=./bin:$PATH
+
+# added by travis gem
+source /Users/ivan/.travis/travis.sh
