@@ -65,6 +65,8 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
   alias vim='mvim -v'
   alias zshconfig="vim ~/.zshrc"
   alias ohmyzsh="vim ~/.oh-my-zsh"
+  alias showinvisible="defaults write com.apple.finder AppleShowAllFiles TRUE"
+  alias hideinvisible="defaults write com.apple.finder AppleShowAllFiles FALSE"
 fi
 alias git='hub'
 alias bower='noglob bower'
