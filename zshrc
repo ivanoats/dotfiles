@@ -113,7 +113,7 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
 fi
 
 # Customize to your needs...
-export PATH=$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/.cask/bin:$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # added by travis gem
