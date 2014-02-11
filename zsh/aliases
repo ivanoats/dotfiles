@@ -67,6 +67,7 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
   alias ohmyzsh="vim ~/.oh-my-zsh"
   alias showinvisible="defaults write com.apple.finder AppleShowAllFiles TRUE"
   alias hideinvisible="defaults write com.apple.finder AppleShowAllFiles FALSE"
+  alias sleepmoria="ssh moria.local pmset sleepnow"
 fi
 alias git='hub'
 alias bower='noglob bower'
@@ -97,4 +98,5 @@ if [[ -a /etc/issue ]];
   then
     alias pbcopy='xclip -selection clipboard'
     alias pbpaste='xclip -selection clipboard -o'
+    alias open='gnome-open'
 fi
