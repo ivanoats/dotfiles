@@ -116,10 +116,12 @@ fi
 export PATH=$HOME/.cask/bin:$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-# added by travis gem
-source /Users/ivan/.travis/travis.sh
-
+# current directory bin PATH
 export PATH=./bin:$PATH
+
+# Go language
+export GOPATH=$HOME/dev/go 
+PATH=$PATH:$GOPATH/bin 
 
 # added by travis gem
 source /Users/ivan/.travis/travis.sh
