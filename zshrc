@@ -120,8 +120,12 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH=./bin:$PATH
 
 # Go language
-export GOPATH=$HOME/dev/go 
-PATH=$PATH:$GOPATH/bin 
+export GOPATH=$HOME/dev/go
+PATH=$PATH:$GOPATH/bin
 
 # added by travis gem
 source /Users/ivan/.travis/travis.sh
+
+# Node Version Manager (NVM)
+source $(brew --prefix nvm)/nvm.sh
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion

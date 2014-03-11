@@ -10,7 +10,6 @@ export CF_AWS_SECRET=UIX7kNoaetsceMbIDFgSQ5aYnFjWLP7EI+3nPWqc
 export CF_AWS_KEY=AKIAJCQIWIB22MU25A7Q
 if [[ ${OSTYPE//[0-9.]/} == 'darwin' ]]; then
   export RBENV_ROOT=/usr/local/var/rbenv
-  export EDITOR="mvim -vf"
-  export VISUAL="mvim -vf"
+  export EDITOR="atom -wf"
+  export VISUAL="atom -wf"
 fi
-
