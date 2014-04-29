@@ -59,7 +59,7 @@ Bundle 'Raimondi/delimitMate'
 set shell=bash
 set completeopt+=preview
 filetype plugin indent on
-set background=dark
+set background=light
 colorscheme solarized
 map <C-h> <C-w>h
 map <C-j> <C-w>j

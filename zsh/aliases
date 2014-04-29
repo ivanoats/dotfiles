@@ -68,6 +68,7 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
   alias showinvisible="defaults write com.apple.finder AppleShowAllFiles TRUE"
   alias hideinvisible="defaults write com.apple.finder AppleShowAllFiles FALSE"
   alias sleepmoria="ssh moria.local pmset sleepnow"
+  alias marked="open -a Marked\ 2 "
 fi
 alias git='hub'
 alias bower='noglob bower'
