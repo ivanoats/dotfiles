@@ -45,18 +45,6 @@ host ccac
 HostName captionmatch.com
 user ccacweb
 
-host apps
-HostName apps.sustainablewebsites.com
-port 15554
-
-host openvbx
-HostName 198.61.224.237
-user visjxcnq
-
-host b10
-HostName b10.codefellows.org
-user bitnami
-
 host pa11y
 HostName pa11y.codefellows.org
 user bitnami
