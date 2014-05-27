@@ -18,7 +18,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'ngmy/vim-rubocop'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-cucumber'
@@ -47,16 +46,23 @@ Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
 Bundle 'skalnik/vim-vroom'
 Bundle 'danchoi/ri.vim'
-" no longer necessary? Bundle 'vim-scripts/rubycomplete.vim'
+Bundle 'moll/vim-node'
+Bundle 'walm/jshint.vim'
+Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'ahayman/vim-nodejs-complete'
+Bundle 'jelera/vim-javascript-syntax'
+"Bundle 'vim-scripts/rubycomplete.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/closetag.vim'
 "Bundle 'FredKSchott/CoVim'
 Bundle 'mattn/webapi-vim'
 Bundle 'Raimondi/delimitMate'
+Bundle 'mattn/emmet-vim'
+Bundle 'mklabs/grunt.vim'
 
-set shell=bash
+set shell=zsh
 set completeopt+=preview
 filetype plugin indent on
 set background=light
@@ -131,7 +137,7 @@ au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 set clipboard=unnamed
 
 let g:ctrlp_custom_ignore = {'dir': '\.git$\|\.hg$\|\.svn$\|doc$\|coverage$\|\.chef$','file': '.DS_Store'}
-let g:syntastic_ruby_exec='/Users/ivan/.rvm/bin/ruby'
+let g:syntastic_ruby_exec='/usr/local/var/rbenv/shims/ruby'
 " waiting until eclipse has ruby 1.9 syntax support
 "let g:EclimCompletionMethod = 'omnifunc'
 "
