@@ -1,18 +1,3 @@
-host home
-HostName home.comrala.com
-port 15554
-user ivan
-
-host comrala
-HostName www.comrala.com
-port 15554
-user comrala
-
-host nicoleandivan
-HostName www.nicoleandivan.com
-user rusty
-port 15554
-
 host ivanenviroman
 HostName localhost3000.org
 user ivanes
@@ -41,10 +26,11 @@ HostName thewfund.com
 user passenger
 port 15554
 
-host ccac
-HostName captionmatch.com
-user ccacweb
-
 host pa11y
 HostName pa11y.codefellows.org
 user bitnami
+
+host codio
+HostName  codio@ssh1.codio.com
+port 32726
+user codio

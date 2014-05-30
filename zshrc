@@ -62,8 +62,8 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 #eval `keychain --eval --agents ssh --inherit any id_dsa`
 
 # env vars and aliases
-. ~/bin/dotfiles/zsh/env
-. ~/bin/dotfiles/zsh/aliases
+. ~/dotfiles/zsh/env
+. ~/dotfiles/zsh/aliases
 
 # powerline
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
