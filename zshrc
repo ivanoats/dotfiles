@@ -126,6 +126,10 @@ PATH=$PATH:$GOPATH/bin
 # added by travis gem
 source /Users/ivan/.travis/travis.sh
 
+# added by travis gem
+[ -f /home/ivan/.travis/travis.sh ] && source /home/ivan/.travis/travis.sh
 # Node Version Manager (NVM)
-source $(brew --prefix nvm)/nvm.sh
-[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+  source $(brew --prefix nvm)/nvm.sh
+  [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+fi
