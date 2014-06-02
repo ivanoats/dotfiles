@@ -18,7 +18,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'ngmy/vim-rubocop'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-cucumber'
@@ -47,19 +46,27 @@ Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
 Bundle 'skalnik/vim-vroom'
 Bundle 'danchoi/ri.vim'
-" no longer necessary? Bundle 'vim-scripts/rubycomplete.vim'
+Bundle 'moll/vim-node'
+" provided by syntastic 
+" Bundle 'walm/jshint.vim'
+Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'ahayman/vim-nodejs-complete'
+Bundle 'jelera/vim-javascript-syntax'
+"Bundle 'vim-scripts/rubycomplete.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/closetag.vim'
 "Bundle 'FredKSchott/CoVim'
 Bundle 'mattn/webapi-vim'
 Bundle 'Raimondi/delimitMate'
+Bundle 'mattn/emmet-vim'
+Bundle 'mklabs/grunt.vim'
 
-set shell=bash
+set shell=zsh
 set completeopt+=preview
 filetype plugin indent on
-set background=dark
+set background=light
 colorscheme solarized
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -99,12 +106,20 @@ set smartcase
 if has("autocmd")
   autocmd! bufwritepost .vimrc source ~/.vimrc
   " Make sure all mardown files have the correct filetype set and setup wrapping
-  au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
+  autocmd BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
   "not sure what below does
   "au FileType markdown call s:setupWrapping()
-
-  " Treat JSON files like JavaScript
-  au BufNewFile,BufRead *.json set ft=javascript
+  autocmd BufWritePre *.rb :call <SID>StripTrailingWhitespaces()
+  autocmd BufWritePre *.yaml :call <SID>StripTrailingWhitespaces()
+  autocmd BufWritePre *.feature :call <SID>StripTrailingWhitespaces()
+  autocmd BufWritePre *.erb :call <SID>StripTrailingWhitespaces()
+  autocmd BufWritePre *.html :call <SID>StripTrailingWhitespaces()
+  autocmd BufWritePre *.js :call <SID>StripTrailingWhitespaces()
+  autocmd BufWritePre *.json :call <SID>StripTrailingWhitespaces()
+  autocmd BufWritePre Cheffile :call <SID>StripTrailingWhitespaces()
+  autocmd BufWritePre Rakefile :call <SID>StripTrailingWhitespaces()
+  autocmd Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+  autocmd BufRead,BufNewFile *.json set filetype=json
 endif
 
 nmap <leader>v :tabedit ~/.vimrc<CR>
@@ -119,22 +134,19 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 
-autocmd BufWritePre *.rb :call <SID>StripTrailingWhitespaces()
-autocmd BufWritePre *.yaml :call <SID>StripTrailingWhitespaces()
-autocmd BufWritePre *.feature :call <SID>StripTrailingWhitespaces()
-autocmd BufWritePre *.erb :call <SID>StripTrailingWhitespaces()
-autocmd BufWritePre *.html :call <SID>StripTrailingWhitespaces()
-autocmd BufWritePre *.js :call <SID>StripTrailingWhitespaces()
-autocmd BufWritePre Cheffile :call <SID>StripTrailingWhitespaces()
-autocmd BufWritePre Rakefile :call <SID>StripTrailingWhitespaces()
-au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 set clipboard=unnamed
 
 let g:ctrlp_custom_ignore = {'dir': '\.git$\|\.hg$\|\.svn$\|doc$\|coverage$\|\.chef$','file': '.DS_Store'}
-let g:syntastic_ruby_exec='/Users/ivan/.rvm/bin/ruby'
+let g:syntastic_ruby_exec='/usr/local/var/rbenv/shims/ruby'
+let g:syntastic_json_checkers = ['jsonlint']
+"
+" Better :sign interface symbols
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '!'
+
 " waiting until eclipse has ruby 1.9 syntax support
 "let g:EclimCompletionMethod = 'omnifunc'
-"
+
 " On enter update/create tags
 autocmd VimEnter * call UpdateOrCreateTagsFile()
 

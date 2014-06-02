@@ -62,8 +62,8 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 #eval `keychain --eval --agents ssh --inherit any id_dsa`
 
 # env vars and aliases
-. ~/bin/dotfiles/zsh/env
-. ~/bin/dotfiles/zsh/aliases
+. ~/dotfiles/zsh/env
+. ~/dotfiles/zsh/aliases
 
 # powerline
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
@@ -120,11 +120,16 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH=./bin:$PATH
 
 # Go language
-export GOPATH=$HOME/dev/go 
-PATH=$PATH:$GOPATH/bin 
+export GOPATH=$HOME/dev/go
+PATH=$PATH:$GOPATH/bin
 
 # added by travis gem
 source /Users/ivan/.travis/travis.sh
 
 # added by travis gem
 [ -f /home/ivan/.travis/travis.sh ] && source /home/ivan/.travis/travis.sh
+# Node Version Manager (NVM)
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+  source $(brew --prefix nvm)/nvm.sh
+  [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+fi
