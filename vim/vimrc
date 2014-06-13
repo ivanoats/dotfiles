@@ -55,13 +55,14 @@ Bundle 'jelera/vim-javascript-syntax'
 "Bundle 'vim-scripts/rubycomplete.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
-" Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/closetag.vim'
 "Bundle 'FredKSchott/CoVim'
 Bundle 'mattn/webapi-vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'mattn/emmet-vim'
 Bundle 'mklabs/grunt.vim'
+"Bundle 'marijnh/tern_for_vim'
 
 set shell=zsh
 set completeopt+=preview
