@@ -125,7 +125,7 @@ export GOPATH=$HOME/dev/go
 PATH=$PATH:$GOPATH/bin
 
 # added by travis gem
-source /Users/ivan/.travis/travis.sh
+source $HOME/.travis/travis.sh
 
 # added by travis gem
 [ -f /home/ivan/.travis/travis.sh ] && source /home/ivan/.travis/travis.sh
