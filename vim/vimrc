@@ -63,6 +63,7 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'mattn/emmet-vim'
 Bundle 'mklabs/grunt.vim'
 "Bundle 'marijnh/tern_for_vim'
+Bundle 'elzr/vim-json'
 
 set shell=zsh
 set completeopt+=preview
