@@ -3,10 +3,10 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
-" this should be dependent on OS TYPE
 let ostype_real = system('echo $OSTYPE_REAL')
-if ostype_real == "Darwin"
-  set rtp+=/Users/ivan/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+echo ostype_real
+if ostype_real ==? "darwin\n"
+  source /Users/ivan/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/plugin/powerline.vim
 else
   set rtp+=/home/ivan/.local/lib/python2.7/site-packages/powerline/bindings/vim
 end
