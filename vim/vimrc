@@ -1,6 +1,6 @@
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
 " this should be dependent on OS TYPE
@@ -11,8 +11,8 @@ else
   set rtp+=/home/ivan/.local/lib/python2.7/site-packages/powerline/bindings/vim
 end
 
-Bundle 'gmarik/vundle'
 let g:vundle_default_git_proto = 'git'
+Bundle 'gmarik/Vundle.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
@@ -68,7 +68,6 @@ set shell=zsh
 set completeopt+=preview
 filetype plugin indent on
 set background=light
-colorscheme solarized
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
