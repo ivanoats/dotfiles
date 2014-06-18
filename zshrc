@@ -125,12 +125,11 @@ export GOPATH=$HOME/dev/go
 PATH=$PATH:$GOPATH/bin
 
 # added by travis gem
-source $HOME/.travis/travis.sh
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
-# added by travis gem
-[ -f /home/ivan/.travis/travis.sh ] && source /home/ivan/.travis/travis.sh
-# Node Version Manager (NVM)
+# Node Version Manager (NVM) on Mac
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   source $(brew --prefix nvm)/nvm.sh
   [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 fi
+

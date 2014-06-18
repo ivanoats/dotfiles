@@ -4,7 +4,6 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
 let ostype_real = system('echo $OSTYPE_REAL')
-echo ostype_real
 if ostype_real ==? "darwin\n"
   source /Users/ivan/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/plugin/powerline.vim
 else
@@ -14,6 +13,7 @@ end
 let g:vundle_default_git_proto = 'git'
 Bundle 'gmarik/Vundle.vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'Lokaltog/vim-distinguished'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'ngmy/vim-rubocop'
