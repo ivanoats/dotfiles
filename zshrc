@@ -46,7 +46,7 @@ COMPLETION_WAITING_DOTS="true"
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
   plugins=(git ruby knife vagrant rake rbenv npm web-search)
 else # Mac OS X
-  plugins=(git osx ruby knife brew vagrant rake gpg-agent cloudapp rbenv npm web-search)
+  plugins=(git osx ruby knife brew vagrant rake gpg-agent cloudapp rbenv npm web-search mvn node npm pip redis-cli web-search gem docker bower)
 fi
 
 # load up oh my zsh
@@ -128,6 +128,7 @@ PATH=$PATH:$GOPATH/bin
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
 # Node Version Manager (NVM) on Mac
+export NVM_DIR=~/.nvm
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   source $(brew --prefix nvm)/nvm.sh
   [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
