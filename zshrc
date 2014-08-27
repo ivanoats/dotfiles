@@ -44,9 +44,9 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-  plugins=(git ruby knife vagrant rake rbenv)
+  plugins=(git ruby knife vagrant rake rbenv npm web-search)
 else # Mac OS X
-  plugins=(git osx ruby knife brew vagrant rake gpg-agent cloudapp rbenv)
+  plugins=(git osx ruby knife brew vagrant rake gpg-agent cloudapp rbenv npm web-search mvn node npm pip redis-cli web-search gem docker bower)
 fi
 
 # load up oh my zsh
@@ -64,6 +64,7 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 # env vars and aliases
 . ~/dotfiles/zsh/env
 . ~/dotfiles/zsh/aliases
+. ~/dotfiles/zsh/private_keys
 
 # powerline
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
@@ -124,11 +125,10 @@ export GOPATH=$HOME/dev/go
 PATH=$PATH:$GOPATH/bin
 
 # added by travis gem
-source /Users/ivan/.travis/travis.sh
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
-# added by travis gem
-[ -f /home/ivan/.travis/travis.sh ] && source /home/ivan/.travis/travis.sh
-# Node Version Manager (NVM)
+# Node Version Manager (NVM) on Mac
+export NVM_DIR=~/.nvm
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   source $(brew --prefix nvm)/nvm.sh
   [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
@@ -138,3 +138,4 @@ if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
   export PATH=$PATH:$HOME/.node/bin
   export NODE_PATH=$HOME/.node/lib/node_modules
 fi
+=======
