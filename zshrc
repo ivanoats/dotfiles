@@ -134,3 +134,7 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
   [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 fi
 
+if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
+  export PATH=$PATH:$HOME/.node/bin
+  export NODE_PATH=$HOME/.node/lib/node_modules
+fi
