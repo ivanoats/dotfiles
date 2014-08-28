@@ -48,7 +48,7 @@ Bundle 'skalnik/vim-vroom'
 Bundle 'danchoi/ri.vim'
 Bundle 'moll/vim-node'
 " provided by syntastic 
-" Bundle 'walm/jshint.vim'
+Bundle 'walm/jshint.vim'
 Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'ahayman/vim-nodejs-complete'
 Bundle 'jelera/vim-javascript-syntax'
@@ -62,7 +62,7 @@ Bundle 'mattn/webapi-vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'mattn/emmet-vim'
 Bundle 'mklabs/grunt.vim'
-"Bundle 'marijnh/tern_for_vim'
+Bundle 'marijnh/tern_for_vim'
 Bundle 'elzr/vim-json'
 
 set shell=zsh
@@ -117,6 +117,7 @@ if has("autocmd")
   autocmd BufWritePre *.html :call <SID>StripTrailingWhitespaces()
   autocmd BufWritePre *.js :call <SID>StripTrailingWhitespaces()
   autocmd BufWritePre *.json :call <SID>StripTrailingWhitespaces()
+  autocmd BufWritePre *.java :call <SID>StripTrailingWhitespaces()
   autocmd BufWritePre Cheffile :call <SID>StripTrailingWhitespaces()
   autocmd BufWritePre Rakefile :call <SID>StripTrailingWhitespaces()
   autocmd Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
@@ -137,16 +138,21 @@ endfun
 
 set clipboard=unnamed
 
-let g:ctrlp_custom_ignore = {'dir': '\.git$\|\.hg$\|\.svn$\|doc$\|coverage$\|\.chef$','file': '.DS_Store'}
+let g:ctrlp_custom_ignore = {'dir': '\.git$\|\.hg$\|\.svn$\|doc$\|node_modules$\|coverage$\|\.chef$','file': '.DS_Store'}
 let g:syntastic_ruby_exec='/usr/local/var/rbenv/shims/ruby'
 let g:syntastic_json_checkers = ['jsonlint']
+let g:syntastic_javascript_checkers = ['jshint']
 "
 " Better :sign interface symbols
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
 
 " waiting until eclipse has ruby 1.9 syntax support
+" for YouCompleteMe only
 "let g:EclimCompletionMethod = 'omnifunc'
+
+" For Supertab + Eclim
+let g:SuperTabDefaultCompletionType = 'context'
 
 " On enter update/create tags
 autocmd VimEnter * call UpdateOrCreateTagsFile()
