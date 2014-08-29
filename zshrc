@@ -44,9 +44,9 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-  plugins=(git ruby knife vagrant rake rbenv npm web-search)
+  plugins=(git gitfast git-extras ruby knife vagrant rake rbenv npm web-search)
 else # Mac OS X
-  plugins=(git osx ruby knife brew vagrant rake gpg-agent cloudapp rbenv npm web-search mvn node npm pip redis-cli web-search gem docker bower)
+  plugins=(gitfast git-extras osx ruby knife brew vagrant rake gpg-agent cloudapp rbenv npm web-search mvn node npm pip redis-cli web-search gem docker bower)
 fi
 
 # load up oh my zsh
@@ -109,12 +109,15 @@ if [[ $? -lt 1 ]]; then
   fi
 fi
 
+# git-core
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   export PATH=$PATH:/usr/local/Cellar/git/latest/libexec/git-core
 fi
 
 # Customize to your needs...
 export PATH=$HOME/.cask/bin:$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
+
+# RBenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # current directory bin PATH
