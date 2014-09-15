@@ -95,6 +95,7 @@ alias pgdbs='psql -c "select datname from pg_database;"'
 alias gitlog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias tch='clear && tmux clear-history'
 alias jstree="tree -I 'node_modules|bower_components|db'"
+alias gpicf='git push cf master && git push'
 # LINUX ONLY
 if [[ -a /etc/issue ]];
   then

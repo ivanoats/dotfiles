@@ -48,7 +48,7 @@ Bundle 'skalnik/vim-vroom'
 Bundle 'danchoi/ri.vim'
 Bundle 'moll/vim-node'
 " provided by syntastic 
-Bundle 'walm/jshint.vim'
+Bundle 'shutnik/jshint2.vim'
 Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'ahayman/vim-nodejs-complete'
 Bundle 'jelera/vim-javascript-syntax'
