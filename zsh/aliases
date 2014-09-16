@@ -43,6 +43,8 @@ function pvcp()
 
 growl() { echo -e $'\e]9;'${1}'\007' ; return ; }
 
+function git(){hub $@}
+
 # MAC OS X ONLY
 if [[ $OSTYPE != 'linux-gnu' ]]; then
   alias tu='top -o cpu' # sorted by cpu
@@ -70,7 +72,6 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
   alias sleepmoria="ssh moria.local pmset sleepnow"
   alias marked="open -a Marked\ 2 "
 fi
-alias git='hub'
 alias bower='noglob bower'
 alias pdbs="psql -l"
 alias retag="ctags --exclude=*.js --extra=+f -R *"
