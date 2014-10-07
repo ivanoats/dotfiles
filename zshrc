@@ -117,8 +117,10 @@ fi
 # Customize to your needs...
 export PATH=$HOME/.cask/bin:$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
-# RBenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# chruby
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+  source /usr/local/opt/chruby/share/chruby/chruby.sh
+fi
 
 # current directory bin PATH
 export PATH=./bin:$PATH
