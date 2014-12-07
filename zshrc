@@ -46,7 +46,7 @@ COMPLETION_WAITING_DOTS="true"
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
   plugins=(gitfast git-extras ruby knife vagrant rake rbenv npm web-search)
 else # Mac OS X
-  plugins=(gitfast git-extras osx ruby knife brew vagrant rake gpg-agent cloudapp rbenv npm web-search mvn node npm pip redis-cli web-search gem docker bower)
+  plugins=(gitfast git-extras osx ruby knife brew vagrant rake cloudapp npm web-search mvn node npm pip redis-cli web-search gem docker bower)
 fi
 
 # load up oh my zsh
