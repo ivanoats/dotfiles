@@ -46,7 +46,7 @@ COMPLETION_WAITING_DOTS="true"
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
   plugins=(gitfast git-extras ruby knife vagrant rake rbenv npm web-search)
 else # Mac OS X
-  plugins=(gitfast git-extras osx ruby knife brew vagrant rake gpg-agent cloudapp rbenv npm web-search mvn node npm pip redis-cli web-search gem docker bower)
+  plugins=(gitfast git-extras osx ruby knife brew vagrant rake gpg-agent cloudapp npm web-search mvn node npm pip redis-cli web-search gem docker bower)
 fi
 
 # load up oh my zsh
@@ -143,3 +143,6 @@ if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
   export PATH=$PATH:$HOME/.node/bin
   export NODE_PATH=$HOME/.node/lib/node_modules
 fi
+
+# OPAM configuration
+. /Users/ivan/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
