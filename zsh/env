@@ -8,7 +8,9 @@ export MYICLOUD=102480994.members.btmm.icloud.com
 if [[ ${OSTYPE//[0-9.]/} == 'darwin' ]]; then
   export RBENV_ROOT=/usr/local/var/rbenv
   #export EDITOR="atom -w"
-  #export EDITOR="atom -w"
+  #export VISUAL="atom -w"
   export VISUAL="mvim -vf"
-  export VISUAL="mvim -vf"
+  export EDITOR="mvim -vf"
 fi
+# UW Certificates
+# export SSL_CERT_FILE=/usr/local/etc/ssl/certs/ca-certificates.crt
