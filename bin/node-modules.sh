@@ -43,8 +43,10 @@ npm -g install nodemon
 npm -g install npmlist
 npm -g install planetproto
 npm -g install protractor
+npm -g install phantomjs
 npm -g install pty.js
 npm -g install react-tools
+npm -g install selenium-standalone
 npm -g install stream-adventure
 npm -g install superagent-cli
 npm -g install travis-ci
