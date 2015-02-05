@@ -25,12 +25,14 @@ npm -g install grunt-contrib-jscs
 npm -g install jasmine-node
 npm -g install javascripting
 npm -g install jscs
+npm -g install json-server
 npm -g install jsctags
 npm -g install jshint
 npm -g install jspm
 npm -g install jsxhint
 npm -g install karma-cli
 npm -g install learnyounode
+npm -g install live-server
 npm -g install localtunnel
 npm -g install lololodash
 npm -g install makemehapi
