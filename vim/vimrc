@@ -145,7 +145,7 @@ set clipboard=unnamed
 let g:ctrlp_custom_ignore = {'dir': '\.git$\|\.hg$\|\.svn$\|doc$\|node_modules$\|coverage$\|\.chef$','file': '.DS_Store'}
 let g:syntastic_ruby_exec=' /Users/ivan/.rubies/ruby-2.2.0/bin/ruby'
 let g:syntastic_json_checkers = ['jsonlint']
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
 "
 " Better :sign interface symbols
 let g:syntastic_error_symbol = '✗'
