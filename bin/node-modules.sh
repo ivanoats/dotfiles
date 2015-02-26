@@ -57,4 +57,6 @@ npm -g install travis-ci
 npm -g install tty.js
 npm -g install ungit
 npm -g install watchify
+npm -g install webpack
+npm -g install webpack-dev-server
 npm -g install yo
