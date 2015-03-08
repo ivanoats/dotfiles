@@ -9,9 +9,9 @@ npm -g install casperjs
 npm -g install cli-md
 npm -g install coffee-script
 npm -g install cucumber
-npm -g install express-generator
 npm -g install eslint
 npm -g install esprima-fb
+npm -g install express-generator
 npm -g install foreman
 npm -g install functional-javascript-workshop
 npm -g install generator-browserify
@@ -26,9 +26,9 @@ npm -g install gulp
 npm -g install jasmine-node
 npm -g install javascripting
 npm -g install jscs
-npm -g install json-server
 npm -g install jsctags
 npm -g install jshint
+npm -g install json-server
 npm -g install jspm
 npm -g install jsxhint
 npm -g install karma-cli
@@ -45,9 +45,9 @@ npm -g install node-theseus
 npm -g install nodeclipse
 npm -g install nodemon
 npm -g install npmlist
+npm -g install phantomjs
 npm -g install planetproto
 npm -g install protractor
-npm -g install phantomjs
 npm -g install pty.js
 npm -g install react-tools
 npm -g install selenium-standalone
