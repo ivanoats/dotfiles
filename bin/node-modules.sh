@@ -21,7 +21,6 @@ npm -g install generator-webapp
 npm -g install git-it
 npm -g install gitbook
 npm -g install grunt-cli
-npm -g install grunt-contrib-jscs
 npm -g install gulp
 npm -g install jasmine-node
 npm -g install javascripting
@@ -30,7 +29,6 @@ npm -g install jsctags
 npm -g install jshint
 npm -g install json-server
 npm -g install jspm
-npm -g install jsxhint
 npm -g install karma-cli
 npm -g install learnyounode
 npm -g install live-server
@@ -45,6 +43,7 @@ npm -g install node-theseus
 npm -g install nodeclipse
 npm -g install nodemon
 npm -g install npmlist
+npm -g install npmdep
 npm -g install phantomjs
 npm -g install planetproto
 npm -g install protractor
