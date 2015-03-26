@@ -43,6 +43,7 @@ npm -g install node-theseus
 npm -g install nodeclipse
 npm -g install nodemon
 npm -g install npmlist
+npm -g install npmdep
 npm -g install phantomjs
 npm -g install planetproto
 npm -g install protractor
