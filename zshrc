@@ -120,6 +120,8 @@ export PATH=$HOME/.cask/bin:$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm
 # chruby
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   source /usr/local/opt/chruby/share/chruby/chruby.sh
+else # linux
+  source /usr/local/share/chruby/chruby.sh
 fi
 
 # current directory bin PATH
