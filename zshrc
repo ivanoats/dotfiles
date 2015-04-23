@@ -120,6 +120,8 @@ export PATH=$HOME/.cask/bin:$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm
 # chruby
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   source /usr/local/opt/chruby/share/chruby/chruby.sh
+else # linux
+  source /usr/local/share/chruby/chruby.sh
 fi
 
 # current directory bin PATH
@@ -140,10 +142,10 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
 fi
 
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-  export PATH=$PATH:$HOME/.node/bin
-  export NODE_PATH=$HOME/.node/lib/node_modules
+  source $HOME/.nvm/nvm.sh
+  [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 fi
 
 # OPAM configuration
-. /Users/ivan/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+. $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
