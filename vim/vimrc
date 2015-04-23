@@ -143,9 +143,10 @@ endfun
 set clipboard=unnamed
 
 let g:ctrlp_custom_ignore = {'dir': '\.git$\|\.hg$\|\.svn$\|doc$\|node_modules$\|coverage$\|\.chef$','file': '.DS_Store'}
-let g:syntastic_ruby_exec=' /Users/ivan/.rubies/ruby-2.2.0/bin/ruby'
+let g:syntastic_ruby_exec=' /Users/ivan/.rubies/ruby-2.2.2/bin/ruby'
 let g:syntastic_json_checkers = ['jsonlint']
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_html_tidy_exec = 'tidy5'
 "
 " Better :sign interface symbols
 let g:syntastic_error_symbol = '✗'
@@ -160,6 +161,9 @@ let g:SuperTabDefaultCompletionType = 'context'
 
 " On enter update/create tags
 autocmd VimEnter * call UpdateOrCreateTagsFile()
+
+" warn if file has changed
+au CursorHold * if getcmdwintype() == '' | checktime | endif
 
 " On write just update tags of this file
 "autocmd BufWritePost *.rb call writefile(split(system("sort -u <(touch tags && grep -v " . expand('%:%') . " tags) <(ctags --language-force=ruby -u -f - " . shellescape(expand('%:%')) . " | grep " . expand('%:r') . ")"),"\n"),"tags")
