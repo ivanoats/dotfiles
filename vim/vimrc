@@ -126,6 +126,7 @@ if has("autocmd")
   autocmd BufWritePre Rakefile :call <SID>StripTrailingWhitespaces()
   autocmd Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
   autocmd BufRead,BufNewFile *.json set filetype=json
+  autocmd filetype crontab setlocal nobackup nowritebackup
 endif
 
 nmap <leader>v :tabedit ~/.vimrc<CR>
