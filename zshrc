@@ -44,9 +44,9 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-  plugins=(gitfast git-extras ruby knife vagrant rake rbenv npm web-search)
+  plugins=(gitfast git-extras ruby knife vagrant docker rake nvm npm web-search pip)
 else # Mac OS X
-  plugins=(gitfast git-extras osx ruby knife brew vagrant rake cloudapp npm web-search mvn node npm pip redis-cli web-search gem docker bower)
+  plugins=(gitfast git-extras osx ruby knife brew vagrant rake cloudapp npm web-search mvn node npm nvm pip redis-cli web-search gem docker bower)
 fi
 
 # load up oh my zsh
@@ -84,12 +84,12 @@ if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
     export PATH
   fi
 else # Mac OS X
-  # tsuga - powerline is in ~/Library
+  # if powerline is in ~/Library
   if [[ -r ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
     source ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
     export PATH=$PATH:/Users/ivan/Library/Python/2.7/bin
   fi
-  # leaf - powerline is in /usr/local
+  # or powerline is in /usr/local
   if [[ -r /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
     source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
   fi
@@ -134,7 +134,7 @@ PATH=$PATH:$GOPATH/bin
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
-# Node Version Manager (NVM) on Mac
+# Node Version Manager (NVM)
 export NVM_DIR=~/.nvm
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   source $(brew --prefix nvm)/nvm.sh
