@@ -3,8 +3,7 @@ export LC_CTYPE=en_US.UTF-8  # for textmate svn compatibility
 export CLICOLOR=1
 export HISTFILESIZE=3000
 export TERM=xterm-256color
-export WUNDERAPI=e6a4bb57676626e0
-export MYICLOUD=102480994.members.btmm.icloud.com
+export NODE_ENV=development
 if [[ ${OSTYPE//[0-9.]/} == 'darwin' ]]; then
   export RBENV_ROOT=/usr/local/var/rbenv
   #export EDITOR="atom -w"
