@@ -134,6 +134,12 @@ PATH=$PATH:$GOPATH/bin
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
+# lunchy on betula to stop services not used
+if [[ $OSTYPE_REAL == 'darwin' && `hostname` == 'betula' ]]; then
+  lunchy stop mariadb
+  lunchy stop mongodb
+fi
+
 # Node Version Manager (NVM)
 export NVM_DIR=~/.nvm
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
@@ -149,3 +155,5 @@ fi
 # OPAM configuration
 . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
+# Cabal configuration
+export PATH=$HOME/.cabal/bin:$PATH
