@@ -100,15 +100,6 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
   export JAVA_HOME="$(/usr/libexec/java_home)"
 fi
 
-/bin/ls $HOME/.ec2/pk-*.pem >/dev/null 2>/dev/null
-if [[ $? -lt 1 ]]; then
-  export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
-  export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
-  if [[ $OSTYPE_REAL == 'darwin' ]]; then
-    export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
-  fi
-fi
-
 # git-core
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   export PATH=$PATH:/usr/local/Cellar/git/latest/libexec/git-core
@@ -136,8 +127,8 @@ PATH=$PATH:$GOPATH/bin
 
 # lunchy on betula to stop services not used
 if [[ $OSTYPE_REAL == 'darwin' && `hostname` == 'betula' ]]; then
-  lunchy stop mariadb
-  lunchy stop mongodb
+  lunchy stop mariadb &> /dev/null
+  lunchy stop mongodb &> /dev/null
 fi
 
 # Node Version Manager (NVM)
