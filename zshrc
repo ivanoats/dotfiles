@@ -131,6 +131,13 @@ if [[ $OSTYPE_REAL == 'darwin' && `hostname` == 'betula' ]]; then
   lunchy stop mongodb &> /dev/null
 fi
 
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+  LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+  if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
+    . $LUNCHY_DIR/lunchy-completion.zsh
+  fi
+fi
+
 # Node Version Manager (NVM)
 export NVM_DIR=~/.nvm
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
