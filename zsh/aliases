@@ -4,7 +4,7 @@
 #     eview evim gview gvim gvimdiff gvimtutor rgview
 #     rgvim rview rvim vim vimdiff vimtutor xxd mvim
 #   )
-# 
+#
 #   for cmd in ${vim_commands[@]}; do
 #     cmd_path=`/usr/bin/env which -a "${cmd}" 2>/dev/null | grep '^/'`
 #     if [ -x "${cmd_path}" ]; then
@@ -94,6 +94,7 @@ alias pgdbs='psql -c "select datname from pg_database;"'
 alias gitlog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias tch='clear && tmux clear-history'
 alias jstree="tree -I 'node_modules|bower_components|db'"
+alias elmtree="tree -I 'node_modules|bower_components|db|elm-stuff'"
 alias gpicf='git push cf master && git push'
 # LINUX ONLY
 if [[ -a /etc/issue ]];
@@ -102,4 +103,3 @@ if [[ -a /etc/issue ]];
     alias pbpaste='xclip -selection clipboard -o'
     alias open='gnome-open'
 fi
-

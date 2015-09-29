@@ -66,6 +66,7 @@ Bundle 'mattn/emmet-vim'
 Bundle 'mklabs/grunt.vim'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'elzr/vim-json'
+Bundle 'elmcast/elm-vim'
 " provided by syntastic 
 "Bundle 'vim-scripts/rubycomplete.vim'
 "Bundle 'FredKSchott/CoVim'
