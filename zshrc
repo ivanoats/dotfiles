@@ -142,7 +142,7 @@ fi
 export NVM_DIR=~/.nvm
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   source $(brew --prefix nvm)/nvm.sh
-  [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+  eval "`npm completion`"
 fi
 
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
