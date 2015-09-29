@@ -142,12 +142,17 @@ fi
 export NVM_DIR=~/.nvm
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   source $(brew --prefix nvm)/nvm.sh
-  [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+  eval "`npm completion`"
 fi
 
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
   source $HOME/.nvm/nvm.sh
   [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+fi
+
+# Elm on linux
+if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
+  export ELM_HOME='/home/ivan/.nvm/versions/node/v4.0.0/lib/node_modules/elm/share'
 fi
 
 # OPAM configuration

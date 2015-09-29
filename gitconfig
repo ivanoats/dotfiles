@@ -1,9 +1,9 @@
 [user]
 	name = Ivan Storck
-	email = ivanoats@gmail.com
+	email = ivan@ivanstorck.com
 [core]
 	quotepath = false
-	excludesfile = /Users/ivan/.gitignore
+	excludesfile = /Users/ivan/.gitignore_global
 [pivotal]
 	api-token = ac7479e00f64aab931f3826d920b5af0
 	full-name = Ivan Storck
