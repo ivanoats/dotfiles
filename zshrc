@@ -152,7 +152,7 @@ fi
 
 # Elm on linux
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-  export ELM_HOME='/home/ivan/.nvm/versions/node/v4.0.0/lib/node_modules/elm/share'
+  export ELM_HOME='/home/ivan/.nvm/versions/node/v4.2.1/lib/node_modules/elm/share'
 fi
 
 # OPAM configuration
