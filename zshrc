@@ -46,7 +46,7 @@ COMPLETION_WAITING_DOTS="true"
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
   plugins=(gitfast git-extras ruby knife vagrant docker rake nvm npm web-search pip)
 else # Mac OS X
-  plugins=(gitfast git-extras osx ruby knife brew vagrant rake cloudapp npm web-search mvn node npm nvm pip redis-cli web-search gem docker bower)
+  plugins=(gitfast git-extras osx ruby knife brew rake npm mvn node npm nvm pip redis-cli web-search gem docker bower)
 fi
 
 # load up oh my zsh
@@ -54,9 +54,6 @@ source $ZSH/oh-my-zsh.sh
 
 # try to make ssh agent work better
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-
-# set 4.2 to the default gcc since I only compile shit for rubygems
-#export CC=/usr/bin/gcc-4.2
 
 # use keychain for a long running ssh agent process
 #eval `keychain --eval --agents ssh --inherit any id_dsa`
@@ -105,7 +102,7 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
   export PATH=$PATH:/usr/local/Cellar/git/latest/libexec/git-core
 fi
 
-# Customize to your needs...
+# Paths from homebrew, cask, heroku, npm
 export PATH=$HOME/.cask/bin:$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # chruby
@@ -126,10 +123,14 @@ PATH=$PATH:$GOPATH/bin
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
 # lunchy on betula to stop services not used
-if [[ $OSTYPE_REAL == 'darwin' && `hostname` == 'betula' ]]; then
-  lunchy stop mariadb &> /dev/null
-  lunchy stop mongodb &> /dev/null
-fi
+ if [[ $OSTYPE_REAL == 'darwin' && `hostname` == 'betula' ]]; then
+   if [[ $(lunchy status redis | grep -q 0) ]]; then
+     lunchy stop redis
+   fi
+   lunchy stop mariadb &> /dev/null
+   lunchy stop mongodb &> /dev/null
+   lunchy stop dynamodb &> /dev/null
+ fi
 
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
@@ -160,3 +161,5 @@ fi
 
 # Cabal configuration
 export PATH=$HOME/.cabal/bin:$PATH
+
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
