@@ -162,4 +162,4 @@ fi
 # Cabal configuration
 export PATH=$HOME/.cabal/bin:$PATH
 
-test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+fortune
