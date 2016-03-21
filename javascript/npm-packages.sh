@@ -1,5 +1,8 @@
 #!/bin/zsh
-npm -g install babel
+npm -g install npm
+npm -g install babel-cli
+npm -g install babel-eslint
+npm -g install babel-node-debug
 npm -g install babel-preset-es2015
 npm -g install bower
 npm -g install brunch
@@ -10,7 +13,11 @@ npm -g install electron-prebuilt
 npm -g install elm-oracle
 npm -g install elm-test
 npm -g install eslint
+npm -g install eslint-plugin-babel
+npm -g install eslint-plugin-immutable
 npm -g install eslint-plugin-react
+npm -g install estraverse
+npm -g install estraverse-fb
 npm -g install foreman
 npm -g install gatsby
 npm -g install generator-craft
