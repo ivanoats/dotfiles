@@ -15,6 +15,7 @@ npm -g install elm-test
 npm -g install eslint
 npm -g install eslint-plugin-babel
 npm -g install eslint-plugin-immutable
+npm -g install eslint-plugin-import
 npm -g install eslint-plugin-react
 npm -g install estraverse
 npm -g install estraverse-fb
@@ -48,8 +49,10 @@ npm -g install node-inspector
 npm -g install node-libs-browser
 npm -g install node-static
 npm -g install npmlist
+npm -g install npmrc
 npm -g install phantomjs-prebuild
 npm -g install plato
+npm -g install pm2
 npm -g install pushstate-server
 npm -g install replpad
 npm -g install rwb
