@@ -50,6 +50,7 @@ npm -g install node-libs-browser
 npm -g install node-static
 npm -g install npmlist
 npm -g install npmrc
+npm -g install package-json-validator
 npm -g install phantomjs-prebuild
 npm -g install plato
 npm -g install pm2
