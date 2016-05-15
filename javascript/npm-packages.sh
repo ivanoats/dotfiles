@@ -13,6 +13,8 @@ npm -g install electron-prebuilt
 npm -g install elm-oracle
 npm -g install elm-test
 npm -g install eslint
+npm -g install eslint-config-airbnb
+npm -g install eslint-plugin-jsx-a11y
 npm -g install eslint-plugin-babel
 npm -g install eslint-plugin-immutable
 npm -g install eslint-plugin-import
@@ -39,6 +41,7 @@ npm -g install jshint
 npm -g install jslint
 npm -g install json-server
 npm -g install jsonlint
+npm -g install js-beautify
 npm -g install karma-cli
 npm -g install learnyounode
 npm -g install live-server
@@ -50,6 +53,7 @@ npm -g install node-libs-browser
 npm -g install node-static
 npm -g install npmlist
 npm -g install npmrc
+npm -g install npm-check-updates
 npm -g install package-json-validator
 npm -g install phantomjs-prebuild
 npm -g install plato
@@ -61,6 +65,7 @@ npm -g install secretkey
 npm -g install selenium-standalone
 npm -g install surge
 npm -g install swagger
+npm -g install tern
 npm -g install tinypng
 npm -g install tslint
 npm -g install typescript
