@@ -1,0 +1,36 @@
+# Figure out OS type, Mac or Linux. Strip out version# from Darwin
+export OSTYPE_REAL=${OSTYPE//[0-9.]/}
+
+# My env vars and aliases
+. ~/dotfiles/zsh/env
+. ~/dotfiles/zsh/aliases
+. ~/dotfiles/zsh/private_keys
+
+# Paths from homebrew, cask, heroku, npm
+export PATH=$HOME/.cask/bin:$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
+
+# chruby
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+  source /usr/local/opt/chruby/share/chruby/chruby.sh
+else # linux
+  source /usr/local/share/chruby/chruby.sh
+fi
+
+# current directory bin PATH
+export PATH=./bin:$PATH
+
+# Go language
+export GOPATH=$HOME/dev/go
+PATH=$PATH:$GOPATH/bin
+
+# Node Version Manager (NVM)
+export NVM_DIR=~/.nvm
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+  source $(brew --prefix nvm)/nvm.sh
+  eval "`npm completion`"
+fi
+
+if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
+  source $HOME/.nvm/nvm.sh
+  [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+fi
