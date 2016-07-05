@@ -57,7 +57,6 @@
     userId: "225ff118-31c4-3c8c-59d9-01e6cd8c9aad"
   "gist-it":
     openAfterCreate: true
-    userToken: "521f4e5f3a1a83359360cf938c814f9762ca6d85"
   "git-plus": {}
   "haskell-ghc-mod": {}
   "ide-flow":
