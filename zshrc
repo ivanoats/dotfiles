@@ -162,7 +162,7 @@ fi
 # Cabal configuration
 export PATH=$HOME/.cabal/bin:$PATH
 
-fortune
+# fortune
 
 
 # tabtab source for yo package

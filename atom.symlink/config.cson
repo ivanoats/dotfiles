@@ -1,0 +1,102 @@
+"*":
+  "atom-ternjs": {}
+  "atom-typescript": {}
+  "autocomplete-haskell": {}
+  "autocomplete-plus": {}
+  build:
+    buildOnSave: true
+    panelVisibility: "Show on Error"
+    saveOnBuild: true
+  core:
+    disabledPackages: [
+      "term2"
+      "linter-tidy"
+      "language-swig"
+      "grunt-runner"
+      "nitrogen"
+      "build"
+      "css-color-underline"
+      "react"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      ".unison"
+      "CVS"
+      ".AppleDouble"
+      ".LSOverride"
+      ".Spotlight-V100"
+      ".Trashes"
+      "desktop.ini"
+      "*.lock"
+      "*.sock"
+      "*.pid"
+      "*.sw?"
+      ".unison*"
+      "*~"
+    ]
+    projectHome: "/Users/ivan/dev"
+    themes: [
+      "solarized-dark-ui"
+      "solarized-dark-syntax"
+    ]
+  deprecated:
+    tool:
+      grunt: true
+  editor:
+    fontFamily: "Inconsolata"
+    fontSize: 18
+    invisibles: {}
+    showInvisibles: true
+  emmet: {}
+  "exception-reporting":
+    userId: "225ff118-31c4-3c8c-59d9-01e6cd8c9aad"
+  "gist-it":
+    openAfterCreate: true
+    userToken: "521f4e5f3a1a83359360cf938c814f9762ca6d85"
+  "git-plus": {}
+  "haskell-ghc-mod": {}
+  "ide-flow":
+    flowPath: "/usr/local/bin/flow"
+  "ide-purescript": {}
+  "language-babel": {}
+  "language-elm":
+    elmOraclePath: "/Users/ivan/.nvm/versions/node/v6.2.0/bin/elm-oracle"
+  linter:
+    showErrorTabLine: true
+    statusBar: "Show error of the selected line"
+  "linter-elm-make":
+    elmMakeExecutablePath: "/usr/local/bin/elm-make"
+  "linter-eslint":
+    disableWhenNoEslintrcFileInPath: false
+    globalNodePath: "/Users/ivan/.nvm/versions/node/v6.2.0"
+    showRuleIdInMessage: true
+  "linter-jsonlint": {}
+  "linter-stylelint":
+    useStandard: true
+  "linter-tidy":
+    tidyExecutablePath: "/usr/local/bin/tidy"
+  minimap:
+    autoToggle: false
+    plugins:
+      "minimap-autohide": true
+      "minimap-autohideDecorationsZIndex": 0
+  nitrogen:
+    showWelcomeOnStartup: false
+  "one-dark-ui": {}
+  react: {}
+  "toggle-quotes": {}
+  "tree-view":
+    hideIgnoredNames: true
+  "unity-ui":
+    colorStatusIndicatorsInTreeView: true
+    showIcons: true
+  "vim-mode":
+    startInInsertMode: true
+    useClipboardAsDefaultRegister: true
+  welcome:
+    showOnStartup: false
