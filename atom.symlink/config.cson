@@ -10,7 +10,6 @@
   core:
     disabledPackages: [
       "term2"
-      "linter-tidy"
       "language-swig"
       "grunt-runner"
       "nitrogen"
@@ -48,8 +47,8 @@
     tool:
       grunt: true
   editor:
-    fontFamily: "Inconsolata"
-    fontSize: 18
+    fontFamily: "Fira Code"
+    fontSize: 15
     invisibles: {}
     showInvisibles: true
   emmet: {}

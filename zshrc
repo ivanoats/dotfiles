@@ -24,7 +24,7 @@ compinit
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
+DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -44,9 +44,9 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-  plugins=(gitfast git-extras ruby knife vagrant docker rake nvm npm web-search pip)
+  plugins=(gitfast git-extras ruby docker rake nvm npm web-search pip)
 else # Mac OS X
-  plugins=(gitfast git-extras osx ruby knife brew rake npm mvn node npm nvm pip redis-cli web-search gem docker bower)
+  plugins=(zsh-autosuggestions gitfast git-extras osx ruby brew rake npm mvn node nvm pip redis-cli web-search gem docker)
 fi
 
 # load up oh my zsh
@@ -167,4 +167,4 @@ export PATH=$HOME/.cabal/bin:$PATH
 
 # tabtab source for yo package
 # uninstall by removing these lines or running `tabtab uninstall yo`
-[[ -f /Users/ivan/.nvm/versions/node/v6.1.0/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh ]] && . /Users/ivan/.nvm/versions/node/v6.1.0/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh
+[[ -f /Users/ivan/.nvm/versions/node/v6.3.0/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh ]] && . /Users/ivan/.nvm/versions/node/v6.1.0/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh

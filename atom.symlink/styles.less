@@ -21,5 +21,14 @@ atom-text-editor {
 // To style other content in the text editor's shadow DOM, use the ::shadow
 // expression
 atom-text-editor::shadow .cursor {
+  font-size: 4em;
+}
 
+atom-text-editor {
+  text-rendering: optimizeLegibility;
+}
+
+atom-text-editor::shadow .string.quoted,
+atom-text-editor::shadow .string.regexp {
+  -webkit-font-feature-settings: "liga" off, "calt" off;
 }
