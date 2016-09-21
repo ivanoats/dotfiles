@@ -40,8 +40,8 @@
     ]
     projectHome: "/Users/ivan/dev"
     themes: [
-      "solarized-light-ui"
-      "solarized-light-syntax"
+      "solarized-dark-ui"
+      "solarized-dark-syntax"
     ]
   deprecated:
     tool:
