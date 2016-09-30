@@ -97,11 +97,6 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
   export JAVA_HOME="$(/usr/libexec/java_home)"
 fi
 
-# git-core
-if [[ $OSTYPE_REAL == 'darwin' ]]; then
-  export PATH=$PATH:/usr/local/Cellar/git/latest/libexec/git-core
-fi
-
 # Paths from homebrew, cask, heroku, npm
 export PATH=$HOME/.cask/bin:$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
@@ -121,16 +116,6 @@ PATH=$PATH:$GOPATH/bin
 
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
-
-# lunchy on betula to stop services not used
- if [[ $OSTYPE_REAL == 'darwin' && `hostname` == 'betula' ]]; then
-   if [[ $(lunchy status redis | grep -q 0) ]]; then
-     lunchy stop redis
-   fi
-   lunchy stop mariadb &> /dev/null
-   lunchy stop mongodb &> /dev/null
-   lunchy stop dynamodb &> /dev/null
- fi
 
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
@@ -162,7 +147,7 @@ fi
 
 # Elm on linux
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-  export ELM_HOME='/home/ivan/.nvm/versions/node/v4.2.1/lib/node_modules/elm/share'
+  export ELM_HOME='/home/ivan/.nvm/versions/node/v6.7.0/lib/node_modules/elm/share'
 fi
 
 # OPAM configuration
@@ -170,9 +155,6 @@ fi
 
 # Cabal configuration
 export PATH=$HOME/.cabal/bin:$PATH
-
-# fortune
-
 
 # tabtab source for yo package
 # uninstall by removing these lines or running `tabtab uninstall yo`
