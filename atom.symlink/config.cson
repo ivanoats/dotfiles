@@ -16,7 +16,6 @@
       "build"
       "css-color-underline"
       "react"
-      "vim-mode"
     ]
     ignoredNames: [
       ".git"
@@ -40,13 +39,18 @@
       "*~"
     ]
     projectHome: "/Users/ivan/dev"
+    themes: [
+      "solarized-dark-ui"
+      "solarized-dark-syntax"
+    ]
   deprecated:
     tool:
       grunt: true
   editor:
     fontFamily: "Fira Code"
-    fontSize: 17
+    fontSize: 15
     invisibles: {}
+    showInvisibles: true
   emmet: {}
   "exception-reporting":
     userId: "225ff118-31c4-3c8c-59d9-01e6cd8c9aad"
@@ -59,7 +63,7 @@
   "ide-purescript": {}
   "language-babel": {}
   "language-elm":
-    elmOraclePath: "/Users/ivan/.nvm/versions/node/v6.2.0/bin/elm-oracle"
+    elmOraclePath: "/Users/ivan/.nvm/versions/node/v6.7.0/bin/elm-oracle"
   linter:
     showErrorTabLine: true
     statusBar: "Show error of the selected line"
@@ -69,9 +73,6 @@
     disableWhenNoEslintrcFileInPath: false
     globalNodePath: "/Users/ivan/.nvm/versions/node/v6.7.0"
     showRuleIdInMessage: true
-  "linter-js-standard":
-    checkStyleDevDependencies: true
-    showEslintRules: true
   "linter-jsonlint": {}
   "linter-stylelint":
     useStandard: true

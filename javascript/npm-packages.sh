@@ -73,6 +73,7 @@ npm -g install selenium-standalone
 npm -g install slow-deps
 npm -g install surge
 npm -g install swagger
+npm -g install standard
 npm -g install tern
 npm -g install tinypng
 npm -g install tslint
