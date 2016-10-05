@@ -16,6 +16,7 @@
       "build"
       "css-color-underline"
       "react"
+      "vim-mode"
     ]
     ignoredNames: [
       ".git"
@@ -39,18 +40,13 @@
       "*~"
     ]
     projectHome: "/Users/ivan/dev"
-    themes: [
-      "solarized-light-ui"
-      "solarized-light-syntax"
-    ]
   deprecated:
     tool:
       grunt: true
   editor:
     fontFamily: "Fira Code"
-    fontSize: 15
+    fontSize: 17
     invisibles: {}
-    showInvisibles: true
   emmet: {}
   "exception-reporting":
     userId: "225ff118-31c4-3c8c-59d9-01e6cd8c9aad"
@@ -71,8 +67,11 @@
     elmMakeExecutablePath: "/usr/local/bin/elm-make"
   "linter-eslint":
     disableWhenNoEslintrcFileInPath: false
-    globalNodePath: "/Users/ivan/.nvm/versions/node/v6.2.0"
+    globalNodePath: "/Users/ivan/.nvm/versions/node/v6.7.0"
     showRuleIdInMessage: true
+  "linter-js-standard":
+    checkStyleDevDependencies: true
+    showEslintRules: true
   "linter-jsonlint": {}
   "linter-stylelint":
     useStandard: true
