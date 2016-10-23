@@ -64,7 +64,7 @@
   "ide-purescript": {}
   "language-babel": {}
   "language-elm":
-    elmOraclePath: "/Users/ivan/.nvm/versions/node/v6.2.0/bin/elm-oracle"
+    elmOraclePath: "/Users/ivan/.nvm/versions/node/v6.7.0/bin/elm-oracle"
   linter:
     showErrorTabLine: true
     statusBar: "Show error of the selected line"
@@ -72,7 +72,7 @@
     elmMakeExecutablePath: "/usr/local/bin/elm-make"
   "linter-eslint":
     disableWhenNoEslintrcFileInPath: false
-    globalNodePath: "/Users/ivan/.nvm/versions/node/v6.2.0"
+    globalNodePath: "/Users/ivan/.nvm/versions/node/v6.7.0"
     showRuleIdInMessage: true
   "linter-jsonlint": {}
   "linter-stylelint":
