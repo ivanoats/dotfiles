@@ -24,7 +24,7 @@ compinit
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
+DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -44,9 +44,9 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-  plugins=(gitfast git-extras ruby knife vagrant docker rake nvm npm web-search pip)
+  plugins=(gitfast git-extras ruby docker rake nvm npm web-search pip)
 else # Mac OS X
-  plugins=(gitfast git-extras osx ruby knife brew rake npm mvn node npm nvm pip redis-cli web-search gem docker bower)
+  plugins=(zsh-autosuggestions gitfast git-extras osx ruby brew rake npm mvn node nvm pip redis-cli web-search gem docker)
 fi
 
 # load up oh my zsh
@@ -97,11 +97,6 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
   export JAVA_HOME="$(/usr/libexec/java_home)"
 fi
 
-# git-core
-if [[ $OSTYPE_REAL == 'darwin' ]]; then
-  export PATH=$PATH:/usr/local/Cellar/git/latest/libexec/git-core
-fi
-
 # Paths from homebrew, cask, heroku, npm
 export PATH=$HOME/.cask/bin:$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
@@ -122,16 +117,6 @@ PATH=$PATH:$GOPATH/bin
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
-# lunchy on betula to stop services not used
- if [[ $OSTYPE_REAL == 'darwin' && `hostname` == 'betula' ]]; then
-   if [[ $(lunchy status redis | grep -q 0) ]]; then
-     lunchy stop redis
-   fi
-   lunchy stop mariadb &> /dev/null
-   lunchy stop mongodb &> /dev/null
-   lunchy stop dynamodb &> /dev/null
- fi
-
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
   if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
@@ -151,9 +136,18 @@ if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
   [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 fi
 
+# Autoenv
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+  source $(brew --prefix autoenv)/activate.sh
+fi
+
+if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
+  source `which activate.sh`
+fi
+
 # Elm on linux
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-  export ELM_HOME='/home/ivan/.nvm/versions/node/v4.2.1/lib/node_modules/elm/share'
+  export ELM_HOME='/home/ivan/.nvm/versions/node/v6.7.0/lib/node_modules/elm/share'
 fi
 
 # OPAM configuration
@@ -162,9 +156,6 @@ fi
 # Cabal configuration
 export PATH=$HOME/.cabal/bin:$PATH
 
-# fortune
-
-
 # tabtab source for yo package
 # uninstall by removing these lines or running `tabtab uninstall yo`
-[[ -f /Users/ivan/.nvm/versions/node/v6.1.0/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh ]] && . /Users/ivan/.nvm/versions/node/v6.1.0/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh
+[[ -f /Users/ivan/.nvm/versions/node/v6.3.0/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh ]] && . /Users/ivan/.nvm/versions/node/v6.1.0/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh
