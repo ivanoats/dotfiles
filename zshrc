@@ -71,15 +71,6 @@ if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
   if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
     source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
   fi
-  if [[ -r /usr/local/java ]]; then
-    JAVA_HOME=/usr/local/java
-    PATH=$PATH:$JAVA_HOME/bin
-    JRE_HOME=/usr/local/java
-    PATH=$PATH:$JRE_HOME/bin
-    export JAVA_HOME
-    export JRE_HOME
-    export PATH
-  fi
 else # Mac OS X
   # if powerline is in ~/Library
   if [[ -r ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
@@ -92,13 +83,31 @@ else # Mac OS X
   fi
 fi
 
+# Java on Linux
+if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
+  if [[ -r /usr/local/java ]]; then
+    JAVA_HOME=/usr/local/java
+    PATH=$PATH:$JAVA_HOME/bin
+    JRE_HOME=/usr/local/java
+    PATH=$PATH:$JRE_HOME/bin
+    export JAVA_HOME
+    export JRE_HOME
+    export PATH
+  fi
+fi
+
+# jenv (Java Environment)
+#if [[ $OSTYPE_REAL == 'darwin' ]]; then
+#  if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+#fi
+
 # Amazon ec2
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   export JAVA_HOME="$(/usr/libexec/java_home)"
 fi
 
 # Paths from homebrew, cask, heroku, npm
-export PATH=$HOME/.cask/bin:$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/.cask/bin:$HOME/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # chruby
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
@@ -158,4 +167,4 @@ export PATH=$HOME/.cabal/bin:$PATH
 
 # tabtab source for yo package
 # uninstall by removing these lines or running `tabtab uninstall yo`
-[[ -f /Users/ivan/.nvm/versions/node/v6.3.0/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh ]] && . /Users/ivan/.nvm/versions/node/v6.1.0/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh
+[[ -f /Users/ivan/.nvm/versions/node/v6.9.1/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh ]] && . /Users/ivan/.nvm/versions/node/v6.9.1/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh

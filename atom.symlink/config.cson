@@ -39,8 +39,9 @@
       "*~"
     ]
     projectHome: "/Users/ivan/dev"
+    telemetryConsent: "limited"
     themes: [
-      "solarized-dark-ui"
+      "atom-solarized-dark-ui"
       "solarized-dark-syntax"
     ]
   deprecated:
@@ -90,6 +91,7 @@
   "toggle-quotes": {}
   "tree-view":
     hideIgnoredNames: true
+  "unity-dark-ui": {}
   "unity-ui":
     colorStatusIndicatorsInTreeView: true
     showIcons: true

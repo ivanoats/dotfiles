@@ -7,8 +7,10 @@ export NODE_ENV=development
 if [[ ${OSTYPE//[0-9.]/} == 'darwin' ]]; then
   # export EDITOR="atom -w"
   # export VISUAL="atom -w"
-  export VISUAL="mvim -vf"
-  export EDITOR="mvim -vf"
+  # export VISUAL="mvim -vf"
+  # export EDITOR="mvim -vf"
+  export EDITOR="nvim"
+  export VISUAL="nvim"
   # export EDITOR="emacs"
   # export VISUAL="emacs"
 fi

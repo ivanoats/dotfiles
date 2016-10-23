@@ -14,6 +14,7 @@ npm -g install elm-oracle
 npm -g install elm-test
 npm -g install eslint
 npm -g install eslint-config-airbnb
+npm -g install eslint-config-standard
 npm -g install eslint-plugin-ava
 npm -g install eslint-plugin flowtype
 npm -g install eslint-plugin-jsx-a11y

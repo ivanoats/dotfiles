@@ -3,18 +3,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
-let ostype_real = system('echo $OSTYPE_REAL')
-if ostype_real ==? "darwin\n"
-  if filereadable("/Users/ivan/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/plugin/powerline.vim")
-    source /Users/ivan/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/plugin/powerline.vim
-  endif
-  if filereadable("/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim")
-    source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
-  endif
-else
-  set rtp+=/home/ivan/.local/lib/python2.7/site-packages/powerline/bindings/vim
-end
-
+let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
 let g:vundle_default_git_proto = 'git'
 Bundle 'gmarik/Vundle.vim'
 Bundle 'altercation/vim-colors-solarized'
@@ -51,11 +40,9 @@ Bundle 'majutsushi/tagbar'
 Bundle 'skalnik/vim-vroom'
 Bundle 'danchoi/ri.vim'
 Bundle 'moll/vim-node'
-Bundle 'maksimr/vim-jsbeautify'
-Bundle 'einars/js-beautify'
 Bundle 'mustache/vim-mustache-handlebars'
 "Bundle 'ahayman/vim-nodejs-complete'
-Bundle 'jelera/vim-javascript-syntax'
+"Bundle 'jelera/vim-javascript-syntax'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'vim-scripts/closetag.vim'
@@ -70,7 +57,7 @@ Bundle 'raichoo/purescript-vim'
 " provided by syntastic 
 "Bundle 'vim-scripts/rubycomplete.vim'
 "Bundle 'FredKSchott/CoVim'
-"Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
 
 set shell=$SHELL
 set completeopt+=preview
