@@ -171,7 +171,7 @@ export PATH=$HOME/.cabal/bin:$PATH
 
 # PHP
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
-  export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+  export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
   source /Users/ivan/dotfiles/wp-completion.bash
 fi
 
