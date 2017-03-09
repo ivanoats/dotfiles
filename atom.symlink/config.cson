@@ -49,7 +49,7 @@
       grunt: true
   editor:
     fontFamily: "Fira Code"
-    fontSize: 15
+    fontSize: 16
     invisibles: {}
     showInvisibles: true
   emmet: {}
