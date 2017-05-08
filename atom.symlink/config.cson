@@ -41,14 +41,15 @@
     projectHome: "/Users/ivan/dev"
     telemetryConsent: "limited"
     themes: [
-      "atom-solarized-dark-ui"
-      "solarized-dark-syntax"
+      "unity-ui"
+      "solarized-light-syntax"
     ]
   deprecated:
     tool:
       grunt: true
   editor:
     fontFamily: "Fira Code"
+    fontSize: 12
     invisibles: {}
     showInvisibles: true
   emmet: {}
@@ -65,7 +66,6 @@
   "language-elm":
     elmOraclePath: "/Users/ivan/.nvm/versions/node/v6.7.0/bin/elm-oracle"
   linter:
-    showErrorTabLine: true
     statusBar: "Show error of the selected line"
   "linter-elm-make":
     elmMakeExecutablePath: "/usr/local/bin/elm-make"
