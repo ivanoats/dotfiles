@@ -169,9 +169,10 @@ export PATH=$HOME/.cabal/bin:$PATH
 # uninstall by removing these lines or running `tabtab uninstall yo`
 [[ -f /Users/ivan/.nvm/versions/node/v6.9.1/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh ]] && . /Users/ivan/.nvm/versions/node/v6.9.1/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh
 
-# PHP
+# PHP including composer
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
+  export PATH="/Users/ivan/.composer/vendor/bin:$PATH"
   source /Users/ivan/dotfiles/wp-completion.bash
 fi
 
