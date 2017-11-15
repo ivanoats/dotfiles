@@ -134,10 +134,11 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
 fi
 
 # Node Version Manager (NVM)
-export NVM_DIR=~/.nvm
+export NVM_DIR="$HOME/.nvm"
+
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
-  source $(brew --prefix nvm)/nvm.sh
-  eval "`npm completion`"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 fi
 
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
@@ -180,3 +181,10 @@ LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
 if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
   . $LUNCHY_DIR/lunchy-completion.zsh
 fi
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh

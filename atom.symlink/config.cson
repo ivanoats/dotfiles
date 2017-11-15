@@ -16,6 +16,7 @@
       "build"
       "css-color-underline"
       "react"
+      "parcel"
     ]
     ignoredNames: [
       ".git"
@@ -74,6 +75,7 @@
     showRuleIdInMessage: true
   "linter-jsonlint": {}
   "linter-stylelint":
+    disableWhenNoConfig: false
     useStandard: true
   "linter-tidy":
     tidyExecutablePath: "/usr/local/bin/tidy"
