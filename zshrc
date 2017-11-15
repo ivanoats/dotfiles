@@ -46,7 +46,7 @@ COMPLETION_WAITING_DOTS="true"
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
   plugins=(gitfast git-extras ruby docker rake nvm npm web-search pip)
 else # Mac OS X
-  plugins=(zsh-autosuggestions gitfast git-extras osx ruby brew rake npm mvn node nvm pip redis-cli web-search gem docker)
+  plugins=(zsh-autosuggestions gitfast git-extras osx ruby brew rake npm mvn node pip redis-cli web-search gem docker)
 fi
 
 # load up oh my zsh
@@ -135,15 +135,8 @@ fi
 
 # Node Version Manager (NVM)
 export NVM_DIR=~/.nvm
-if [[ $OSTYPE_REAL == 'darwin' ]]; then
-  source $(brew --prefix nvm)/nvm.sh
-  eval "`npm completion`"
-fi
-
-if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-  source $HOME/.nvm/nvm.sh
-  [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
-fi
+source $HOME/.nvm/nvm.sh
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 
 # Autoenv
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
