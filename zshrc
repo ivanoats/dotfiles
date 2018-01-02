@@ -156,7 +156,7 @@ fi
 
 # Elm on linux
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-  export ELM_HOME='/home/ivan/.nvm/versions/node/v6.7.0/lib/node_modules/elm/share'
+  export ELM_HOME='/home/ivan/.nvm/versions/node/v8.9.3/lib/node_modules/elm/share'
 fi
 
 # OPAM configuration
@@ -167,7 +167,7 @@ export PATH=$HOME/.cabal/bin:$PATH
 
 # tabtab source for yo package
 # uninstall by removing these lines or running `tabtab uninstall yo`
-[[ -f /Users/ivan/.nvm/versions/node/v6.9.1/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh ]] && . /Users/ivan/.nvm/versions/node/v6.9.1/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh
+[[ -f /Users/ivan/.nvm/versions/node/v8.9.3/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh ]] && . /Users/ivan/.nvm/versions/node/v7.8.0/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh
 
 # PHP
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
@@ -179,3 +179,10 @@ LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
 if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
   . $LUNCHY_DIR/lunchy-completion.zsh
 fi
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/ivan/.nvm/versions/node/v8.9.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/ivan/.nvm/versions/node/v8.9.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/ivan/.nvm/versions/node/v8.9.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /home/ivan/.nvm/versions/node/v8.9.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
