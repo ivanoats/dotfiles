@@ -46,7 +46,7 @@ COMPLETION_WAITING_DOTS="true"
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
   plugins=(gitfast git-extras ruby docker rake nvm npm web-search pip)
 else # Mac OS X
-  plugins=(zsh-autosuggestions gitfast git-extras osx ruby brew rake npm mvn node nvm pip redis-cli web-search gem docker)
+  plugins=(zsh-autosuggestions gitfast git-extras osx ruby brew rake npm mvn node pip redis-cli web-search gem docker)
 fi
 
 # load up oh my zsh
@@ -102,9 +102,9 @@ fi
 #fi
 
 # Amazon ec2
-if [[ $OSTYPE_REAL == 'darwin' ]]; then
-  export JAVA_HOME="$(/usr/libexec/java_home)"
-fi
+# if [[ $OSTYPE_REAL == 'darwin' ]]; then
+#  export JAVA_HOME="$(/usr/libexec/java_home)"
+# fi
 
 # Paths from homebrew, cask, heroku, npm
 export PATH=$HOME/.cask/bin:$HOME/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
@@ -123,9 +123,7 @@ export PATH=./bin:$PATH
 export GOPATH=$HOME/dev/go
 PATH=$PATH:$GOPATH/bin
 
-# added by travis gem
-[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
-
+# Lunchy for Mac OS X process management
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
   if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
@@ -135,15 +133,8 @@ fi
 
 # Node Version Manager (NVM)
 export NVM_DIR=~/.nvm
-if [[ $OSTYPE_REAL == 'darwin' ]]; then
-  source $(brew --prefix nvm)/nvm.sh
-  eval "`npm completion`"
-fi
-
-if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-  source $HOME/.nvm/nvm.sh
-  [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
-fi
+source $HOME/.nvm/nvm.sh
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 
 # Autoenv
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
@@ -165,24 +156,18 @@ fi
 # Cabal configuration
 export PATH=$HOME/.cabal/bin:$PATH
 
-# tabtab source for yo package
-# uninstall by removing these lines or running `tabtab uninstall yo`
-[[ -f /Users/ivan/.nvm/versions/node/v8.9.3/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh ]] && . /Users/ivan/.nvm/versions/node/v7.8.0/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh
-
-# PHP
+# PHP including composer on OS X
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
+  export PATH="/Users/ivan/.composer/vendor/bin:$PATH"
   source /Users/ivan/dotfiles/wp-completion.bash
 fi
 
-LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
-if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
-  . $LUNCHY_DIR/lunchy-completion.zsh
-fi
-
+# Serverless Framework
+# 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /home/ivan/.nvm/versions/node/v8.9.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/ivan/.nvm/versions/node/v8.9.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /home/ivan/.nvm/versions/node/v8.9.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /home/ivan/.nvm/versions/node/v8.9.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh

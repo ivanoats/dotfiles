@@ -72,24 +72,25 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
   alias showinvisible="defaults write com.apple.finder AppleShowAllFiles TRUE"
   alias hideinvisible="defaults write com.apple.finder AppleShowAllFiles FALSE"
   alias marked="open -a Marked\ 2 "
-  alias brac="open -a Brackets "
 fi
 alias bower='noglob bower'
 alias pdbs="psql -l"
 alias retag="ctags --exclude=*.js --extra=+f -R *"
 alias zipr="zip -r" #directory.zip directory
 alias upstream="git rev-parse --abbrev-ref @{u}"
-alias ll="ls -ltrahG"
+# alias ll="ls -ltrahG"
+alias ll="exa -la -s modified"
 alias g="git status"
 alias h="history|tail -100"
 alias dbs="mysql -e 'show databases;'"
 alias dbusers="mysql -e 'connect mysql; select host, user from user;'"
 alias aliases="cat ~/dotfiles/zsh/aliases"
 alias sshc="less ~/.ssh/config"
-alias backtomymac="ssh -2 -6 sitka.102480994.members.btmm.icloud.com -v"
 alias bert="bundle exec rake -T"
 alias ber="bundle exec rake"
 alias be="bundle exec"
+alias jeks="bundle exec jekyll serve"
+alias jekb="JEKYLL_ENV=production bundle exec jekyll build"
 alias unixtime="ruby -e 'puts Time.now.to_i'"
 alias pcat="pygmentize"
 alias pcatr="pygmentize -l ruby"
@@ -103,7 +104,7 @@ alias gpicf='git push cf master && git push'
 alias gempty='git commit --allow-empty'
 alias grem='git remote -v'
 alias glgn='git --no-pager log --stat --color | head -n 15'
-alias weather='finger seattle@graph.no'
+alias weather='finger ^seattle@graph.no'
 alias nukemods='rm -rf node_modules && npm install'
 # LINUX ONLY
 if [[ -a /etc/issue ]];

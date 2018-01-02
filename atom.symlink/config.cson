@@ -16,6 +16,7 @@
       "build"
       "css-color-underline"
       "react"
+      "parcel"
     ]
     ignoredNames: [
       ".git"
@@ -41,8 +42,8 @@
     projectHome: "/Users/ivan/dev"
     telemetryConsent: "limited"
     themes: [
-      "atom-solarized-dark-ui"
-      "solarized-dark-syntax"
+      "unity-ui"
+      "solarized-light-syntax"
     ]
   deprecated:
     tool:
@@ -65,7 +66,6 @@
   "language-elm":
     elmOraclePath: "/Users/ivan/.nvm/versions/node/v6.7.0/bin/elm-oracle"
   linter:
-    showErrorTabLine: true
     statusBar: "Show error of the selected line"
   "linter-elm-make":
     elmMakeExecutablePath: "/usr/local/bin/elm-make"
@@ -75,6 +75,7 @@
     showRuleIdInMessage: true
   "linter-jsonlint": {}
   "linter-stylelint":
+    disableWhenNoConfig: false
     useStandard: true
   "linter-tidy":
     tidyExecutablePath: "/usr/local/bin/tidy"
