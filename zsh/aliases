@@ -106,6 +106,7 @@ alias grem='git remote -v'
 alias glgn='git --no-pager log --stat --color | head -n 15'
 alias weather='finger ^seattle@graph.no'
 alias nukemods='rm -rf node_modules && npm install'
+alias ip='wget -qO- ip-api.com/line/?fields=query'
 # LINUX ONLY
 if [[ -a /etc/issue ]];
   then
