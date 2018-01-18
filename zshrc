@@ -131,10 +131,13 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
   fi
 fi
 
-# Node Version Manager (NVM)
-export NVM_DIR=~/.nvm
-source $HOME/.nvm/nvm.sh
-[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+# Node Version Manager (NVM) on Linux only
+# Maybe use Nodenv in future
+if [[ $OSTYPE_REAL == 'linux-gnu' ]] then
+  export NVM_DIR=~/.nvm
+  source $HOME/.nvm/nvm.sh
+  [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+fi
 
 # Autoenv
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
