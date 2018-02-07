@@ -1,5 +1,9 @@
 "*":
-  "atom-ternjs": {}
+  "atom-ide-ui":
+    use:
+      "atom-ide-diagnostics-ui": false
+  "atom-ternjs":
+    inlineFnCompletionDocumentation: true
   "atom-typescript": {}
   "autocomplete-haskell": {}
   "autocomplete-plus": {}
@@ -17,6 +21,9 @@
       "css-color-underline"
       "react"
       "parcel"
+      "Zen"
+      "ide-flow"
+      "vim-surround"
     ]
     ignoredNames: [
       ".git"
@@ -50,6 +57,7 @@
       grunt: true
   editor:
     fontFamily: "Fira Code"
+    fontSize: 15
     invisibles: {}
     showInvisibles: true
   emmet: {}
