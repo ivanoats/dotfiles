@@ -161,7 +161,7 @@ export PATH=$HOME/.cabal/bin:$PATH
 
 # PHP including composer on OS X
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
-  export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
+  export PATH="$(brew --prefix php)/bin:$PATH"
   export PATH="/Users/ivan/.composer/vendor/bin:$PATH"
   source /Users/ivan/dotfiles/wp-completion.bash
 fi
