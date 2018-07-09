@@ -63,24 +63,23 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 . ~/dotfiles/zsh/aliases
 . ~/dotfiles/zsh/private_keys
 
-# powerline
-if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-  if [ -d "$HOME/.local/bin" ]; then
-    PATH="$HOME/.local/bin:$PATH"
-  fi
-  if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
-    source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-  fi
-else # Mac OS X
-  # if powerline is in ~/Library
-  if [[ -r ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
-    source ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
-    export PATH=$PATH:/Users/ivan/Library/Python/2.7/bin
-  fi
-  # or powerline is in /usr/local
-  if [[ -r /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
-    source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-  fi
+# powerline go
+
+function powerline_precmd() {
+    PS1="$(~/dev/go/bin/powerline-go -error $? -shell zsh)"
+}
+
+function install_powerline_precmd() {
+  for s in "${precmd_functions[@]}"; do
+    if [ "$s" = "powerline_precmd" ]; then
+      return
+    fi
+  done
+  precmd_functions+=(powerline_precmd)
+}
+
+if [ "$TERM" != "linux" ]; then
+    install_powerline_precmd
 fi
 
 # Java on Linux
