@@ -24,7 +24,7 @@ compinit
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment following line if you want to disable colors in ls
-DISABLE_LS_COLORS="true"
+# DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -115,6 +115,8 @@ else # linux
   source /usr/local/share/chruby/chruby.sh
 fi
 
+chruby ruby
+
 # current directory bin PATH
 export PATH=./bin:$PATH
 
@@ -132,7 +134,7 @@ fi
 
 # Node Version Manager (NVM) on Linux only
 # Maybe use Nodenv in future
-if [[ $OSTYPE_REAL == 'linux-gnu' ]] then
+if [[ $OSTYPE_REAL == 'linux-gnu' && $(hostname) -ne 'ivanAsus' ]]; then
   export NVM_DIR=~/.nvm
   source $HOME/.nvm/nvm.sh
   [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
@@ -143,14 +145,14 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
   source $(brew --prefix autoenv)/activate.sh
 fi
 
-if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
+if [[ $OSTYPE_REAL == 'linux-gnu' && $(hostname) -ne 'ivanAsus' ]]; then
   source `which activate.sh`
 fi
 
 # Elm on linux
-if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-  export ELM_HOME='/home/ivan/.nvm/versions/node/v8.9.3/lib/node_modules/elm/share'
-fi
+#if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
+#  export ELM_HOME='/home/ivan/.nvm/versions/node/v8.9.3/lib/node_modules/elm/share'
+#fi
 
 # OPAM configuration
 . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
@@ -175,4 +177,11 @@ fi
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
 # AWS CLI auto completion
-source /usr/local/bin/aws_zsh_completer.sh
+if [[ $(hostname) == 'ivanAsus' ]]; then
+  source /home/ivan/.local/bin/aws_zsh_completer.sh
+else
+  source /usr/local/bin/aws_zsh_completer.sh
+fi
+
+# PIP local in path
+export PATH="~/.local/bin:$PATH"
