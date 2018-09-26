@@ -44,9 +44,9 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-  plugins=(gitfast git-extras ruby docker rake nvm npm web-search pip)
+  plugins=(gitfast git-extras docker npm web-search pip)
 else # Mac OS X
-  plugins=(zsh-autosuggestions gitfast git-extras osx ruby brew rake npm mvn node pip redis-cli web-search gem docker)
+  plugins=(zsh-autosuggestions gitfast git-extras osx brew npm mvn node pip redis-cli web-search docker)
 fi
 
 # load up oh my zsh
@@ -109,13 +109,13 @@ fi
 export PATH=$HOME/.cask/bin:$HOME/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # chruby
-if [[ $OSTYPE_REAL == 'darwin' ]]; then
-  source /usr/local/opt/chruby/share/chruby/chruby.sh
-else # linux
-  source /usr/local/share/chruby/chruby.sh
-fi
+# if [[ $OSTYPE_REAL == 'darwin' ]]; then
+#   source /usr/local/opt/chruby/share/chruby/chruby.sh
+# else # linux
+#   source /usr/local/share/chruby/chruby.sh
+# fi
 
-chruby ruby
+# chruby ruby
 
 # current directory bin PATH
 export PATH=./bin:$PATH
@@ -123,14 +123,6 @@ export PATH=./bin:$PATH
 # Go language
 export GOPATH=$HOME/dev/go
 PATH=$PATH:$GOPATH/bin
-
-# Lunchy for Mac OS X process management
-if [[ $OSTYPE_REAL == 'darwin' ]]; then
-  LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
-  if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
-    . $LUNCHY_DIR/lunchy-completion.zsh
-  fi
-fi
 
 # Node Version Manager (NVM) on Linux only
 # Maybe use Nodenv in future

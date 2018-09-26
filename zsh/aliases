@@ -94,7 +94,7 @@ alias jekb="JEKYLL_ENV=production bundle exec jekyll build"
 alias unixtime="ruby -e 'puts Time.now.to_i'"
 alias pcat="pygmentize"
 alias pcatr="pygmentize -l ruby"
-alias ccat="coderay"
+alias ccat="bat"
 alias pgdbs='psql -c "select datname from pg_database;"'
 alias gitlog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias tch='clear && tmux clear-history'

@@ -9,13 +9,6 @@ export OSTYPE_REAL=${OSTYPE//[0-9.]/}
 # Paths from homebrew, cask, heroku, npm
 export PATH=$HOME/.cask/bin:$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
-# chruby
-if [[ $OSTYPE_REAL == 'darwin' ]]; then
-  source /usr/local/opt/chruby/share/chruby/chruby.sh
-else # linux
-  source /usr/local/share/chruby/chruby.sh
-fi
-
 # current directory bin PATH
 export PATH=./bin:$PATH
 
