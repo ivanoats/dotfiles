@@ -122,11 +122,11 @@ export PATH=./bin:$PATH
 
 # Go language
 export GOPATH=$HOME/dev/go
-PATH=$PATH:$GOPATH/bin
+PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # Node Version Manager (NVM) on Linux only
 # Maybe use Nodenv in future
-if [[ $OSTYPE_REAL == 'linux-gnu' && $(hostname) -ne 'ivanAsus' ]]; then
+if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
   export NVM_DIR=~/.nvm
   source $HOME/.nvm/nvm.sh
   [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
@@ -135,10 +135,6 @@ fi
 # Autoenv
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   source $(brew --prefix autoenv)/activate.sh
-fi
-
-if [[ $OSTYPE_REAL == 'linux-gnu' && $(hostname) -ne 'ivanAsus' ]]; then
-  source `which activate.sh`
 fi
 
 # Elm on linux
@@ -176,4 +172,4 @@ else
 fi
 
 # PIP local in path
-export PATH="~/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
