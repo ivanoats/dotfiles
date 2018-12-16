@@ -126,7 +126,7 @@ PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # Node Version Manager (NVM) on Linux only
 # Maybe use Nodenv in future
-if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
+if [[ $OSTYPE_REAL == 'linux-gnu' && $(hostname) -ne 't420thinkpad' ]]; then
   export NVM_DIR=~/.nvm
   source $HOME/.nvm/nvm.sh
   [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
@@ -135,6 +135,14 @@ fi
 # Autoenv
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   source $(brew --prefix autoenv)/activate.sh
+fi
+
+if [[ $OSTYPE_REAL == 'linux-gnu' && $(hostname) -ne 't420thinkpad' ]]; then
+  source `which activate.sh`
+fi
+
+if [[ $(hostname) -eq 't420thinkpad' ]]; then
+  export PATH=$HOME/.npm-global/bin:$PATH
 fi
 
 # Elm on linux
@@ -165,7 +173,7 @@ fi
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
 # AWS CLI auto completion
-if [[ $(hostname) == 'ivanAsus' ]]; then
+if [[ $(hostname) == 't420thinkpad' ]]; then
   source /home/ivan/.local/bin/aws_zsh_completer.sh
 else
   source /usr/local/bin/aws_zsh_completer.sh
