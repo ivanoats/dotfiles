@@ -2,8 +2,11 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
-
-let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
+if has('unix')
+  let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
+elseif has ('mac')
+  let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
+endif
 let g:vundle_default_git_proto = 'git'
 Bundle 'gmarik/Vundle.vim'
 Bundle 'altercation/vim-colors-solarized'
@@ -58,6 +61,7 @@ Bundle 'raichoo/purescript-vim'
 "Bundle 'vim-scripts/rubycomplete.vim'
 "Bundle 'FredKSchott/CoVim'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'prettier/vim-prettier'
 
 set shell=$SHELL
 set completeopt+=preview
