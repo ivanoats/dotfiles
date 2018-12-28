@@ -126,22 +126,23 @@ PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # Node Version Manager (NVM) on Linux only
 # Maybe use Nodenv in future
-if [[ $OSTYPE_REAL == 'linux-gnu' && $(hostname) -ne 't420thinkpad' ]]; then
-  export NVM_DIR=~/.nvm
-  source $HOME/.nvm/nvm.sh
-  [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+if [[ $OSTYPE_REAL == 'linux-gnu' && $(hostname) != 't420thinkpad' ]]; then
+    export NVM_DIR=~/.nvm
+    source $HOME/.nvm/nvm.sh
+    [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 fi
 
-# Autoenv
+# Autoenv / Direnv
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   source $(brew --prefix autoenv)/activate.sh
 fi
 
-if [[ $OSTYPE_REAL == 'linux-gnu' && $(hostname) -ne 't420thinkpad' ]]; then
-  source `which activate.sh`
+if [[ $OSTYPE_REAL == 'linux-gnu' && $(hostname) != 't420thinkpad' ]]; then
+  eval "$(direnv hook zsh)"
 fi
 
-if [[ $(hostname) -eq 't420thinkpad' ]]; then
+# npm global packages when not using brew or nvm
+if [[ $(hostname) == 't420thinkpad' ]]; then
   export PATH=$HOME/.npm-global/bin:$PATH
 fi
 
