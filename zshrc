@@ -133,11 +133,7 @@ if [[ $OSTYPE_REAL == 'linux-gnu' && $(hostname) != 't420thinkpad' ]]; then
 fi
 
 # Autoenv / Direnv
-if [[ $OSTYPE_REAL == 'darwin' ]]; then
-  source $(brew --prefix autoenv)/activate.sh
-fi
-
-if [[ $OSTYPE_REAL == 'linux-gnu' && $(hostname) != 't420thinkpad' ]]; then
+if [[ $(hostname) != 't420thinkpad' ]]; then
   eval "$(direnv hook zsh)"
 fi
 
