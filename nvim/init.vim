@@ -1,5 +1,5 @@
 filetype off
-set rtp+=~/.nvim/bundle/Vundle.vim/
+set rtp+=~/.config/nvim/bundle/Vundle.vim/
 call vundle#rc()
 
 if has('nvim')
