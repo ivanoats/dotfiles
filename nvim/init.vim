@@ -116,7 +116,6 @@ set ignorecase
 set smartcase
 
 if has("autocmd")
-  autocmd! bufwritepost .vimrc source ~/.vimrc
   autocmd! bufwritepost .init.vim source ~/.nvim/init.vim
   " Make sure all mardown files have the correct filetype set and setup wrapping
   autocmd BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
@@ -192,17 +191,19 @@ fun! UpdateOrCreateTagsFile()
   endif
 endfun
 
-"Python stuff
+" Python stuff
 au BufNewFile,BufRead *.py
-    \ tabstop=4
-    \ softtabstop=4
-    \ shiftwidth=4
-    \ textwidth=79
-    \ expandtab
-    \ autoindent
-    \ fileformat=unix
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
 
 let g:ycm_autoclose_preview_window_after_comletion=1
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 let python_highlight_all=1
+let g:python3_host_prog="/usr/local/bin/python3"
+
