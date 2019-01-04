@@ -72,9 +72,13 @@ Bundle 'raichoo/purescript-vim'
 "Bundle 'vim-scripts/rubycomplete.vim'
 "Bundle 'FredKSchott/CoVim'
 Bundle 'Valloric/YouCompleteMe'
+" Python
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'plytophogy/vim-virtualenv'
+" Rust language
+Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer'
 
 set shell=$SHELL
 set completeopt+=preview
