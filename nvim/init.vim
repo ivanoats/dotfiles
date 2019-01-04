@@ -41,7 +41,6 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-bundler'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'skwp/vim-rspec'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'vim-ruby/vim-ruby'
@@ -55,7 +54,6 @@ Bundle 'skalnik/vim-vroom'
 Bundle 'danchoi/ri.vim'
 Bundle 'moll/vim-node'
 Bundle 'mustache/vim-mustache-handlebars'
-"Bundle 'ahayman/vim-nodejs-complete'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
@@ -68,9 +66,6 @@ Bundle 'marijnh/tern_for_vim'
 Bundle 'elzr/vim-json'
 Bundle 'elmcast/elm-vim'
 Bundle 'raichoo/purescript-vim'
-" provided by syntastic 
-"Bundle 'vim-scripts/rubycomplete.vim'
-"Bundle 'FredKSchott/CoVim'
 Bundle 'Valloric/YouCompleteMe'
 " Python
 Plugin 'vim-scripts/indentpython.vim'
@@ -209,5 +204,9 @@ let g:ycm_autoclose_preview_window_after_comletion=1
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 let python_highlight_all=1
-let g:python3_host_prog="/usr/local/bin/python3"
+if has("mac")
+  let g:python3_host_prog="/usr/local/bin/python3"
+elseif has("unix")
+  let g:python3_host_prog="/usr/bin/python3"
+endif
 
