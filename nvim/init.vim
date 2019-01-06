@@ -55,6 +55,7 @@ Bundle 'danchoi/ri.vim'
 Bundle 'moll/vim-node'
 Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'jelera/vim-javascript-syntax'
+Plugin 'prettier/vim-prettier'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'vim-scripts/closetag.vim'
@@ -135,7 +136,7 @@ if has("autocmd")
   autocmd filetype crontab setlocal nobackup nowritebackup
 endif
 
-nmap <leader>v :tabedit ~/.nvim/init.vim<CR>
+nmap <leader>v :tabedit ~/.config/nvim/init.vim<CR>
 nmap <leader>n :NERDTreeToggle<CR>
 
 set colorcolumn=80
