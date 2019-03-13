@@ -132,6 +132,13 @@ if [[ $OSTYPE_REAL == 'linux-gnu' && $(hostname) != 't420thinkpad' ]]; then
     [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 fi
 
+# use NVM on betula
+if [[ $(hostname) == 'betula' ]]; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"
+fi
+
 # Autoenv / Direnv
 if [[ $(hostname) != 't420thinkpad' ]]; then
   eval "$(direnv hook zsh)"
@@ -178,3 +185,8 @@ fi
 
 # PIP local in path
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh

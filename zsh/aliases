@@ -103,6 +103,7 @@ alias weather='finger ^seattle@graph.no'
 alias nukemods='rm -rf node_modules && npm install'
 alias ip='curl -s ip-api.com/json | jq ".query"'
 alias cfls="aws cloudfront list-distributions | jq '.DistributionList.Items[] | {aliases: .Aliases.Items, comment: .Comment, domainName: .DomainName, id:  .Id}'"
+alias lssl="live-server --https=/usr/local/lib/node_modules/live-server-https"
 # LINUX ONLY
 if [[ -a /etc/issue ]];
 then
