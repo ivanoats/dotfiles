@@ -44,9 +44,9 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-  plugins=(gitfast git-extras docker npm web-search pip)
+    plugins=(gitfast git-extras docker npm web-search pip)
 else # Mac OS X
-  plugins=(zsh-autosuggestions gitfast git-extras osx brew npm mvn node pip redis-cli web-search docker)
+    plugins=(zsh-autosuggestions gitfast git-extras osx brew npm mvn node pip redis-cli web-search docker)
 fi
 
 # load up oh my zsh
@@ -70,12 +70,12 @@ function powerline_precmd() {
 }
 
 function install_powerline_precmd() {
-  for s in "${precmd_functions[@]}"; do
-    if [ "$s" = "powerline_precmd" ]; then
-      return
-    fi
-  done
-  precmd_functions+=(powerline_precmd)
+    for s in "${precmd_functions[@]}"; do
+        if [ "$s" = "powerline_precmd" ]; then
+            return
+        fi
+    done
+    precmd_functions+=(powerline_precmd)
 }
 
 if [ "$TERM" != "linux" ]; then
@@ -84,15 +84,15 @@ fi
 
 # Java on Linux
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-  if [[ -r /usr/local/java ]]; then
-    JAVA_HOME=/usr/local/java
-    PATH=$PATH:$JAVA_HOME/bin
-    JRE_HOME=/usr/local/java
-    PATH=$PATH:$JRE_HOME/bin
-    export JAVA_HOME
-    export JRE_HOME
-    export PATH
-  fi
+    if [[ -r /usr/local/java ]]; then
+        JAVA_HOME=/usr/local/java
+        PATH=$PATH:$JAVA_HOME/bin
+        JRE_HOME=/usr/local/java
+        PATH=$PATH:$JRE_HOME/bin
+        export JAVA_HOME
+        export JRE_HOME
+        export PATH
+    fi
 fi
 
 # jenv (Java Environment)
@@ -117,6 +117,11 @@ export PATH=$HOME/.cask/bin:$HOME/bin:/usr/local/share/npm/bin:/usr/local/bin:/u
 
 # chruby ruby
 
+# help install sharp, needed for Gatsby, on Mac OS X with homebrew installing the vips package
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+    export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
+fi
+
 # current directory bin PATH
 export PATH=./bin:$PATH
 
@@ -132,14 +137,21 @@ if [[ $OSTYPE_REAL == 'linux-gnu' && $(hostname) != 't420thinkpad' ]]; then
     [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 fi
 
+# use NVM on betula
+if [[ $(hostname) == 'betula' ]]; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+    [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"
+fi
+
 # Autoenv / Direnv
 if [[ $(hostname) != 't420thinkpad' ]]; then
-  eval "$(direnv hook zsh)"
+    eval "$(direnv hook zsh)"
 fi
 
 # npm global packages when not using brew or nvm
 if [[ $(hostname) == 't420thinkpad' ]]; then
-  export PATH=$HOME/.npm-global/bin:$PATH
+    export PATH=$HOME/.npm-global/bin:$PATH
 fi
 
 # Elm on linux
@@ -155,30 +167,32 @@ export PATH=$HOME/.cabal/bin:$PATH
 
 # PHP including composer on OS X
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
-  export PATH="$(brew --prefix php)/bin:$PATH"
-  export PATH="/Users/ivan/.composer/vendor/bin:$PATH"
-  source /Users/ivan/dotfiles/wp-completion.bash
+    export PATH="$(brew --prefix php)/bin:$PATH"
+    export PATH="/Users/ivan/.composer/vendor/bin:$PATH"
+    source /Users/ivan/dotfiles/wp-completion.bash
 fi
 
 # Serverless Framework
-# 
+#
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
 
 # AWS CLI auto completion
 if [[ $(hostname) == 't420thinkpad' ]]; then
-  source /home/ivan/.local/bin/aws_zsh_completer.sh
+    source /home/ivan/.local/bin/aws_zsh_completer.sh
 else
-  source /usr/local/bin/aws_zsh_completer.sh
+    source /usr/local/bin/aws_zsh_completer.sh
 fi
 
 # PIP local in path
 export PATH="$HOME/.local/bin:$PATH"
 
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+

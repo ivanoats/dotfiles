@@ -75,6 +75,11 @@ Plugin 'plytophogy/vim-virtualenv'
 " Rust language
 Plugin 'rust-lang/rust.vim'
 Plugin 'racer-rust/vim-racer'
+" Reason language
+Plugin 'reasonml-editor/vim-reason-plus'
+let g:LanguageClient_serverCommands = {
+    \ 'reason': ['/Users/ivan/bin/reason-language-server/reason-language-server.exe']
+    \ }
 
 set shell=$SHELL
 set completeopt+=preview
