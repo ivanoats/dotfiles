@@ -129,21 +129,6 @@ export PATH=./bin:$PATH
 export GOPATH=$HOME/dev/go
 PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
-# Node Version Manager (NVM) on Linux only
-# Maybe use Nodenv in future
-if [[ $OSTYPE_REAL == 'linux-gnu' && $(hostname) != 't420thinkpad' ]]; then
-    export NVM_DIR=~/.nvm
-    source $HOME/.nvm/nvm.sh
-    [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
-fi
-
-# use NVM on betula
-if [[ $(hostname) == 'betula' ]]; then
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-    [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"
-fi
-
 # Autoenv / Direnv
 if [[ $(hostname) != 't420thinkpad' ]]; then
     eval "$(direnv hook zsh)"
@@ -153,11 +138,6 @@ fi
 if [[ $(hostname) == 't420thinkpad' ]]; then
     export PATH=$HOME/.npm-global/bin:$PATH
 fi
-
-# Elm on linux
-#if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-#  export ELM_HOME='/home/ivan/.nvm/versions/node/v8.9.3/lib/node_modules/elm/share'
-#fi
 
 # OPAM configuration
 . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
