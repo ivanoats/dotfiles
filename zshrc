@@ -44,9 +44,9 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-    plugins=(gitfast git-extras docker npm web-search pip)
+    plugins=(git gitfast git-extras docker npm web-search pip)
 else # Mac OS X
-    plugins=(zsh-autosuggestions gitfast git-extras osx brew npm mvn node pip redis-cli web-search docker)
+    plugins=(git zsh-autosuggestions gitfast git-extras osx brew npm mvn node pip redis-cli web-search docker)
 fi
 
 # load up oh my zsh
@@ -137,28 +137,6 @@ if [[ $OSTYPE_REAL == 'linux-gnu' && $(hostname) != 't420thinkpad' ]]; then
     [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 fi
 
-# use NVM on betula
-if [[ $(hostname) == 'betula' ]]; then
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-    [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"
-fi
-
-# Autoenv / Direnv
-if [[ $(hostname) != 't420thinkpad' ]]; then
-    eval "$(direnv hook zsh)"
-fi
-
-# npm global packages when not using brew or nvm
-if [[ $(hostname) == 't420thinkpad' ]]; then
-    export PATH=$HOME/.npm-global/bin:$PATH
-fi
-
-# Elm on linux
-#if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-#  export ELM_HOME='/home/ivan/.nvm/versions/node/v8.9.3/lib/node_modules/elm/share'
-#fi
-
 # OPAM configuration
 . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
@@ -185,14 +163,16 @@ fi
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
 
 # AWS CLI auto completion
-if [[ $(hostname) == 't420thinkpad' ]]; then
-    source /home/ivan/.local/bin/aws_zsh_completer.sh
-else
-    source /usr/local/bin/aws_zsh_completer.sh
-fi
+source /usr/local/bin/aws_zsh_completer.sh
 
 # PIP local in path
 export PATH="$HOME/.local/bin:$PATH"
 
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# fnm
+if [[ $(hostname) == 'betula' ]]; then
+  export PATH=/Users/ivan/.fnm:$PATH
+  eval "`fnm env --multi`"
+fi
 
