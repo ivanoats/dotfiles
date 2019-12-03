@@ -100,11 +100,6 @@ fi
 #  if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 #fi
 
-# Amazon ec2
-# if [[ $OSTYPE_REAL == 'darwin' ]]; then
-#  export JAVA_HOME="$(/usr/libexec/java_home)"
-# fi
-
 # Paths from homebrew, cask, heroku, npm
 export PATH=$HOME/.cask/bin:$HOME/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
@@ -171,7 +166,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # fnm
-if [[ $(hostname) == 'betula' ]]; then
+if [[ $(hostname) == 'plicata' ]]; then
   export PATH=/Users/ivan/.fnm:$PATH
   eval "`fnm env --multi`"
 fi
