@@ -100,6 +100,11 @@ fi
 #  if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 #fi
 
+# Amazon ec2
+# if [[ $OSTYPE_REAL == 'darwin' ]]; then
+#  export JAVA_HOME="$(/usr/libexec/java_home)"
+# fi
+
 # Paths from homebrew, cask, heroku, npm
 export PATH=$HOME/.cask/bin:$HOME/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
@@ -123,14 +128,6 @@ export PATH=./bin:$PATH
 # Go language
 export GOPATH=$HOME/dev/go
 PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-
-# Node Version Manager (NVM) on Linux only
-# Maybe use Nodenv in future
-if [[ $OSTYPE_REAL == 'linux-gnu' && $(hostname) != 't420thinkpad' ]]; then
-    export NVM_DIR=~/.nvm
-    source $HOME/.nvm/nvm.sh
-    [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
-fi
 
 # OPAM configuration
 . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
@@ -163,11 +160,19 @@ source /usr/local/bin/aws_zsh_completer.sh
 # PIP local in path
 export PATH="$HOME/.local/bin:$PATH"
 
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+# Ruby (from homebrew)
+# UPDATE this for each new verison of Ruby installed
+export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
 
 # fnm
-if [[ $(hostname) == 'plicata' ]]; then
-  export PATH=/Users/ivan/.fnm:$PATH
-  eval "`fnm env --multi`"
+export PATH=$HOME/.fnm:$PATH
+eval "`fnm env --multi`"
+
+# pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
 fi
 
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true

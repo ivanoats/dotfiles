@@ -44,6 +44,8 @@ growl() { echo -e $'\e]9;'${1}'\007' ; return ; }
 
 function git(){hub $@}
 
+function passrand() {echo "(($RANDOM % 60) + 1)"}
+
 # MAC OS X ONLY
 if [[ $OSTYPE != 'linux-gnu' ]]; then
     alias tu='top -o cpu' # sorted by cpu
@@ -67,7 +69,7 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
     alias showinvisible="defaults write com.apple.finder AppleShowAllFiles TRUE"
     alias hideinvisible="defaults write com.apple.finder AppleShowAllFiles FALSE"
     alias marked="open -a Marked\ 2 "
-    alias newpass="xkcd-password -s $((RANDOM % 60 +1)) -f ~/wordfile"
+    alias newpass="xkcd-password -s echo passrand -f ~/wordfile"
 fi
 alias bower='noglob bower'
 alias pdbs="psql -l"
