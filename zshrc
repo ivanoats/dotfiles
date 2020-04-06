@@ -17,6 +17,9 @@ ZSH_THEME="robbyrussell"
 autoload -Uz compinit
 compinit
 
+# Fix multiple users brew
+ZSH_DISABLE_COMPFIX=true
+
 # Comment this out to disable weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
 
@@ -157,9 +160,6 @@ fi
 # AWS CLI auto completion
 source /usr/local/bin/aws_zsh_completer.sh
 
-# PIP local in path
-export PATH="$HOME/.local/bin:$PATH"
-
 # Ruby (from homebrew)
 # UPDATE this for each new verison of Ruby installed
 export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
@@ -176,3 +176,9 @@ fi
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+
+# elixir
+export ERL_AFLAGS="-kernel shell_history enabled"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
