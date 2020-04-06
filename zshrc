@@ -1,3 +1,6 @@
+# Fix multiple users brew, must be before oh my zsh is loaded
+ZSH_DISABLE_COMPFIX="true"
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
