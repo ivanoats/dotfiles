@@ -18,7 +18,7 @@ ZSH_THEME="robbyrussell"
 
 # auto complete ..
 autoload -Uz compinit
-compinit
+compinit -i # needs -i to remove security warning
 
 # Fix multiple users brew
 ZSH_DISABLE_COMPFIX=true
