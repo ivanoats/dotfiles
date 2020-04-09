@@ -130,6 +130,8 @@ fi
 
 # current directory bin PATH
 export PATH=./bin:$PATH
+# home bin
+export PATH=$HOME/bin:$PATH
 
 # Go language
 export GOPATH=$HOME/dev/go
@@ -144,8 +146,8 @@ export PATH=$HOME/.cabal/bin:$PATH
 # PHP including composer on OS X
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
     export PATH="$(brew --prefix php)/bin:$PATH"
-    export PATH="/Users/ivan/.composer/vendor/bin:$PATH"
-    source /Users/ivan/dotfiles/wp-completion.bash
+    export PATH="$HOME/.composer/vendor/bin:$PATH"
+    source $HOME/dotfiles/wp-completion.bash
 fi
 
 # Serverless Framework
