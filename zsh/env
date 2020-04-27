@@ -10,8 +10,10 @@ if [[ ${OSTYPE//[0-9.]/} == 'darwin' ]]; then
   # export VISUAL="atom -w"
   # export VISUAL="mvim -vf"
   # export EDITOR="mvim -vf"
-  export EDITOR="nvim"
-  export VISUAL="nvim"
+  # export EDITOR="nvim"
+  # export VISUAL="nvim"
+  export EDITOR="code --wait"
+  export VISUAL="code --wait"
   # export EDITOR="emacs"
   # export VISUAL="emacs"
 
