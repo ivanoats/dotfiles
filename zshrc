@@ -187,3 +187,5 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+export VOLTA_HOME="/Users/ivan/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
