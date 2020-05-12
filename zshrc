@@ -163,7 +163,9 @@ fi
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
 
 # AWS CLI auto completion
-source /usr/local/bin/aws_zsh_completer.sh
+if test -f "/usr/local/bin/aws_zsh_completer.sh"; then
+  source /usr/local/bin/aws_zsh_completer.sh
+fi
 
 # Ruby (from homebrew)
 # UPDATE this for each new verison of Ruby installed
