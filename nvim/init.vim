@@ -210,10 +210,8 @@ let g:ycm_autoclose_preview_window_after_comletion=1
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 let python_highlight_all=1
-if has("mac")
-  let g:python3_host_prog="/usr/local/bin/python3"
-elseif has("unix")
-  let g:python3_host_prog="/usr/bin/python3"
+if has("unix")
+  let g:python3_host_prog="/Users/ivan/.pyenv/shims/python3"
 endif
 
 " Project Specific settings
