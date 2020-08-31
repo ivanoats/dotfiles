@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Fix multiple users brew, must be before oh my zsh is loaded
 ZSH_DISABLE_COMPFIX="true"
 
@@ -11,7 +18,7 @@ export OSTYPE_REAL=${OSTYPE//[0-9.]/}
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -68,25 +75,6 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 . ~/dotfiles/zsh/env
 . ~/dotfiles/zsh/aliases
 . ~/dotfiles/zsh/private_keys
-
-# powerline go
-
-function powerline_precmd() {
-    PS1="$(~/dev/go/bin/powerline-go -error $? -shell zsh)"
-}
-
-function install_powerline_precmd() {
-    for s in "${precmd_functions[@]}"; do
-        if [ "$s" = "powerline_precmd" ]; then
-            return
-        fi
-    done
-    precmd_functions+=(powerline_precmd)
-}
-
-if [ "$TERM" != "linux" ]; then
-    install_powerline_precmd
-fi
 
 # Java on Linux
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
@@ -191,3 +179,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 export VOLTA_HOME="/Users/ivan/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
