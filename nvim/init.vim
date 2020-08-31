@@ -67,7 +67,7 @@ Bundle 'marijnh/tern_for_vim'
 Bundle 'elzr/vim-json'
 Bundle 'elmcast/elm-vim'
 Bundle 'raichoo/purescript-vim'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 " Python
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'nvie/vim-flake8'
@@ -211,7 +211,7 @@ map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 let python_highlight_all=1
 if has("unix")
-  let g:python3_host_prog="/Users/ivan/.pyenv/shims/python3"
+  let g:python3_host_prog="$HOME/.pyenv/shims/python3"
 endif
 
 " Project Specific settings

@@ -10,4 +10,5 @@ atom.symlink/.node-gyp
 atom.symlink/blob-store
 atom.symlink/compile-cachewordfile
 wordfile
+nvim/bundle
 
