@@ -159,10 +159,6 @@ fi
 # UPDATE this for each new verison of Ruby installed
 export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
 
-# fnm
-export PATH=$HOME/.fnm:$PATH
-eval "`fnm env --multi`"
-
 # pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
