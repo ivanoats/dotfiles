@@ -159,10 +159,6 @@ fi
 # UPDATE this for each new verison of Ruby installed
 export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
 
-# fnm
-export PATH=$HOME/.fnm:$PATH
-eval "`fnm env --multi`"
-
 # pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
@@ -182,3 +178,6 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
