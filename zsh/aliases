@@ -113,6 +113,8 @@ alias lssl="live-server --https=/usr/local/lib/node_modules/live-server-https"
 # LINUX ONLY
 if [[ -a /etc/issue ]];
 then
+    alias fd='fdfind'
+    alias bat='batcat'
     alias pbcopy='xclip -selection clipboard'
     alias pbpaste='xclip -selection clipboard -o'
     alias open='gnome-open'
