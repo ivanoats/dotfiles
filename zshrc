@@ -94,13 +94,18 @@ fi
 #  if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 #fi
 
+# java openjdk on mac
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+  export PATH="/usr/local/opt/openjdk/bin:$PATH"
+fi
+
 # Amazon ec2
 # if [[ $OSTYPE_REAL == 'darwin' ]]; then
 #  export JAVA_HOME="$(/usr/libexec/java_home)"
 # fi
 
 # Paths from homebrew, cask, heroku, npm
-export PATH=$HOME/.cask/bin:$HOME/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/.cask/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # chruby
 # if [[ $OSTYPE_REAL == 'darwin' ]]; then
