@@ -57,9 +57,9 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-    plugins=(git gitfast git-extras docker npm web-search pip)
+    plugins=(git gitfast git-extras docker npm web-search pip asdf)
 else # Mac OS X
-    plugins=(git zsh-autosuggestions gitfast git-extras osx brew npm mvn node pip redis-cli web-search docker)
+    plugins=(git zsh-autosuggestions gitfast git-extras osx brew npm mvn node pip redis-cli web-search docker asdf)
 fi
 
 # load up oh my zsh
@@ -162,7 +162,9 @@ fi
 
 # Ruby (from homebrew)
 # UPDATE this for each new verison of Ruby installed
-export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+    export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
+fi
 
 # pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
