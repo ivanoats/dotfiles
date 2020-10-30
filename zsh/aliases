@@ -106,7 +106,7 @@ alias grem='git remote -v'
 alias glgn='git --no-pager log --stat --color | head -n 15'
 alias weather='finger ^seattle@graph.no'
 alias nukemods='rm -rf node_modules && npm install'
-alias ip='curl -s ip-api.com/json | jq ".query"'
+alias myip='curl -s ip-api.com/json | jq ".query"'
 alias externalip='http http://ip-api.com/json/\?fields\=16904191  | jq ".query"'
 alias cfls="aws cloudfront list-distributions | jq '.DistributionList.Items[] | {aliases: .Aliases.Items, comment: .Comment, domainName: .DomainName, id:  .Id}'"
 alias lssl="live-server --https=/usr/local/lib/node_modules/live-server-https"

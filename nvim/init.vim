@@ -211,7 +211,7 @@ map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 let python_highlight_all=1
 if has("unix")
-  let g:python3_host_prog="$HOME/.pyenv/shims/python3"
+  let g:python3_host_prog="$HOME/.asdf/shims/python3"
 endif
 
 " Project Specific settings
