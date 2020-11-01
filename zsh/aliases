@@ -61,8 +61,6 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
     alias lockscreen="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
     alias sshkeycopy="cat ~/.ssh/id_rsa.pub | pbcopy"
     alias rkhunter="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin sudo rkhunter --check"
-    alias vi='nvim'
-    alias vim='nvim'
     alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim'
     alias zshconfig="nvim ~/.zshrc"
     alias ohmyzsh="nvim ~/.oh-my-zsh"
@@ -110,6 +108,8 @@ alias myip='curl -s ip-api.com/json | jq ".query"'
 alias externalip='http http://ip-api.com/json/\?fields\=16904191  | jq ".query"'
 alias cfls="aws cloudfront list-distributions | jq '.DistributionList.Items[] | {aliases: .Aliases.Items, comment: .Comment, domainName: .DomainName, id:  .Id}'"
 alias lssl="live-server --https=/usr/local/lib/node_modules/live-server-https"
+alias vi='nvim'
+alias vim='nvim'
 # LINUX ONLY
 if [[ -a /etc/issue ]];
 then

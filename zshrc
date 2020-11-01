@@ -167,9 +167,9 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
 fi
 
 # pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init -)"
-fi
+#if command -v pyenv 1>/dev/null 2>&1; then
+#    eval "$(pyenv init -)"
+#fi
 
 # tabtab source for packages
 # uninstall by removing these lines
@@ -180,8 +180,8 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+# export VOLTA_HOME="$HOME/.volta"
+# export PATH="$VOLTA_HOME/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
