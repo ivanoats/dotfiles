@@ -99,14 +99,9 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
   export PATH="/usr/local/opt/openjdk/bin:$PATH"
 fi
 
-# Amazon ec2
-# if [[ $OSTYPE_REAL == 'darwin' ]]; then
-#  export JAVA_HOME="$(/usr/libexec/java_home)"
-# fi
-
-# Paths from homebrew, cask, heroku, npm
+# Paths from cask, any others necessary for mac
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
-  export PATH=$HOME/.cask/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
+  export PATH=$HOME/.cask/bin:$PATH
 fi
 
 # chruby
@@ -162,13 +157,13 @@ if test -f "/usr/local/bin/aws_zsh_completer.sh"; then
   source /usr/local/bin/aws_zsh_completer.sh
 fi
 
-# Ruby (from homebrew)
+# Ruby (from homebrew) now managed by asdf
 # UPDATE this for each new verison of Ruby installed
-if [[ $OSTYPE_REAL == 'darwin' ]]; then
-    export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
-fi
+#if [[ $OSTYPE_REAL == 'darwin' ]]; then
+#    export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
+#fi
 
-# pyenv
+# pyenv now managed by asdf
 #if command -v pyenv 1>/dev/null 2>&1; then
 #    eval "$(pyenv init -)"
 #fi
@@ -182,6 +177,7 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# no longer using volta until next version, using asdf now
 # export VOLTA_HOME="$HOME/.volta"
 # export PATH="$VOLTA_HOME/bin:$PATH"
 
