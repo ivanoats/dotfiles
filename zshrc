@@ -105,7 +105,9 @@ fi
 # fi
 
 # Paths from homebrew, cask, heroku, npm
-export PATH=$HOME/.cask/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+  export PATH=$HOME/.cask/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
+fi
 
 # chruby
 # if [[ $OSTYPE_REAL == 'darwin' ]]; then
