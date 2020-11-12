@@ -68,6 +68,7 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
     alias hideinvisible="defaults write com.apple.finder AppleShowAllFiles FALSE"
     alias marked="open -a Marked\ 2 "
     alias newpass="xkcd-password -s echo passrand -f ~/wordfile"
+    alias growldone"grownlnotify -m 'done' && say done"
 fi
 alias bower='noglob bower'
 alias pdbs="psql -l"
