@@ -23,6 +23,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+  if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  fi
+fi
 # auto complete ..
 autoload -Uz compinit
 compinit -i # needs -i to remove security warning
@@ -57,9 +62,9 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
-    plugins=(git gitfast git-extras docker npm web-search pip asdf)
+    plugins=(git zsh-autosuggestions gitfast git-extras docker npm node pip web-search asdf zsh-completions)
 else # Mac OS X
-    plugins=(git zsh-autosuggestions gitfast git-extras osx brew npm mvn node pip redis-cli web-search docker asdf)
+    plugins=(git zsh-autosuggestions gitfast git-extras docker npm node pip web-search asdf osx brew)
 fi
 
 # load up oh my zsh
@@ -183,6 +188,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
