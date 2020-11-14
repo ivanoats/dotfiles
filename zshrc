@@ -45,14 +45,8 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
 fi
 antigen apply
 
-# Zsh completions on MacOS
-if [[ $OSTYPE_REAL == 'darwin' ]]; then
-  if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-  fi
-fi
 # auto complete ..
-autoload -Uz compinit
+autoload -Uz compinit -i
 compinit -i # needs -i to remove security warning
 
 # Fix multiple users brew
