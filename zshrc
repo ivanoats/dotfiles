@@ -37,6 +37,7 @@ antigen bundle asdf
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle "MichaelAquilina/zsh-auto-notify"
 
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   antigen bundle osx
