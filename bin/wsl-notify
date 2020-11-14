@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+powershell.exe "New-BurntToastNotification -Text \"$1\""
