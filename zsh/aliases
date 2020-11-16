@@ -75,7 +75,6 @@ alias pdbs="psql -l"
 alias retag="ctags --exclude=*.js --extra=+f -R *"
 alias zipr="zip -r" #directory.zip directory
 alias upstream="git rev-parse --abbrev-ref @{u}"
-# alias ll="ls -ltrahG"
 alias ll="exa -la -s modified"
 alias g="git status"
 alias gnb="git --no-pager branch"
@@ -114,6 +113,8 @@ alias vim='nvim'
 # LINUX ONLY
 if [[ -a /etc/issue ]];
 then
+    # need a WSL only section
+    alias win32yank='win32yank.exe'
     alias fd='fdfind'
     alias pbcopy='xclip -selection clipboard'
     alias pbpaste='xclip -selection clipboard -o'
