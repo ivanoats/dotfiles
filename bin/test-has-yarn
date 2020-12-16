@@ -1,0 +1,6 @@
+#!/bin/bash
+if has-yarn --quiet; then
+  yarn test
+else
+  npm test --
+fi
