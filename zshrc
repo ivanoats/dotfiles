@@ -149,17 +149,6 @@ if test -f "/usr/local/bin/aws_zsh_completer.sh"; then
   source /usr/local/bin/aws_zsh_completer.sh
 fi
 
-# Ruby (from homebrew) now managed by asdf
-# UPDATE this for each new verison of Ruby installed
-#if [[ $OSTYPE_REAL == 'darwin' ]]; then
-#    export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
-#fi
-
-# pyenv now managed by asdf
-#if command -v pyenv 1>/dev/null 2>&1; then
-#    eval "$(pyenv init -)"
-#fi
-
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
