@@ -14,11 +14,12 @@ ZSH=$HOME/.oh-my-zsh
 # Figure out OS type, Mac or Linux. Strip out version# from Darwin
 export OSTYPE_REAL=${OSTYPE//[0-9.]/}
 
+# Themes provided by Antigen now
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -37,6 +38,7 @@ antigen bundle asdf
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen theme romkatv/powerlevel10k
 alias notify-send $HOME/dotfiles/bin/wsl-notify
 antigen bundle "MichaelAquilina/zsh-auto-notify"
 
