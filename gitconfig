@@ -2,11 +2,11 @@
 	name = Ivan Storck
 	email = ivan@ivanstorck.com
 [core]
+  pager = delta
 	quotepath = false
-	excludesfile = /Users/ivan/.gitignore_global
-[pivotal]
-	api-token = ac7479e00f64aab931f3826d920b5af0
-	full-name = Ivan Storck
+	excludesfile = $HOME/.gitignore
+[credential]
+  helper = cache
 [web]
 	browser = open
 [difftool "sourcetree"]
@@ -27,8 +27,6 @@
 	sync = !legit sync \"$@\"
 	publish = !legit publish \"$@\"
 	graft = !legit graft \"$@\"
-[difftool "Kaleidoscope"]
-	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
 [difftool]
 	prompt = false
 [diff]
@@ -37,3 +35,12 @@
 	user = ivanoats
 [push]
 	default = simple
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[merge]
+	tool = Kaleidoscope
+[mergetool]
+	prompt = false
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
