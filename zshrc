@@ -32,9 +32,11 @@ antigen bundle git-extras
 antigen bundle docker
 antigen bundle npm
 antigen bundle node
+antigen bundle lukechilds/zsh-nvm
 antigen bundle pip
 antigen bundle web-search
-antigen bundle asdf
+# f flakey version managers
+# antigen bundle asdf
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -99,7 +101,7 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
   export PATH=$HOME/.cask/bin:$PATH
 fi
 
-# chruby - using asdf now
+# chruby - legacy but commented if needed again
 # if [[ $OSTYPE_REAL == 'darwin' ]]; then
 #   source /usr/local/opt/chruby/share/chruby/chruby.sh
 # else # linux
@@ -161,7 +163,7 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # iterm on mac
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# no longer using volta until next version, using asdf now
+# no longer using volta until next version, using asdf or whatevers latest now
 # export VOLTA_HOME="$HOME/.volta"
 # export PATH="$VOLTA_HOME/bin:$PATH"
 
