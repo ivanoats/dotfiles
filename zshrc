@@ -32,12 +32,15 @@ antigen bundle git-extras
 antigen bundle docker
 antigen bundle npm
 antigen bundle node
+antigen bundle lukechilds/zsh-nvm
 antigen bundle pip
 antigen bundle web-search
 # remove asdf until m1 support is more widespread
 #antigen bundle asdf
 # use nvm now because it works better on m1 macs 
 antigen bundle lukechilds/zsh-nvm
+# f flakey version managers
+# antigen bundle asdf
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -98,7 +101,11 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
   export PATH=$HOME/.cask/bin:$PATH
 fi
 
+<<<<<<< HEAD
 # help install sharp, needed for Gatsby, on Mac OS X with homebrew installing the vips package
+=======
+# chruby - legacy but commented if needed again
+>>>>>>> 0eb7c277f4afc85c7d18f8fe1fcad1f368719355
 # if [[ $OSTYPE_REAL == 'darwin' ]]; then
     # export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 # fi
@@ -152,6 +159,13 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # iterm on mac
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+<<<<<<< HEAD
+=======
+# no longer using volta until next version, using asdf or whatevers latest now
+# export VOLTA_HOME="$HOME/.volta"
+# export PATH="$VOLTA_HOME/bin:$PATH"
+
+>>>>>>> 0eb7c277f4afc85c7d18f8fe1fcad1f368719355
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
