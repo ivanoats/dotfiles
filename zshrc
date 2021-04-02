@@ -1,12 +1,12 @@
+# Fix multiple users brew, must be before oh my zsh is loaded
+ZSH_DISABLE_COMPFIX="true"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-# Fix multiple users brew, must be before oh my zsh is loaded
-ZSH_DISABLE_COMPFIX="true"
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -34,7 +34,10 @@ antigen bundle npm
 antigen bundle node
 antigen bundle pip
 antigen bundle web-search
-antigen bundle asdf
+# remove asdf until m1 support is more widespread
+#antigen bundle asdf
+# use nvm now because it works better on m1 macs 
+antigen bundle lukechilds/zsh-nvm
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -44,13 +47,14 @@ antigen bundle "MichaelAquilina/zsh-auto-notify"
 
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   antigen bundle osx
-  antigen bundle brew
+  # don't antigen brew for m1 macs right now
+  # antigen bundle brew
 fi
 antigen apply
 
 # auto complete ..
 autoload -Uz compinit -i
-compinit -i # needs -i to remove security warning
+# compinit -i # needs -i to remove security warning
 
 # Fix multiple users brew
 ZSH_DISABLE_COMPFIX=true
@@ -84,11 +88,6 @@ if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
     fi
 fi
 
-# jenv (Java Environment)
-#if [[ $OSTYPE_REAL == 'darwin' ]]; then
-#  if which jenv > /dev/null; then eval "$(jenv init -)"; fi
-#fi
-
 # java openjdk on mac
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   export PATH="/usr/local/opt/openjdk/bin:$PATH"
@@ -99,18 +98,10 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
   export PATH=$HOME/.cask/bin:$PATH
 fi
 
-# chruby - using asdf now
-# if [[ $OSTYPE_REAL == 'darwin' ]]; then
-#   source /usr/local/opt/chruby/share/chruby/chruby.sh
-# else # linux
-#   source /usr/local/share/chruby/chruby.sh
-# fi
-# chruby ruby
-
 # help install sharp, needed for Gatsby, on Mac OS X with homebrew installing the vips package
-if [[ $OSTYPE_REAL == 'darwin' ]]; then
-    export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
-fi
+# if [[ $OSTYPE_REAL == 'darwin' ]]; then
+    # export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
+# fi
 
 # current directory bin PATH
 export PATH=./bin:$PATH
@@ -161,12 +152,33 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # iterm on mac
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# no longer using volta until next version, using asdf now
-# export VOLTA_HOME="$HOME/.volta"
-# export PATH="$VOLTA_HOME/bin:$PATH"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
+
+# set bgcolor blue if intel
+if [[ $(hostname) == "taxus-brevifolia.local" ]]; then
+  _ARCH=$(arch)
+  PROMPT="$_ARCH $PROMPT"
+  # Requires iterm2
+  if [[ "$_ARCH" == "i386" ]]; then
+    echo -ne "\033]1337;SetColors=bg=0071C5\007"
+    local brew_path="/usr/local/homebrew/bin"
+    local brew_opt_path="/usr/local/opt"
+    local ruby_path="/usr/local/opt/ruby/bin"
+    local nvm_path="$HOME/.nvm-x86"
+  else
+    local brew_path="/opt/homebrew/bin"
+    local brew_opt_path="/opt/homebrew/bin"
+    local nvm_path="$HOME/.nvm"
+    local ruby_path="/opt/homebrew/opt/ruby/bin"
+  fi 
+
+  export PATH="${ruby_path}:${brew_path}:${PATH}"
+  export NVM_DIR="${nvm_path}"
+
+  [ -s "${brew_opt_path}/nvm/nvm.sh" ] && . "${brew_opt_path}/nvm/nvm.sh"
+  [ -s "${brew_opt_path}/nvm/etc/bash_completion.d/nvm" ] && . "${brew_opt_path}/nvm/etc/bash_completion.d/nvm"
+fi
