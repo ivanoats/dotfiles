@@ -32,15 +32,14 @@ antigen bundle git-extras
 antigen bundle docker
 antigen bundle npm
 antigen bundle node
-antigen bundle lukechilds/zsh-nvm
 antigen bundle pip
 antigen bundle web-search
-# remove asdf until m1 support is more widespread
-#antigen bundle asdf
 # use nvm now because it works better on m1 macs 
-antigen bundle lukechilds/zsh-nvm
-# f flakey version managers
-# antigen bundle asdf
+# antigen bundle lukechilds/zsh-nvm
+# windows 10
+if [[ $(hostname) == "thuja" ]]; then
+  antigen bundle asdf
+fi
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
