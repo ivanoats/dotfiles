@@ -25,6 +25,7 @@ export OSTYPE_REAL=${OSTYPE//[0-9.]/}
 # CASE_SENSITIVE="true"
 
 source $HOME/dotfiles/zsh/antigen.zsh
+antigen theme romkatv/powerlevel10k
 antigen use oh-my-zsh
 antigen bundle git
 antigen bundle gitfast
@@ -35,22 +36,24 @@ antigen bundle node
 antigen bundle pip
 antigen bundle web-search
 # use nvm now because it works better on m1 macs 
+# commented out see end of file for ARCH workaround
 # antigen bundle lukechilds/zsh-nvm
-# windows 10
-if [[ $(hostname) == "thuja" ]]; then
+# windows 10 and Intel lll laptop
+if [[ $(hostname) == "thuja" || ${hostname} == "C02D15NSMD6T" ]]; then
   antigen bundle asdf
 fi
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen theme romkatv/powerlevel10k
 alias notify-send $HOME/dotfiles/bin/wsl-notify
 antigen bundle "MichaelAquilina/zsh-auto-notify"
 
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   antigen bundle osx
   # don't antigen brew for m1 macs right now
-  # antigen bundle brew
+  if [[ ${hostname} == "C02D15NSMD6T" ]]; then
+    antigen bundle brew
+  fi
 fi
 antigen apply
 
@@ -155,7 +158,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
-# set bgcolor blue if intel
+# M1 Macs: set up brew and ruby paths based on arch, set bgcolor blue if intel
 if [[ $(hostname) == "taxus-brevifolia.local" ]]; then
   _ARCH=$(arch)
   PROMPT="$_ARCH $PROMPT"
