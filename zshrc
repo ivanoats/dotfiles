@@ -181,4 +181,6 @@ if [[ $(hostname) == "taxus-brevifolia.local" ]]; then
 
   [ -s "${brew_opt_path}/nvm/nvm.sh" ] && . "${brew_opt_path}/nvm/nvm.sh"
   [ -s "${brew_opt_path}/nvm/etc/bash_completion.d/nvm" ] && . "${brew_opt_path}/nvm/etc/bash_completion.d/nvm"
+else
+  export NVM_DIR="$HOME/.nvm"
 fi
