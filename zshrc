@@ -39,7 +39,7 @@ antigen bundle web-search
 # commented out see end of file for ARCH workaround
 # antigen bundle lukechilds/zsh-nvm
 # windows 10 and Intel lll laptop
-if [[ $(hostname) == "thuja" || ${hostname} == "C02D15NSMD6T" ]]; then
+if [[ $(hostname) == "thuja" || $(hostname) == "C02D15NSMD6T" ]]; then
   antigen bundle asdf
 fi
 antigen bundle zsh-users/zsh-completions
@@ -51,7 +51,7 @@ antigen bundle "MichaelAquilina/zsh-auto-notify"
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   antigen bundle osx
   # don't antigen brew for m1 macs right now
-  if [[ ${hostname} == "C02D15NSMD6T" ]]; then
+  if [[ $(hostname) == "C02D15NSMD6T" ]]; then
     antigen bundle brew
   fi
 fi
