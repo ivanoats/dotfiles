@@ -14,13 +14,6 @@ ZSH=$HOME/.oh-my-zsh
 # Figure out OS type, Mac or Linux. Strip out version# from Darwin
 export OSTYPE_REAL=${OSTYPE//[0-9.]/}
 
-# Themes provided by Antigen now
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-# ZSH_THEME="powerlevel10k/powerlevel10k"
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -159,7 +152,7 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
 # M1 Macs: set up brew and ruby paths based on arch, set bgcolor blue if intel
-if [[ $(hostname) == "taxus-brevifolia.local" ]]; then
+if [[ $(hostname) == "taxus-brevifolia.local" || $(hostname) == "birch.local" ]]; then
   _ARCH=$(arch)
   PROMPT="$_ARCH $PROMPT"
   # Requires iterm2
@@ -171,7 +164,7 @@ if [[ $(hostname) == "taxus-brevifolia.local" ]]; then
     local nvm_path="$HOME/.nvm-x86"
   else
     local brew_path="/opt/homebrew/bin"
-    local brew_opt_path="/opt/homebrew/bin"
+    local brew_opt_path="/opt/homebrew/opt"
     local nvm_path="$HOME/.nvm"
     local ruby_path="/opt/homebrew/opt/ruby/bin"
   fi 
