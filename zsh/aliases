@@ -53,7 +53,6 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
     alias tm='top -o vsize' #sorted by memory
     alias ls="ls -G"
     alias myip="ifconfig | grep 'inet ' | grep -v 127.* | cut -d\   -f2"
-    alias hd2="cd /Volumes/Macintosh\ HD\ 2"
     alias startpg="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
     alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
     alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
@@ -70,7 +69,6 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
     alias newpass="xkcd-password -s echo passrand -f ~/wordfile"
     alias growldone"grownlnotify -m 'done' && say done"
 fi
-alias bower='noglob bower'
 alias pdbs="psql -l"
 alias retag="ctags --exclude=*.js --extra=+f -R *"
 alias zipr="zip -r" #directory.zip directory
@@ -90,14 +88,11 @@ alias be="bundle exec"
 alias jeks="bundle exec jekyll serve"
 alias jekb="JEKYLL_ENV=production bundle exec jekyll build"
 alias unixtime="ruby -e 'puts Time.now.to_i'"
-alias pcat="pygmentize"
-alias pcatr="pygmentize -l ruby"
 alias ccat="bat"
 alias pgdbs='psql -c "select datname from pg_database;"'
 alias gitlog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias tch='clear && tmux clear-history'
 alias jstree="tree -I 'node_modules|bower_components|db'"
-alias elmtree="tree -I 'node_modules|bower_components|db|elm-stuff'"
 alias gpicf='git push cf master && git push'
 alias gempty='git commit --allow-empty'
 alias grem='git remote -v'

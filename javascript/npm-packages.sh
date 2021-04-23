@@ -6,8 +6,6 @@ npm -g install dash-cli
 npm -g install foreman
 npm -g install gifify
 npm -g install gist-cli
-npm -g install greenkeeper
-npm -g install growl
 npm -g install http-server
 npm -g install ijavascript
 npm -g install json-server

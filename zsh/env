@@ -1,22 +1,15 @@
-export LC_CTYPE=en_US.UTF-8  # for python and textmate svn compatibility
 export CLICOLOR=1
 export HISTFILESIZE=3000
 export TERM=xterm-256color
-#export NODE_ENV=development
 export LANG=en_US.UTF-8
-export CLOUDSDK_PYTHON=/usr/bin/python3.8
 
 if [[ ${OSTYPE//[0-9.]/} == 'darwin' ]]; then
-  # export EDITOR="atom -w"
-  # export VISUAL="atom -w"
   # export VISUAL="mvim -vf"
   # export EDITOR="mvim -vf"
   # export EDITOR="nvim"
   # export VISUAL="nvim"
   export EDITOR="code --wait"
   export VISUAL="code --wait"
-  # export EDITOR="emacs"
-  # export VISUAL="emacs"
 
   # python with tcl tk for turtle
   export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
@@ -25,8 +18,4 @@ if [[ ${OSTYPE//[0-9.]/} == 'darwin' ]]; then
   export PKG_CONFIG_PATH="/usr/local/opt/tcl-tk/lib/pkgconfig"
 fi
 
-# UW Certificates
-# export SSL_CERT_FILE=/usr/local/etc/ssl/certs/ca-certificates.crt
 # set -o vi   #vi line editing mode
-
-
