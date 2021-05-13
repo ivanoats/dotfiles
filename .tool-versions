@@ -1,6 +1,6 @@
 ruby 3.0.1
 python 2.7.18 3.9.2
 github-cli 1.9.2
-nodejs 14.16.1
+nodejs 14.17.0
 yarn 1.22.10
 gcloud 321.0.0
