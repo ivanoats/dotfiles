@@ -157,7 +157,7 @@ if [[ $(hostname) == "taxus-brevifolia.local" || $(hostname) == "birch.local" ||
   PROMPT="$_ARCH $PROMPT"
   # Requires iterm2
   if [[ "$_ARCH" == "i386" ]]; then
-    echo -ne "\033]1337;SetColors=bg=0071C5\007"
+    echo -ne "\033]1337;SetColors=bg=268bd2\007"
     local brew_path="/usr/local/homebrew/bin"
     local brew_opt_path="/usr/local/Homebrew/opt"
     local ruby_path="/usr/local/Homebrew/opt/ruby/bin"
