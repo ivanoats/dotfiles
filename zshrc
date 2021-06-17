@@ -152,7 +152,7 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
 # M1 Macs: set up brew and ruby paths based on arch, set bgcolor blue if intel
-if [[ $(hostname) == "taxus-brevifolia.local" || $(hostname) == "birch.local" ]]; then
+if [[ $(hostname) == "taxus-brevifolia.local" || $(hostname) == "birch.local" || $(hostname) == "FVFFM17EQ6LT" ]]; then
   _ARCH=$(arch)
   PROMPT="$_ARCH $PROMPT"
   # Requires iterm2
