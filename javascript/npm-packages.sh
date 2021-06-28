@@ -8,6 +8,7 @@ npm -g install gifify
 npm -g install gist-cli
 npm -g install http-server
 npm -g install ijavascript
+npm -g install ipt
 npm -g install json-server
 npm -g install jsonlint
 npm -g install karma-cli
@@ -29,8 +30,8 @@ npm -g install pushstate-server
 npm -g install secretkey
 npm -g install selenium-standalone
 npm -g install slow-deps
+npm -g install svgo
 #npm -g install swagger
 npm -g install tern
-#npm -g install tinypng
 npm -g install typescript
 npm -g install uncss
