@@ -1,7 +1,0 @@
-.DS_Store
-tags
-.sass-cache
-node_modules
-tmp
-.idea
-.vagrant/**/*
