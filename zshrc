@@ -43,10 +43,6 @@ antigen bundle "MichaelAquilina/zsh-auto-notify"
 
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   antigen bundle osx
-  # don't antigen brew for m1 macs right now
-  if [[ $(hostname) == "C02D15NSMD6T" ]]; then
-    antigen bundle brew
-  fi
 fi
 antigen apply
 
