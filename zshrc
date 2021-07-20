@@ -32,7 +32,7 @@ antigen bundle web-search
 # commented out see end of file for ARCH workaround
 # antigen bundle lukechilds/zsh-nvm
 # windows 10 and Intel lll laptop
-if [[ $(hostname) == "thuja" || $(hostname) == "C02D15NSMD6T" ]]; then
+if [[ $(hostname) == "thuja" ]]; then
   antigen bundle asdf
 fi
 antigen bundle zsh-users/zsh-completions
