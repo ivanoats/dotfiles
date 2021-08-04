@@ -106,13 +106,8 @@ PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # Cabal configuration
 export PATH=$HOME/.cabal/bin:$PATH
+  # Requires iterm2
 
-# PHP including composer on OS X
-if [[ $OSTYPE_REAL == 'darwin' ]]; then
-    export PATH="$(brew --prefix php)/bin:$PATH"
-    export PATH="$HOME/.composer/vendor/bin:$PATH"
-    source $HOME/dotfiles/wp-completion.bash
-fi
 
 # Serverless Framework
 #
@@ -154,9 +149,9 @@ iterm2_print_user_vars() {
 # M1 Macs: set up brew and ruby paths based on arch, set bgcolor blue if intel
 if [[ $(hostname) == "taxus-brevifolia.local" || $(hostname) == "birch.local" || $(hostname) == "FVFFM17EQ6LT" ]]; then
   _ARCH=$(arch)
-  PROMPT="$_ARCH $PROMPT"
-  # Requires iterm2
+  #PROMPT="$_ARCH $PROMPT"
   if [[ "$_ARCH" == "i386" ]]; then
+    # Requires iterm2
     # echo -ne "\033]1337;SetColors=bg=268bd2\007"
     local brew_path="/usr/local/homebrew/bin"
     local brew_opt_path="/usr/local/Homebrew/opt"
@@ -176,6 +171,13 @@ if [[ $(hostname) == "taxus-brevifolia.local" || $(hostname) == "birch.local" ||
   [ -s "${brew_opt_path}/nvm/etc/bash_completion.d/nvm" ] && . "${brew_opt_path}/nvm/etc/bash_completion.d/nvm"
 else
   export NVM_DIR="$HOME/.nvm"
+fi
+
+# PHP including composer on OS X
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+    export PATH="$(brew --prefix php)/bin:$PATH"
+    export PATH="$HOME/.composer/vendor/bin:$PATH"
+    source $HOME/dotfiles/wp-completion.bash
 fi
 
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
