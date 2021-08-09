@@ -197,3 +197,8 @@ if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
   # <<< conda initialize <<<
 fi
 
+# python pipenv on MacOS
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+  export PATH="$HOME/Library/Python/3.9/bin:$PATH"
+fi
+
