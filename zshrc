@@ -202,3 +202,7 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
   export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 fi
 
+# chruby on linux / WSL
+if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
+  source /usr/local/share/chruby/chruby.sh
+fi
