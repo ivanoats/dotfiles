@@ -159,17 +159,19 @@ if [[ $(hostname) == "taxus-brevifolia.local" || $(hostname) == "birch.local" ||
     # Requires iterm2
     # echo -ne "\033]1337;SetColors=bg=268bd2\007"
     local brew_path="/usr/local/homebrew/bin"
+    local brew_sbin_path="/usr/local/Homebrew/sbin"
     local brew_opt_path="/usr/local/Homebrew/opt"
     local ruby_path="/usr/local/Homebrew/opt/ruby/bin"
     local nvm_path="$HOME/.nvm-x86"
   else
     local brew_path="/opt/homebrew/bin"
+    local brew_sbin_path="/opt/homebrew/sbin"
     local brew_opt_path="/opt/homebrew/opt"
     local nvm_path="$HOME/.nvm"
     local ruby_path="/opt/homebrew/opt/ruby/bin"
   fi 
 
-  export PATH="${ruby_path}:${brew_path}:${PATH}"
+  export PATH="${ruby_path}:${brew_path}:${brew_sbin_path}:${PATH}"
   export NVM_DIR="${nvm_path}"
 
   [ -s "${brew_opt_path}/nvm/nvm.sh" ] && . "${brew_opt_path}/nvm/nvm.sh"
@@ -212,3 +214,7 @@ fi
 # Please make sure this block is at the end of this file.
 [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
 #### END FIG ENV VARIABLES ####
+# chruby on linux / WSL
+if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
+  source /usr/local/share/chruby/chruby.sh
+fi
