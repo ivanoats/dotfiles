@@ -1,3 +1,8 @@
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the start of this file.
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+#### END FIG ENV VARIABLES ####
 # Fix multiple users brew, must be before oh my zsh is loaded
 ZSH_DISABLE_COMPFIX="true"
 
@@ -202,3 +207,8 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
   export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 fi
 
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the end of this file.
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####
