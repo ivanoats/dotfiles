@@ -1,13 +1,8 @@
-# Figure out OS type, Mac or Linux. Strip out version# from Darwin
-export OSTYPE_REAL=${OSTYPE//[0-9.]/}
 
 # My env vars and aliases
 . ~/dotfiles/zsh/env
 . ~/dotfiles/zsh/aliases
 . ~/dotfiles/zsh/private_keys
-
-# current directory bin PATH
-export PATH=./bin:$HOME/bin:$PATH
 
 # Go language
 export GOPATH=$HOME/dev/go

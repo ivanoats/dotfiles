@@ -49,7 +49,6 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
     alias tu='top -o cpu' # sorted by cpu
     alias openports="sudo lsof -i -P | grep -i \"listen\""
     alias tm='top -o vsize' #sorted by memory
-    alias ls="ls -G"
     alias myip="ifconfig | grep 'inet ' | grep -v 127.* | cut -d\   -f2"
     alias startpg="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
     alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
