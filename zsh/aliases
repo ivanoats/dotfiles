@@ -99,6 +99,8 @@ alias cfls="aws cloudfront list-distributions | jq '.DistributionList.Items[] | 
 alias lssl="live-server --https=/usr/local/lib/node_modules/live-server-https"
 alias vi='nvim'
 alias vim='nvim'
+alias nvm_upgrade_lts="nvm install 'lts/*' --reinstall-packages-from=current"
+
 # LINUX ONLY
 if [[ -a /etc/issue ]];
 then
