@@ -42,8 +42,6 @@ function pvcp()
 
 growl() { echo -e $'\e]9;'${1}'\007' ; return ; }
 
-function git(){hub $@}
-
 function newpass() {xkcd-password -s $(jot -r 1 1 9) -f ~/wordfile|pbcopy}
 
 # MAC OS X ONLY

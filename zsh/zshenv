@@ -6,11 +6,8 @@ export OSTYPE_REAL=${OSTYPE//[0-9.]/}
 . ~/dotfiles/zsh/aliases
 . ~/dotfiles/zsh/private_keys
 
-# Paths from homebrew, cask, heroku, npm
-export PATH=$HOME/.cask/bin:$HOME/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
-
 # current directory bin PATH
-export PATH=./bin:$PATH
+export PATH=./bin:$HOME/bin:$PATH
 
 # Go language
 export GOPATH=$HOME/dev/go
