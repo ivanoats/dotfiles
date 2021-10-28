@@ -54,10 +54,8 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
     alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
     alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
     alias stoppg="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
-    alias lockscreen="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
     alias sshkeycopy="cat ~/.ssh/id_rsa.pub | pbcopy"
     alias rkhunter="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin sudo rkhunter --check"
-    alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim'
     alias zshconfig="nvim ~/.zshrc"
     alias ohmyzsh="nvim ~/.oh-my-zsh"
     alias showinvisible="defaults write com.apple.finder AppleShowAllFiles TRUE"
