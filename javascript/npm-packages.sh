@@ -31,6 +31,7 @@ npm -g install secretkey
 npm -g install selenium-standalone
 npm -g install slow-deps
 npm -g install svgo
+npm -g install stylelint
 #npm -g install swagger
 npm -g install tern
 npm -g install typescript
