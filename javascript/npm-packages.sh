@@ -2,9 +2,6 @@
 #npm -g install bunyan
 #npm -g install replpad
 #npm -g install swagger
-npm -g i topojson-client
-npm -g i topojson-server
-npm -g i toposimplify
 npm -g install @commitlint/cli 
 npm -g install @commitlint/config-conventional
 npm -g install @serverlessui/cli
@@ -45,5 +42,7 @@ npm -g install snyk
 npm -g install stylelint
 npm -g install svgo
 npm -g install tern
+npm -g install topojson-client
+npm -g install topojson-server
 npm -g install typescript
 npm -g install uncss
