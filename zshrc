@@ -152,8 +152,7 @@ iterm2_print_user_vars() {
 }
 
 # M1 Macs: set up brew and ruby paths based on arch, set bgcolor blue if intel
-if [[ $(hostname) == "taxus-brevifolia.local" || $(hostname) == "birch.local" || $(hostname) == "birch.hsd1.wa.comcast.net
-" || $(hostname) == "FVFFM17EQ6LT" ]]; then
+if [[ $(hostname) == "taxus-brevifolia.local" || $(hostname) == "birch.local" || $(hostname) == "birch.hsd1.wa.comcast.net" || $(hostname) == "FVFFM17EQ6LT" ]]; then
   _ARCH=$(arch)
   #PROMPT="$_ARCH $PROMPT"
   if [[ "$_ARCH" == "i386" ]]; then
@@ -208,6 +207,11 @@ fi
 # python pipenv on MacOS
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   export PATH="$HOME/Library/Python/3.9/bin:$PATH"
+fi
+
+#python pip localtion on linux
+if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
+  export PATH="/home/ivan/.local/bin:$PATH"
 fi
 
 # chruby on linux / WSL
