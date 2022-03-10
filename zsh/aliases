@@ -62,6 +62,8 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
     alias hideinvisible="defaults write com.apple.finder AppleShowAllFiles FALSE"
     alias marked="open -a Marked\ 2 "
     alias growldone"grownlnotify -m 'done' && say done"
+    alias arm="env /usr/bin/arch --arm64 /bin/zsh --login"
+    alias intel="env /usr/bin/arch --x86_64 /bin/zsh --login"
 fi
 alias pdbs="psql -l"
 alias retag="ctags --exclude=*.js --extra=+f -R *"
