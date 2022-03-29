@@ -6,7 +6,7 @@
 	quotepath = false
 	excludesfile = $HOME/.gitignore
 [credential]
-  helper = cache
+	helper = manager-core
 [web]
 	browser = open
 [difftool "sourcetree"]
