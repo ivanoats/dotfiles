@@ -1,7 +1,6 @@
 # Fig pre block. Keep at the top of this file.
 export PATH="${PATH}:${HOME}/.local/bin"
-eval "$(fig init zsh pre)"
-
+. "$HOME/.fig/shell/zshrc.pre.zsh"
 # Fix multiple users brew, must be before oh my zsh is loaded
 ZSH_DISABLE_COMPFIX="true"
 
@@ -208,7 +207,7 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
   export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 fi
 
-#python pip localtion on linux
+#python pip location on linux
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
   export PATH="/home/ivan/.local/bin:$PATH"
 fi
@@ -224,9 +223,9 @@ if [ -f '/Users/ivan/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ivan/googl
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/ivan/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ivan/google-cloud-sdk/completion.zsh.inc'; fi
 
-# Fig post block. Keep at the bottom of this file.
-eval "$(fig init zsh post)"
-
 # Bun
 export BUN_INSTALL="/Users/ivan/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Fig post block. Keep at the bottom of this file.
+. "$HOME/.fig/shell/zshrc.post.zsh"
