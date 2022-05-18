@@ -1,5 +1,5 @@
-# Fig pre block. Keep at the top of this file.
 export PATH="${PATH}:${HOME}/.local/bin"
+# Fig pre block. Keep at the top of this file.
 . "$HOME/.fig/shell/zshrc.pre.zsh"
 # Fix multiple users brew, must be before oh my zsh is loaded
 ZSH_DISABLE_COMPFIX="true"
