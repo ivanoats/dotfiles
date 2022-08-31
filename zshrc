@@ -1,8 +1,6 @@
 export PATH="${PATH}:${HOME}/.local/bin"
 # Fig pre block. Keep at the top of this file.
 . "$HOME/.fig/shell/zshrc.pre.zsh"
-# Fix multiple users brew, must be before oh my zsh is loaded
-ZSH_DISABLE_COMPFIX="true"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -32,9 +30,8 @@ antigen bundle node
 antigen bundle pip
 antigen bundle web-search
 # use nvm now because it works better on m1 macs 
-# commented out see end of file for ARCH workaround
 # antigen bundle lukechilds/zsh-nvm
-# windows 10 and Intel lll laptop
+# windows 10 
 if [[ $(hostname) == "thuja" ]]; then
   antigen bundle asdf
 fi
@@ -185,7 +182,7 @@ fi
 
 # python pipenv on MacOS
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
-  export PATH="$HOME/Library/Python/3.9/bin:$PATH"
+  export PATH="$HOME/Library/Python/3.10/bin:$PATH"
 fi
 
 #python pip location on linux
