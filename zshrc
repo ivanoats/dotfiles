@@ -142,40 +142,21 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
 iterm2_print_user_vars() {
   iterm2_set_user_var arch $(arch)
 }
 
-# M1 Macs: set up brew and ruby paths based on arch, set bgcolor blue if intel
-if [[ $(hostname) == "taxus-brevifolia.local" || $(hostname) == "birch.local" || $(hostname) == "birch.hsd1.wa.comcast.net" || $(hostname) == "FVFFM17EQ6LT" ]]; then
-  _ARCH=$(arch)
-  #PROMPT="$_ARCH $PROMPT"
-  if [[ "$_ARCH" == "i386" ]]; then
-    # Requires iterm2
-    # echo -ne "\033]1337;SetColors=bg=268bd2\007"
-    local brew_path="/usr/local/homebrew/bin"
-    local brew_sbin_path="/usr/local/Homebrew/sbin"
-    local brew_opt_path="/usr/local/Homebrew/opt"
-    local ruby_path="/usr/local/Homebrew/opt/ruby/bin"
-    local nvm_path="$HOME/.nvm-x86"
-  else
-    local brew_path="/opt/homebrew/bin"
-    local brew_sbin_path="/opt/homebrew/sbin"
-    local brew_opt_path="/opt/homebrew/opt"
-    local nvm_path="$HOME/.nvm"
-    local ruby_path="/opt/homebrew/opt/ruby/bin"
-  fi 
+# M1 Macs: set up brew nvm and bash completion
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+  local brew_opt_path="/opt/homebrew/opt"
+  local nvm_path="$HOME/.nvm"
 
-  export PATH="${ruby_path}:${brew_path}:${brew_sbin_path}:${PATH}"
   export NVM_DIR="${nvm_path}"
 
   [ -s "${brew_opt_path}/nvm/nvm.sh" ] && . "${brew_opt_path}/nvm/nvm.sh"
   [ -s "${brew_opt_path}/nvm/etc/bash_completion.d/nvm" ] && . "${brew_opt_path}/nvm/etc/bash_completion.d/nvm"
-else
-  export NVM_DIR="$HOME/.nvm"
 fi
 
 # PHP including composer on OS X
