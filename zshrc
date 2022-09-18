@@ -189,9 +189,12 @@ if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
   export PATH="/home/ivan/.local/bin:$PATH"
 fi
 
-# chruby on linux / WSL
+# chruby on linux / WSL or brew ruby on OS X
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
   source /usr/local/share/chruby/chruby.sh
+fi
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+  export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 fi
 
 # The next line updates PATH for the Google Cloud SDK.
