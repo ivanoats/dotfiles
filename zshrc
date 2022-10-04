@@ -208,10 +208,7 @@ export BUN_INSTALL="/Users/ivan/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # bun completions
-[ -s "/Users/ivan/.bun/_bun" ] && source "/Users/ivan/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-
-# bun completions
-[ -s "/Users/ivan/.bun/_bun" ] && source "/Users/ivan/.bun/_bun"
