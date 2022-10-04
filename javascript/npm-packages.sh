@@ -35,13 +35,13 @@ npm -g install pagespeed-cli
 npm -g install pm2
 npm -g install pushstate-server
 npm -g install secretkey
-npm -g install selenium-standalone
+#npm -g install selenium-standalone
 npm -g install shapefile
 npm -g install slow-deps
 npm -g install snyk
 npm -g install stylelint
 npm -g install svgo
-npm -g install tern
+#npm -g install tern
 npm -g install topojson-client
 npm -g install topojson-server
 npm -g install toposjson-simplify

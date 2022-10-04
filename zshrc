@@ -1,6 +1,5 @@
-export PATH="${PATH}:${HOME}/.local/bin"
 # Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 export PATH="${PATH}:${HOME}/.local/bin"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -190,9 +189,12 @@ if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
   export PATH="/home/ivan/.local/bin:$PATH"
 fi
 
-# chruby on linux / WSL
+# chruby on linux / WSL or brew ruby on OS X
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
   source /usr/local/share/chruby/chruby.sh
+fi
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+  export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 fi
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -206,4 +208,4 @@ export BUN_INSTALL="/Users/ivan/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
