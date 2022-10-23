@@ -63,10 +63,6 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 # use keychain for a long running ssh agent process
 # eval `keychain --eval --agents ssh --inherit any id_dsa`
 
-# env vars and aliases
-. ~/dotfiles/zsh/env
-. ~/dotfiles/zsh/aliases
-. ~/dotfiles/zsh/private_keys
 
 # Java on Linux
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
@@ -106,7 +102,6 @@ PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 # Cabal configuration
 export PATH=$HOME/.cabal/bin:$PATH
   # Requires iterm2
-
 
 # Serverless Framework
 #
@@ -215,6 +210,13 @@ export PNPM_HOME="/Users/ivanstorck/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
+# env vars and aliases
+. ~/dotfiles/zsh/env
+. ~/dotfiles/zsh/aliases
+. ~/dotfiles/zsh/private_keys
+
+alias ll="exa -la -s modified"
+alias lo="exa -la -s modified"
+
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-
