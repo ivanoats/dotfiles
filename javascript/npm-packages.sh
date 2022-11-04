@@ -46,4 +46,5 @@ npm -g install topojson-client
 npm -g install topojson-server
 npm -g install toposjson-simplify
 npm -g install typescript
+npm -g install trash-cli
 npm -g install uncss
