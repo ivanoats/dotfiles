@@ -60,6 +60,10 @@ source $ZSH/oh-my-zsh.sh
 # try to make ssh agent work better
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
+# disable ll alias
+zstyle ':omz:plugins:*' aliases no
+zstyle ':omz:lib:*' aliases no
+
 # use keychain for a long running ssh agent process
 # eval `keychain --eval --agents ssh --inherit any id_dsa`
 
@@ -215,6 +219,7 @@ export PATH="$PNPM_HOME:$PATH"
 . ~/dotfiles/zsh/aliases
 . ~/dotfiles/zsh/private_keys
 
+unalias ll
 alias ll="exa -la -s modified"
 alias lo="exa -la -s modified"
 
