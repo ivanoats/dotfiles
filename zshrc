@@ -67,7 +67,6 @@ zstyle ':omz:lib:*' aliases no
 # use keychain for a long running ssh agent process
 # eval `keychain --eval --agents ssh --inherit any id_dsa`
 
-
 # Java on Linux
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
     if [[ -r /usr/local/java ]]; then
