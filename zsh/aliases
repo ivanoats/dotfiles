@@ -70,7 +70,7 @@ alias retag="ctags --exclude=*.js --extra=+f -R *"
 alias zipr="zip -r" #directory.zip directory
 alias upstream="git rev-parse --abbrev-ref @{u}"
 # this is getting overridden by https://github.com/ohmyzsh/ohmyzsh/blob/0066280c3e971e1e45a9037f6d0b993dabcc3576/lib/directories.zsh#L37
-alias ll="exa -la -s modified"
+alias ll="eza -la -s modified"
 alias g="git status"
 alias gnb="git --no-pager branch"
 alias gbc="git --no-pager branch | ipt | xargs git checkout"
