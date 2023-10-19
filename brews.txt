@@ -55,7 +55,7 @@ emacs-mac
 emacs-plus@27
 epsilon
 erlang
-exa
+eza
 exiftool
 expat
 fd
