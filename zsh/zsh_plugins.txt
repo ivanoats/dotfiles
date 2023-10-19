@@ -1,0 +1,19 @@
+romkatv/zsh-bench kind:path
+romkatv/powerlevel10k kind:fpath
+
+oh-my-zsh/ohmyzsh path:lib/git
+oh-my-zsh/ohmyzsh path:lib/gitfast
+oh-my-zsh/ohmyzsh path:lib/git-extras
+oh-my-zsh/ohmyzsh path:lib/docker
+oh-my-zsh/ohmyzsh path:lib/npm
+oh-my-zsh/ohmyzsh path:lib/node
+oh-my-zsh/ohmyzsh path:lib/pip
+oh-my-zsh/ohmyzsh path:lib/web-search
+oh-my-zsh/ohmyzsh path:lib/osx
+
+zsh-users/zsh-completions
+belak/zsh-utils path:completion
+
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-syntax-highlighting
+MichaelAquilina/zsh-auto-notify

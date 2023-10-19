@@ -17,33 +17,16 @@ export OSTYPE_REAL=${OSTYPE//[0-9.]/}
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
-#source $HOME/dotfiles/zsh/antigen.zsh
-# antigen theme romkatv/powerlevel10k
-# antigen use oh-my-zsh
-# antigen bundle git
-# antigen bundle gitfast
-# antigen bundle git-extras
-# antigen bundle docker
-# antigen bundle npm
-# antigen bundle node
-# antigen bundle pip
-# antigen bundle web-search
-# # use nvm now because it works better on m1 macs 
-# antigen bundle lukechilds/zsh-nvm
-# windows 10 
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 if [[ $(hostname) == "thuja" ]]; then
 #  antigen bundle asdf
 fi
-# antigen bundle zsh-users/zsh-completions
-# antigen bundle zsh-users/zsh-autosuggestions
-# antigen bundle zsh-users/zsh-syntax-highlighting
 alias notify-send $HOME/dotfiles/bin/wsl-notify
-# antigen bundle "MichaelAquilina/zsh-auto-notify"
 
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
 #   antigen bundle osx
 fi
-# antigen apply
+antidote load
 
 # auto complete ..
 autoload -Uz compinit -i

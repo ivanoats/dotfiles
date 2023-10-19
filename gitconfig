@@ -7,6 +7,8 @@
 	excludesfile = /Users/ivan/.gitignore_global
 [credential]
 	helper = manager-core
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
 [web]
 	browser = open
 [difftool "sourcetree"]
@@ -48,3 +50,5 @@
 	defaultBranch = main
 [commit]
 	template = /Users/ivan/.stCommitMsg
+[credential "https://dev.azure.com"]
+	useHttpPath = true
