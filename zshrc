@@ -18,15 +18,7 @@ export OSTYPE_REAL=${OSTYPE//[0-9.]/}
 # CASE_SENSITIVE="true"
 
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-if [[ $(hostname) == "thuja" ]]; then
-#  antigen bundle asdf
-fi
-alias notify-send $HOME/dotfiles/bin/wsl-notify
-
-if [[ $OSTYPE_REAL == 'darwin' ]]; then
-#   antigen bundle osx
-fi
-antidote load
+antidote load $HOME/.zsh_plugins.txt
 
 # auto complete ..
 autoload -Uz compinit -i
@@ -205,7 +197,7 @@ unalias ll
 alias ll="eza -la -s modified"
 alias lo="eza -la -s modified"
 
-[ -f "/Users/ivan/.ghcup/env" ] && source "/Users/ivan/.ghcup/env" # ghcup-env
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

@@ -10,6 +10,7 @@ oh-my-zsh/ohmyzsh path:lib/node
 oh-my-zsh/ohmyzsh path:lib/pip
 oh-my-zsh/ohmyzsh path:lib/web-search
 oh-my-zsh/ohmyzsh path:lib/osx
+oh-my-zsh/ohmyzsh path:plugins/asdf
 
 zsh-users/zsh-completions
 belak/zsh-utils path:completion
