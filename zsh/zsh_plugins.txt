@@ -1,16 +1,16 @@
 romkatv/zsh-bench kind:path
 romkatv/powerlevel10k kind:fpath
 
-oh-my-zsh/ohmyzsh path:lib/git
-oh-my-zsh/ohmyzsh path:lib/gitfast
-oh-my-zsh/ohmyzsh path:lib/git-extras
-oh-my-zsh/ohmyzsh path:lib/docker
-oh-my-zsh/ohmyzsh path:lib/npm
-oh-my-zsh/ohmyzsh path:lib/node
-oh-my-zsh/ohmyzsh path:lib/pip
-oh-my-zsh/ohmyzsh path:lib/web-search
-oh-my-zsh/ohmyzsh path:lib/osx
-oh-my-zsh/ohmyzsh path:plugins/asdf
+ohmyzsh/ohmyzsh path:lib/git
+ohmyzsh/ohmyzsh path:lib/gitfast
+ohmyzsh/ohmyzsh path:lib/git-extras
+ohmyzsh/ohmyzsh path:lib/docker
+ohmyzsh/ohmyzsh path:lib/npm
+ohmyzsh/ohmyzsh path:lib/node
+ohmyzsh/ohmyzsh path:lib/pip
+ohmyzsh/ohmyzsh path:lib/web-search
+ohmyzsh/ohmyzsh path:lib/osx
+ohmyzsh/ohmyzsh path:plugins/asdf
 
 zsh-users/zsh-completions
 belak/zsh-utils path:completion
