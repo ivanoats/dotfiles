@@ -5,8 +5,6 @@
   pager = delta
 	quotepath = false
 	excludesfile = $HOME/.gitignore_global
-[credential]
-	helper = manager-core
 [web]
 	browser = open
 [difftool "sourcetree"]
