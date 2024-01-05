@@ -1,20 +1,20 @@
 romkatv/zsh-bench kind:path
 romkatv/powerlevel10k kind:fpath
 
-ohmyzsh/ohmyzsh path:lib/git
-ohmyzsh/ohmyzsh path:lib/gitfast
-ohmyzsh/ohmyzsh path:lib/git-extras
-ohmyzsh/ohmyzsh path:lib/docker
-ohmyzsh/ohmyzsh path:lib/npm
-ohmyzsh/ohmyzsh path:lib/node
-ohmyzsh/ohmyzsh path:lib/pip
-ohmyzsh/ohmyzsh path:lib/web-search
-ohmyzsh/ohmyzsh path:lib/osx
-ohmyzsh/ohmyzsh path:plugins/asdf
-
 zsh-users/zsh-completions
 belak/zsh-utils path:completion
 
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
 MichaelAquilina/zsh-auto-notify
+
+ohmyzsh/ohmyzsh path:plugins/git
+ohmyzsh/ohmyzsh path:plugins/gitfast
+ohmyzsh/ohmyzsh path:plugins/git-extras
+#ohmyzsh/ohmyzsh path:plugins/docker
+ohmyzsh/ohmyzsh path:plugins/npm
+ohmyzsh/ohmyzsh path:plugins/node
+ohmyzsh/ohmyzsh path:plugins/pip
+ohmyzsh/ohmyzsh path:plugins/web-search
+ohmyzsh/ohmyzsh path:plugins/macos
+ohmyzsh/ohmyzsh path:plugins/asdf
