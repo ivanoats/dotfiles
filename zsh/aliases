@@ -40,8 +40,6 @@ function pvcp()
     pv ${SOURCE} | > ${DESTINATION}
 }
 
-growl() { echo -e $'\e]9;'${1}'\007' ; return ; }
-
 function newpass() {xkcd-password -s $(jot -r 1 1 9) -f ~/wordfile|pbcopy}
 
 # MAC OS X ONLY
