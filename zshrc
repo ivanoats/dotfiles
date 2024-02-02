@@ -18,11 +18,14 @@ export OSTYPE_REAL=${OSTYPE//[0-9.]/}
 # CASE_SENSITIVE="true"
 
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-antidote load $HOME/.zsh_plugins.txt
+antidote load
+
+# prompt plugins need this
+autoload -Uz promptinit && promptinit && prompt powerlevel10k
 
 # auto complete ..
-autoload -Uz compinit -i
-# compinit -i # needs -i to remove security warning
+autoload -U +X bashcompinit && bashcompinit
+autoload -U +X compinit && compinit
 
 # Fix multiple users brew
 ZSH_DISABLE_COMPFIX=true
@@ -30,7 +33,8 @@ ZSH_DISABLE_COMPFIX=true
 COMPLETION_WAITING_DOTS="true"
 
 # load up oh my zsh
-source $ZSH/oh-my-zsh.sh
+# taken care of by antidote?
+#source $ZSH/oh-my-zsh.sh
 
 # try to make ssh agent work better
 zstyle :omz:plugins:ssh-agent agent-forwarding on
