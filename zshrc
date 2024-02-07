@@ -32,6 +32,8 @@ ZSH_DISABLE_COMPFIX=true
 
 COMPLETION_WAITING_DOTS="true"
 
+set -o AUTO_CD
+
 # load up oh my zsh
 # taken care of by antidote?
 #source $ZSH/oh-my-zsh.sh
