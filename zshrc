@@ -205,3 +205,5 @@ alias ll="eza -la -s modified"
 alias lo="eza -la -s modified"
 
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
+
+PATH=~/.console-ninja/.bin:$PATH
