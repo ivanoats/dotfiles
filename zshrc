@@ -123,17 +123,16 @@ iterm2_print_user_vars() {
   iterm2_set_user_var arch $(arch)
 }
 
-# commented out while using asdf for lll
-# M1 Macs: set up brew nvm and bash completion
-#if [[ $OSTYPE_REAL == 'darwin' ]]; then
-#  local brew_opt_path="/opt/homebrew/opt"
-#  local nvm_path="$HOME/.nvm"
+ M1 Macs: set up brew nvm and bash completion
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+  local brew_opt_path="/opt/homebrew/opt"
+  local nvm_path="$HOME/.nvm"
 
-#  export NVM_DIR="${nvm_path}"
+  export NVM_DIR="${nvm_path}"
 
-#  [ -s "${brew_opt_path}/nvm/nvm.sh" ] && . "${brew_opt_path}/nvm/nvm.sh"
-#  [ -s "${brew_opt_path}/nvm/etc/bash_completion.d/nvm" ] && . "${brew_opt_path}/nvm/etc/bash_completion.d/nvm"
-#fi
+  [ -s "${brew_opt_path}/nvm/nvm.sh" ] && . "${brew_opt_path}/nvm/nvm.sh"
+  [ -s "${brew_opt_path}/nvm/etc/bash_completion.d/nvm" ] && . "${brew_opt_path}/nvm/etc/bash_completion.d/nvm"
+fi
 
 # PHP including composer on OS X
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
