@@ -210,9 +210,9 @@ let g:ycm_autoclose_preview_window_after_comletion=1
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 let python_highlight_all=1
-if has("unix")
-  let g:python3_host_prog="$HOME/.asdf/shims/python3"
-endif
+#if has("unix")
+#  let g:python3_host_prog="$HOME/.asdf/shims/python3"
+#endif
 
 " Project Specific settings
 set exrc

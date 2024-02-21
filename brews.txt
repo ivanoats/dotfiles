@@ -6,7 +6,6 @@ apr
 apr-util
 argon2
 asciinema
-asdf
 aspell
 augeas
 autoconf
