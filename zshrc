@@ -209,4 +209,11 @@ if [[ $OSTYPE_REAL == 'darwin' ]] {
 }
 PATH=~/.console-ninja/.bin:$PATH
 
+# my functions path
+fpath=($HOME/.zsh/functions $HOME/dotfiles/zsh/functions $fpath)
+# Run the above function in ZSH whenever you change directory
+autoload -U add-zsh-hook
+add-zsh-hook chpwd auto-switch-node-version
+auto-switch-node-version
+
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
