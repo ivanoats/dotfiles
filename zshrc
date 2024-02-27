@@ -204,5 +204,9 @@ alias ll="eza -la -s modified"
 alias lo="eza -la -s modified"
 
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
-
+if [[ $OSTYPE_REAL == 'darwin' ]] {
+  source /Users/ivan/.config/broot/launcher/bash/br
+}
 PATH=~/.console-ninja/.bin:$PATH
+
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
