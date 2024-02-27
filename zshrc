@@ -123,7 +123,7 @@ iterm2_print_user_vars() {
   iterm2_set_user_var arch $(arch)
 }
 
- M1 Macs: set up brew nvm and bash completion
+#  M1 Macs: set up brew nvm and bash completion
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
   local brew_opt_path="/opt/homebrew/opt"
   local nvm_path="$HOME/.nvm"
