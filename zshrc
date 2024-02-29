@@ -123,17 +123,6 @@ iterm2_print_user_vars() {
   iterm2_set_user_var arch $(arch)
 }
 
-#  M1 Macs: set up brew nvm and bash completion
-if [[ $OSTYPE_REAL == 'darwin' ]]; then
-  local brew_opt_path="/opt/homebrew/opt"
-  local nvm_path="$HOME/.nvm"
-
-  export NVM_DIR="${nvm_path}"
-
-  [ -s "${brew_opt_path}/nvm/nvm.sh" ] && . "${brew_opt_path}/nvm/nvm.sh"
-  [ -s "${brew_opt_path}/nvm/etc/bash_completion.d/nvm" ] && . "${brew_opt_path}/nvm/etc/bash_completion.d/nvm"
-fi
-
 # PHP including composer on OS X
 if [[ $OSTYPE_REAL == 'darwin' ]]; then
     export PATH="$(brew --prefix php)/bin:$PATH"
@@ -209,6 +198,11 @@ if [[ $OSTYPE_REAL == 'darwin' ]] {
 }
 PATH=~/.console-ninja/.bin:$PATH
 
+# NVM - Node Version Manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # my functions path
 fpath=($HOME/.zsh/functions $HOME/dotfiles/zsh/functions $fpath)
 # Run the above function in ZSH whenever you change directory
@@ -216,4 +210,5 @@ autoload -U add-zsh-hook
 add-zsh-hook chpwd auto-switch-node-version
 auto-switch-node-version
 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+source /Users/ivan/.config/broot/launcher/bash/br
