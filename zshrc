@@ -210,5 +210,4 @@ autoload -U add-zsh-hook
 add-zsh-hook chpwd auto-switch-node-version
 auto-switch-node-version
 
-
 source /Users/ivan/.config/broot/launcher/bash/br
