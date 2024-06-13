@@ -75,11 +75,6 @@ Plugin 'plytophogy/vim-virtualenv'
 " Rust language
 Plugin 'rust-lang/rust.vim'
 Plugin 'racer-rust/vim-racer'
-" Reason language
-Plugin 'reasonml-editor/vim-reason-plus'
-let g:LanguageClient_serverCommands = {
-    \ 'reason': ['/Users/ivan/bin/reason-language-server/reason-language-server.exe']
-    \ }
 
 set shell=$SHELL
 set completeopt+=preview
@@ -165,13 +160,6 @@ let g:syntastic_html_tidy_exec = 'tidy5'
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
 
-" waiting until eclipse has ruby 1.9 syntax support
-" for YouCompleteMe only
-"let g:EclimCompletionMethod = 'omnifunc'
-
-" For Supertab + Eclim
-let g:SuperTabDefaultCompletionType = 'context'
-
 " On enter update/create tags
 autocmd VimEnter * call UpdateOrCreateTagsFile()
 
@@ -210,9 +198,6 @@ let g:ycm_autoclose_preview_window_after_comletion=1
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 let python_highlight_all=1
-#if has("unix")
-#  let g:python3_host_prog="$HOME/.asdf/shims/python3"
-#endif
 
 " Project Specific settings
 set exrc
