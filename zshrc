@@ -180,7 +180,10 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 # pnpm end
 
 # env vars and aliases
@@ -211,3 +214,7 @@ add-zsh-hook chpwd auto-switch-node-version
 auto-switch-node-version
 
 source $HOME/.config/broot/launcher/bash/br
+
+source <(fzf --zsh)
+
+eval "$(zoxide init zsh)"
