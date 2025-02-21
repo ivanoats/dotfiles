@@ -199,7 +199,7 @@ alias lo="eza -la -s modified"
 if [[ $OSTYPE_REAL == 'darwin' ]] {
   source /Users/ivan/.config/broot/launcher/bash/br
 }
-PATH=~/.console-ninja/.bin:$PATH
+
 
 # NVM - Node Version Manager
 export NVM_DIR="$HOME/.nvm"
