@@ -22,7 +22,6 @@ c-ares
 cabal-install
 cairo
 calc
-camlp4
 cfitsio
 cgal
 clingo
@@ -33,14 +32,12 @@ coreutils
 cowsay
 cscope
 ctags
-ctls
 curl
 curl-openssl
 dav1d
 deno
 dialog
 direnv
-dirmngr
 dnsmasq
 docbook
 docbook-xsl
@@ -50,8 +47,6 @@ dust
 dynamodb-local
 eigen
 elixir
-emacs-mac
-emacs-plus@27
 epsilon
 erlang
 eza
@@ -93,7 +88,6 @@ gnupg2
 gnutls
 go
 gobject-introspection
-gpg-agent
 graphicsmagick
 graphite2
 graphviz
@@ -104,8 +98,6 @@ guile
 harfbuzz
 hdf5
 heroku
-heroku-node
-heroku-toolbelt
 highlight
 httpd
 httpie
@@ -115,13 +107,11 @@ hugo
 hwloc
 hyperfine
 icu4c
-ilmbase
 imagemagick
 imagemagick@6
 isl
 jansson
 jasper
-javarepl
 jbake
 jemalloc
 jenv
@@ -153,7 +143,6 @@ libidn
 libidn2
 libksba
 liblqr
-liblwgeom
 libmatio
 libmaxminddb
 libmetalink
@@ -192,7 +181,7 @@ libyaml
 libzip
 little-cms2
 lua
-lua@5.1
+lua@5.3
 luajit
 lzlib
 lzo
@@ -200,7 +189,6 @@ mackup
 mariadb
 mas
 maven
-mcrypt
 mecab
 mecab-ipadic
 mercurial
@@ -210,7 +198,6 @@ mono
 mosh
 mpfr
 msgpack
-namebench
 nasm
 ncurses
 neofetch
@@ -267,7 +254,6 @@ protobuf
 protobuf-c
 pth
 pv
-py2cairo
 py3cairo
 pyenv
 pygobject3
@@ -293,9 +279,9 @@ screenresolution
 sd
 sdl
 sdl2
-sdl_image
-sdl_mixer
-sdl_ttf
+sdl2_image
+sdl2_mixer
+sdl2_ttf
 selenium-server-standalone
 sfcgal
 shared-mime-info
@@ -307,7 +293,6 @@ sqlite
 srt
 stoken
 swig
-szip
 tcl-tk
 terraform
 tesseract
@@ -324,7 +309,6 @@ trash
 tree
 ttygif
 ttyrec
-typesafe-activator
 unbound
 unibilium
 unixodbc
@@ -339,9 +323,7 @@ wxmac
 x264
 x265
 xerces-c
-xhyve
 xmlto
-xterrafile
 xvid
 xz
 yarn

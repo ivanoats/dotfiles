@@ -197,14 +197,16 @@ alias lo="eza -la -s modified"
 
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 if [[ $OSTYPE_REAL == 'darwin' ]] {
-  source /Users/ivan/.config/broot/launcher/bash/br
+  source $HOME/.config/broot/launcher/bash/br
 }
 
 
 # NVM - Node Version Manager
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # my functions path
 fpath=($HOME/.zsh/functions $HOME/dotfiles/zsh/functions $fpath)
@@ -212,8 +214,6 @@ fpath=($HOME/.zsh/functions $HOME/dotfiles/zsh/functions $fpath)
 autoload -U add-zsh-hook
 add-zsh-hook chpwd auto-switch-node-version
 auto-switch-node-version
-
-source $HOME/.config/broot/launcher/bash/br
 
 source <(fzf --zsh)
 
