@@ -218,3 +218,4 @@ source $HOME/.config/broot/launcher/bash/br
 source <(fzf --zsh)
 
 eval "$(zoxide init zsh)"
+PATH=~/.console-ninja/.bin:$PATH
