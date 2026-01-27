@@ -2,6 +2,9 @@ export CLICOLOR=1
 export HISTFILESIZE=3000
 export TERM=xterm-256color
 export LANG=en_US.UTF-8
+export NUXEO_HOME=$HOME/dev/nuxeo-server-tomcat-2025.0
+export NUXEO_ENVIRONMENT=local
+
 
 if [[ ${OSTYPE//[0-9.]/} == 'darwin' ]]; then
   # export EDITOR="nvim"
