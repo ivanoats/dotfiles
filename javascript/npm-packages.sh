@@ -1,6 +1,7 @@
 #!/bin/zsh
 npm -g install @commitlint/cli 
 npm -g install @commitlint/config-conventional
+npm -g install @mermaid-js/mermaid-cli
 npm -g install babel-cli
 npm -g install babel-node-debug
 npm -g install conventional-changelog-cli
