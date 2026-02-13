@@ -22,16 +22,19 @@ jobs:
           fi
 
       - name: Comment on PR with deployment URL
-        if: github.event.deployment_status.state == 'success' && github.event.pull_request
+        if: github.event.deployment_status.state == 'success' && github.event.deployment.payload.pull_request
         uses: actions/github-script@v7
         with:
           script: |
             const deployUrl = '${{ github.event.deployment_status.target_url }}';
             const environment = '${{ github.event.deployment_status.environment }}';
+            const prNumber = context.payload.deployment.payload.pull_request.number;
             
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: `## 🚀 Netlify Deployment Successful\n\n**Environment:** ${environment}\n**Preview URL:** ${deployUrl}\n\nYour changes have been deployed and are ready for review!`
-            });
+            if (prNumber) {
+              await github.rest.issues.createComment({
+                issue_number: prNumber,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `## 🚀 Netlify Deployment Successful\n\n**Environment:** ${environment}\n**Preview URL:** ${deployUrl}\n\nYour changes have been deployed and are ready for review!`
+              });
+            }

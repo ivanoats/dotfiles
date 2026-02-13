@@ -38,7 +38,12 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get install -y shellcheck
           echo "Running security-focused shellcheck..."
+          EXIT_CODE=0
           find . -type f -name "*.sh" -not -path "./.git/*" | while read -r script; do
             echo "Security checking $script..."
-            shellcheck -S warning "$script" || true
+            if ! shellcheck -S warning "$script"; then
+              echo "⚠️ Security issue found in $script"
+              EXIT_CODE=1
+            fi
           done
+          exit $EXIT_CODE
