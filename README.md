@@ -71,6 +71,7 @@ cp zsh/private_keys.template zsh/private_keys
 
 # 4. Create symlinks
 ln -s ~/dotfiles/zshrc ~/.zshrc
+ln -s ~/dotfiles/zsh/zsh_plugins.txt ~/.zsh_plugins.txt
 ln -s ~/dotfiles/nvim ~/.config/nvim
 # Or run the legacy makesymlinks.sh for all configs (includes old vim, etc.)
 # ./makesymlinks.sh
