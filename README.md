@@ -9,7 +9,7 @@
 
 This repository contains carefully crafted **ZSH and Neovim configurations** that work seamlessly on **macOS** (Intel & Apple Silicon) and **Ubuntu 24.04.3 LTS**. Get a productive terminal and editor setup in minutes with modern tools, beautiful themes, and smart defaults.
 
-> **Note:** This repository also contains legacy configuration files for vim (old vimscript), tmux, and bash that are maintained for historical purposes but are not actively developed.
+> **Note:** This repository also contains legacy configuration files for vim (old Vimscript), tmux, and bash that are maintained for historical purposes but are not actively developed.
 
 ## ✨ Features
 
