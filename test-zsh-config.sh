@@ -43,7 +43,21 @@ echo ""
 
 # Test 3: Check zshrc syntax
 echo "📋 Test 3: Validating zshrc Syntax"
-cd ~/dotfiles 2>/dev/null || cd /home/runner/work/dotfiles/dotfiles
+
+# Find dotfiles directory
+DOTFILES_DIR=""
+if [[ -d ~/dotfiles ]]; then
+    DOTFILES_DIR=~/dotfiles
+elif [[ -d /home/runner/work/dotfiles/dotfiles ]]; then
+    DOTFILES_DIR=/home/runner/work/dotfiles/dotfiles
+fi
+
+if [[ -z "$DOTFILES_DIR" ]]; then
+    echo "   ${RED}✗${NC} Cannot find dotfiles directory"
+    exit 1
+fi
+
+cd "$DOTFILES_DIR" 2>/dev/null || cd /home/runner/work/dotfiles/dotfiles
 if zsh -n zshrc 2>&1; then
     echo "   ${GREEN}✓${NC} zshrc syntax is valid"
     ((TESTS_PASSED++))
@@ -98,8 +112,8 @@ echo ""
 echo "📋 Test 6: Checking for Unguarded macOS-Specific Commands"
 ISSUES=0
 
-# Check for brew without guards (but inside command -v brew blocks is OK)
-if grep -n "brew --prefix\|brew info" zshrc | grep -v "command -v brew" | grep -v "if.*brew"; then
+# Check for macOS-only commands without proper guards (but inside command -v brew blocks is OK)
+if grep -E -n "brew --prefix|brew info" zshrc | grep -v "command -v brew" | grep -v "if.*brew"; then
     echo "   ${YELLOW}⚠${NC} Found potentially unguarded brew commands (review manually)"
     ((WARNINGS++))
     ISSUES=1
@@ -147,7 +161,7 @@ echo ""
 
 # Test 9: Test NVM path detection
 echo "📋 Test 9: Checking NVM Configuration"
-if grep -q "NVM_DIR.*nvm.sh" zshrc && grep -q 'OSTYPE_REAL.*darwin.*homebrew.*nvm' zshrc; then
+if grep -q "NVM_DIR.*nvm.sh" zshrc && grep -q "OSTYPE_REAL.*darwin" zshrc && grep -q "homebrew.*nvm" zshrc; then
     echo "   ${GREEN}✓${NC} NVM configuration supports both macOS and Linux"
     ((TESTS_PASSED++))
 else

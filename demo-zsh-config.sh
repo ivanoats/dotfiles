@@ -6,7 +6,22 @@ echo "║      ZSH Configuration Demo on Ubuntu 24.04.3 LTS            ║"
 echo "╚═══════════════════════════════════════════════════════════════╝"
 echo ""
 
-cd /home/runner/work/dotfiles/dotfiles
+# Find dotfiles directory - try multiple locations
+DOTFILES_DIR=""
+if [[ -d ~/dotfiles ]]; then
+    DOTFILES_DIR=~/dotfiles
+elif [[ -d /home/runner/work/dotfiles/dotfiles ]]; then
+    DOTFILES_DIR=/home/runner/work/dotfiles/dotfiles
+elif [[ -d "$(dirname "$0")" ]]; then
+    DOTFILES_DIR="$(dirname "$0")"
+fi
+
+if [[ -z "$DOTFILES_DIR" ]] || [[ ! -f "$DOTFILES_DIR/zshrc" ]]; then
+    echo "Error: Cannot find dotfiles directory with zshrc"
+    exit 1
+fi
+
+cd "$DOTFILES_DIR"
 
 # Source the configuration
 echo "Loading zshrc configuration..."
