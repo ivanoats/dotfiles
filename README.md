@@ -6,6 +6,8 @@
 [![Shell](https://img.shields.io/badge/shell-zsh-green.svg)](https://www.zsh.org/)
 [![Editor](https://img.shields.io/badge/editor-neovim-green.svg)](https://neovim.io/)
 [![License](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE)
+[![CI](https://github.com/ivanoats/dotfiles/workflows/CI%20-%20Test%20Shell%20Configuration/badge.svg)](https://github.com/ivanoats/dotfiles/actions/workflows/ci.yml)
+[![Markdown Lint](https://github.com/ivanoats/dotfiles/workflows/Markdown%20Linting/badge.svg)](https://github.com/ivanoats/dotfiles/actions/workflows/markdown-lint.yml)
 
 This repository contains carefully crafted **ZSH and Neovim configurations** that work seamlessly on **macOS** (Intel & Apple Silicon) and **Ubuntu 24.04.3 LTS**. Get a productive terminal and editor setup in minutes with modern tools, beautiful themes, and smart defaults.
 
@@ -101,6 +103,7 @@ sudo apt-get install -y fzf eza bat fd-find ripgrep neovim
 - **[SETUP.md](SETUP.md)** - Comprehensive installation guide with platform-specific instructions
 - **[SUGGESTIONS.md](SUGGESTIONS.md)** - Future improvements and optimization ideas
 - **[TEST_RESULTS.md](TEST_RESULTS.md)** - Automated test results and verification
+- **[.github/README.md](.github/README.md)** - GitHub Actions and CI/CD documentation
 
 ## 🎯 Supported Platforms
 
@@ -158,6 +161,19 @@ Customize your prompt by running:
 ```bash
 p10k configure
 ```
+
+## 🔄 Continuous Integration
+
+This repository uses GitHub Actions for automated quality assurance:
+
+- **✅ Cross-Platform Testing** - Validates configurations on Ubuntu and macOS
+- **📝 Documentation Quality** - Markdown linting, link checking, and spell checking
+- **🔒 Security Scanning** - Automated secret detection and vulnerability scanning
+- **🏷️ Auto-Labeling** - PRs are automatically labeled based on changed files
+- **🔄 Dependency Updates** - Dependabot keeps GitHub Actions up-to-date
+- **🌐 Netlify Integration** - Deployment status updates on PRs
+
+See [.github/README.md](.github/README.md) for detailed documentation on all workflows.
 
 ## 🤝 Contributing
 
