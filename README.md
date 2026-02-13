@@ -2,12 +2,13 @@
 
 > A modern, cross-platform **ZSH and Neovim configuration** for developers who want a powerful and beautiful command-line experience.
 
-[![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Ubuntu-blue.svg)](https://github.com/ivanoats/dotfiles)
+[![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Ubuntu%20%7C%20Codespaces-blue.svg)](https://github.com/ivanoats/dotfiles)
+[![Codespaces](https://img.shields.io/badge/Codespaces-compatible-brightgreen.svg)](https://github.com/features/codespaces)
 [![Shell](https://img.shields.io/badge/shell-zsh-green.svg)](https://www.zsh.org/)
 [![Editor](https://img.shields.io/badge/editor-neovim-green.svg)](https://neovim.io/)
 [![License](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE)
 
-This repository contains carefully crafted **ZSH and Neovim configurations** that work seamlessly on **macOS** (Intel & Apple Silicon) and **Ubuntu 24.04.3 LTS**. Get a productive terminal and editor setup in minutes with modern tools, beautiful themes, and smart defaults.
+This repository contains carefully crafted **ZSH and Neovim configurations** that work seamlessly on **macOS** (Intel & Apple Silicon), **Ubuntu 24.04.3 LTS**, and **GitHub Codespaces**. Get a productive terminal and editor setup in minutes with modern tools, beautiful themes, and smart defaults.
 
 > **Note:** This repository also contains legacy configuration files for vim (old Vimscript), tmux, and bash that are maintained for historical purposes but are not actively developed.
 
@@ -50,13 +51,47 @@ This repository contains carefully crafted **ZSH and Neovim configurations** tha
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- **macOS** or **Ubuntu 24.04.3 LTS**
+### For GitHub Codespaces (Easiest!)
+
+This repository is fully compatible with **GitHub Codespaces**! Simply enable it in your [Codespaces settings](https://github.com/settings/codespaces):
+
+1. Go to [GitHub Codespaces Settings](https://github.com/settings/codespaces)
+2. Under "Dotfiles", check **"Automatically install dotfiles"**
+3. Select **`ivanoats/dotfiles`** from the repository dropdown
+4. Create any new Codespace - your dotfiles will be automatically installed! 🎉
+
+The `install.sh` script will automatically:
+- Install Antidote plugin manager
+- Create necessary symlinks
+- Set up your ZSH and Neovim configuration
+
+### Manual Installation
+
+#### Prerequisites
+- **macOS** or **Ubuntu 24.04.3 LTS** (or GitHub Codespaces)
 - zsh shell
 - git
 - neovim 0.8+ (for the nvim configuration)
 
-### Installation
+#### Option 1: Using the Install Script (Recommended)
+
+```bash
+# 1. Clone this repository
+git clone https://github.com/ivanoats/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+
+# 2. Run the install script
+./install.sh
+
+# 3. Restart your terminal or source the configuration
+source ~/.zshrc
+
+# 4. Open Neovim to automatically install plugins (first time only)
+nvim
+# Packer will automatically install all plugins on first launch
+```
+
+#### Option 2: Manual Setup
 
 ```bash
 # 1. Clone this repository
@@ -107,6 +142,7 @@ sudo apt-get install -y fzf eza bat fd-find ripgrep neovim
 
 | Platform | Status | Tested Version |
 |----------|--------|----------------|
+| **GitHub Codespaces** | ✅ **Fully Compatible** | Latest |
 | macOS (Intel) | ✅ Supported | macOS 13+ |
 | macOS (Apple Silicon) | ✅ Supported | macOS 13+ |
 | Ubuntu | ✅ Supported | 24.04.3 LTS |
