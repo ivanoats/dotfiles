@@ -50,14 +50,21 @@ if [[ -d ~/dotfiles ]]; then
     DOTFILES_DIR=~/dotfiles
 elif [[ -d /home/runner/work/dotfiles/dotfiles ]]; then
     DOTFILES_DIR=/home/runner/work/dotfiles/dotfiles
+elif [[ -d /Users/runner/work/dotfiles/dotfiles ]]; then
+    DOTFILES_DIR=/Users/runner/work/dotfiles/dotfiles
+elif [[ -d "$(pwd)" && -f "$(pwd)/zshrc" ]]; then
+    # We're already in the dotfiles directory
+    DOTFILES_DIR=$(pwd)
 fi
 
 if [[ -z "$DOTFILES_DIR" ]]; then
     echo "   ${RED}✗${NC} Cannot find dotfiles directory"
+    echo "   Current directory: $(pwd)"
+    echo "   Checked: ~/dotfiles, /home/runner/work/dotfiles/dotfiles, /Users/runner/work/dotfiles/dotfiles"
     exit 1
 fi
 
-cd "$DOTFILES_DIR" 2>/dev/null || cd /home/runner/work/dotfiles/dotfiles
+cd "$DOTFILES_DIR" 2>/dev/null || { echo "   ${RED}✗${NC} Cannot cd to $DOTFILES_DIR"; exit 1; }
 if zsh -n zshrc 2>&1; then
     echo "   ${GREEN}✓${NC} zshrc syntax is valid"
     ((TESTS_PASSED++))

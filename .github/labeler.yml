@@ -1,0 +1,54 @@
+# Labeler configuration for auto-labeling PRs based on changed files
+# Format for actions/labeler@v5
+
+documentation:
+  - changed-files:
+    - any-glob-to-any-file: '**/*.md'
+
+zsh:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'zshrc'
+      - 'zsh/**/*'
+
+bash:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'bashrc*'
+      - 'bash/**/*'
+
+neovim:
+  - changed-files:
+    - any-glob-to-any-file: 'nvim/**/*'
+
+vim:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'vim/**/*'
+      - '.vimrc'
+
+git:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'gitconfig'
+      - 'gitignore_global'
+
+tmux:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'tmux.conf'
+      - '.tmux.*'
+
+scripts:
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**/*.sh'
+      - 'bin/**/*'
+
+ci:
+  - changed-files:
+    - any-glob-to-any-file: '.github/**/*'
+
+dependencies:
+  - changed-files:
+    - any-glob-to-any-file: 'brews.txt'
