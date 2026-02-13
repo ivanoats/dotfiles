@@ -1,40 +1,54 @@
 # Labeler configuration for auto-labeling PRs based on changed files
+# Format for actions/labeler@v5
 
 documentation:
-  - '**/*.md'
-  - 'SETUP.md'
-  - 'SUGGESTIONS.md'
-  - 'TEST_RESULTS.md'
+  - changed-files:
+    - any-glob-to-any-file: '**/*.md'
 
 zsh:
-  - 'zshrc'
-  - 'zsh/**/*'
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'zshrc'
+      - 'zsh/**/*'
 
 bash:
-  - 'bashrc*'
-  - 'bash/**/*'
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'bashrc*'
+      - 'bash/**/*'
 
 neovim:
-  - 'nvim/**/*'
+  - changed-files:
+    - any-glob-to-any-file: 'nvim/**/*'
 
 vim:
-  - 'vim/**/*'
-  - '.vimrc'
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'vim/**/*'
+      - '.vimrc'
 
 git:
-  - 'gitconfig'
-  - 'gitignore_global'
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'gitconfig'
+      - 'gitignore_global'
 
 tmux:
-  - 'tmux.conf'
-  - '.tmux.*'
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'tmux.conf'
+      - '.tmux.*'
 
 scripts:
-  - '**/*.sh'
-  - 'bin/**/*'
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**/*.sh'
+      - 'bin/**/*'
 
 ci:
-  - '.github/**/*'
+  - changed-files:
+    - any-glob-to-any-file: '.github/**/*'
 
 dependencies:
-  - 'brews.txt'
+  - changed-files:
+    - any-glob-to-any-file: 'brews.txt'
