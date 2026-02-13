@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ################################################################################
 # install.sh
 # This script is automatically run by GitHub Codespaces when setting up dotfiles
@@ -90,5 +90,5 @@ echo ""
 echo "📝 Next steps:"
 echo "  1. Restart your shell or run: source ~/.zshrc"
 echo "  2. If you see Antidote errors, ZSH will set up plugins on first run"
-echo "  3. Edit ~/dotfiles/zsh/private_keys to add your API keys and secrets"
+echo "  3. Edit ${DOTFILES_DIR}/zsh/private_keys to add your API keys and secrets"
 echo ""
