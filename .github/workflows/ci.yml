@@ -1,0 +1,78 @@
+name: CI - Test Shell Configuration
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  test-ubuntu:
+    name: Test on Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install ZSH
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y zsh
+
+      - name: Validate ZSH syntax
+        run: |
+          zsh -n zshrc
+          echo "✅ ZSH configuration syntax is valid"
+
+      - name: Run test suite
+        run: |
+          chmod +x test-zsh-config.sh
+          ./test-zsh-config.sh
+
+      - name: Validate Bash syntax (legacy configs)
+        run: |
+          bash -n bashrc
+          bash -n bashrc-ubuntu
+          echo "✅ Bash configuration syntax is valid"
+
+  test-macos:
+    name: Test on macOS
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate ZSH syntax
+        run: |
+          zsh -n zshrc
+          echo "✅ ZSH configuration syntax is valid"
+
+      - name: Run test suite
+        run: |
+          chmod +x test-zsh-config.sh
+          ./test-zsh-config.sh
+
+      - name: Validate Bash syntax (legacy configs)
+        run: |
+          bash -n bashrc
+          bash -n bashrc-ubuntu
+          echo "✅ Bash configuration syntax is valid"
+
+  validate-scripts:
+    name: Validate Shell Scripts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install shellcheck
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+
+      - name: Run shellcheck on scripts
+        run: |
+          # Check all shell scripts in the repository
+          find . -type f -name "*.sh" -not -path "./.git/*" | while read -r script; do
+            echo "Checking $script..."
+            shellcheck -x "$script" || true
+          done

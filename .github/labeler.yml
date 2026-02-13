@@ -1,0 +1,40 @@
+# Labeler configuration for auto-labeling PRs based on changed files
+
+documentation:
+  - '**/*.md'
+  - 'SETUP.md'
+  - 'SUGGESTIONS.md'
+  - 'TEST_RESULTS.md'
+
+zsh:
+  - 'zshrc'
+  - 'zsh/**/*'
+
+bash:
+  - 'bashrc*'
+  - 'bash/**/*'
+
+neovim:
+  - 'nvim/**/*'
+
+vim:
+  - 'vim/**/*'
+  - '.vimrc'
+
+git:
+  - 'gitconfig'
+  - 'gitignore_global'
+
+tmux:
+  - 'tmux.conf'
+  - '.tmux.*'
+
+scripts:
+  - '**/*.sh'
+  - 'bin/**/*'
+
+ci:
+  - '.github/**/*'
+
+dependencies:
+  - 'brews.txt'

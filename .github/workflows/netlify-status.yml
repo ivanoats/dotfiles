@@ -1,0 +1,37 @@
+name: Netlify Deploy Status
+
+on:
+  deployment_status:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    if: github.event.deployment_status.state == 'success' || github.event.deployment_status.state == 'failure'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update deployment status
+        run: |
+          if [ "${{ github.event.deployment_status.state }}" == "success" ]; then
+            echo "✅ Netlify deployment successful"
+            echo "🌐 Preview URL: ${{ github.event.deployment_status.target_url }}"
+          else
+            echo "❌ Netlify deployment failed"
+            echo "Check logs at: ${{ github.event.deployment_status.target_url }}"
+          fi
+
+      - name: Comment on PR with deployment URL
+        if: github.event.deployment_status.state == 'success' && github.event.pull_request
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const deployUrl = '${{ github.event.deployment_status.target_url }}';
+            const environment = '${{ github.event.deployment_status.environment }}';
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## 🚀 Netlify Deployment Successful\n\n**Environment:** ${environment}\n**Preview URL:** ${deployUrl}\n\nYour changes have been deployed and are ready for review!`
+            });
