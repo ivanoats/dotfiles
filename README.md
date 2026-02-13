@@ -1,17 +1,19 @@
 # 🚀 Ivan's Dotfiles
 
-> A modern, cross-platform **ZSH configuration** for developers who want a powerful and beautiful command-line experience.
+> A modern, cross-platform **ZSH and Neovim configuration** for developers who want a powerful and beautiful command-line experience.
 
 [![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Ubuntu-blue.svg)](https://github.com/ivanoats/dotfiles)
 [![Shell](https://img.shields.io/badge/shell-zsh-green.svg)](https://www.zsh.org/)
+[![Editor](https://img.shields.io/badge/editor-neovim-green.svg)](https://neovim.io/)
 [![License](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE)
 
-This repository contains a carefully crafted **ZSH configuration** that works seamlessly on **macOS** (Intel & Apple Silicon) and **Ubuntu 24.04.3 LTS**. Get a productive terminal setup in minutes with modern tools, beautiful themes, and smart defaults.
+This repository contains carefully crafted **ZSH and Neovim configurations** that work seamlessly on **macOS** (Intel & Apple Silicon) and **Ubuntu 24.04.3 LTS**. Get a productive terminal and editor setup in minutes with modern tools, beautiful themes, and smart defaults.
 
-> **Note:** This repository also contains legacy configuration files for vim, tmux, and bash that are maintained for historical purposes but are not actively developed.
+> **Note:** This repository also contains legacy configuration files for vim (old vimscript), tmux, and bash that are maintained for historical purposes but are not actively developed.
 
 ## ✨ Features
 
+### ZSH Shell
 - 🎨 **Beautiful Theme** - [Powerlevel10k](https://github.com/romkatv/powerlevel10k) with instant prompt for blazing-fast startup
 - 🔌 **Smart Plugin Management** - Using [Antidote](https://github.com/mattmc3/antidote) for fast, reliable plugin loading
 - 🌍 **Cross-Platform** - Automatically detects OS and loads appropriate configurations
@@ -21,9 +23,17 @@ This repository contains a carefully crafted **ZSH configuration** that works se
 - 🔒 **Private Keys Support** - Secure way to manage sensitive environment variables (gitignored)
 - ⚡ **Fast Startup** - Optimized configuration with lazy loading and caching
 
+### Neovim Editor
+- 📝 **Modern Lua Config** - Full Lua-based Neovim configuration (not legacy Vimscript)
+- 🔧 **LSP Support** - Language servers with Mason for intelligent code completion and diagnostics
+- 🌳 **Treesitter** - Advanced syntax highlighting and code understanding
+- 🔍 **Telescope** - Powerful fuzzy finder for files, buffers, and more
+- 🎨 **OneDark Theme** - Beautiful, modern color scheme
+- 📦 **Packer** - Fast plugin management
+
 ## 📸 What You Get
 
-A powerful terminal experience with:
+### Terminal (ZSH)
 - **Syntax highlighting** as you type
 - **Auto-suggestions** from your command history
 - **Fuzzy search** for files, history, and directories
@@ -31,12 +41,20 @@ A powerful terminal experience with:
 - **Enhanced git workflows** with custom aliases
 - **Beautiful, informative prompt** showing git status, Node version, and more
 
+### Editor (Neovim)
+- **LSP-powered completion** with intelligent code suggestions
+- **Go-to-definition** and symbol search across your codebase
+- **Inline diagnostics** showing errors and warnings as you type
+- **Git integration** in the editor with gitsigns
+- **Treesitter highlighting** for accurate syntax coloring
+
 ## 🚀 Quick Start
 
 ### Prerequisites
 - **macOS** or **Ubuntu 24.04.3 LTS**
 - zsh shell
 - git
+- neovim 0.8+ (for the nvim configuration)
 
 ### Installation
 
@@ -51,13 +69,18 @@ git clone --depth=1 https://github.com/mattmc3/antidote.git ~/.antidote
 # 3. Setup private keys for your secrets (optional)
 cp zsh/private_keys.template zsh/private_keys
 
-# 4. Create symlink for ZSH configuration
+# 4. Create symlinks
 ln -s ~/dotfiles/zshrc ~/.zshrc
-# Or run the legacy makesymlinks.sh for all configs (includes vim, etc.)
+ln -s ~/dotfiles/nvim ~/.config/nvim
+# Or run the legacy makesymlinks.sh for all configs (includes old vim, etc.)
 # ./makesymlinks.sh
 
 # 5. Restart your terminal or source the configuration
 source ~/.zshrc
+
+# 6. Open Neovim to automatically install plugins (first time only)
+nvim
+# Packer will automatically install all plugins on first launch
 ```
 
 ### Optional But Recommended Tools
@@ -90,16 +113,22 @@ sudo apt-get install -y fzf eza bat fd-find ripgrep neovim
 
 ## 🔧 What's Included
 
-### Primary: ZSH Configuration
+### Primary: ZSH & Neovim Configuration
 - **zsh/** - Modern shell configuration, aliases, functions, and environment variables
 - **zshrc** - Main ZSH configuration file with cross-platform support
-- **bin/** - Custom scripts and utilities for ZSH workflows
+- **nvim/** - Modern Neovim configuration with LSP, Treesitter, and Packer plugin manager
+  - LSP support with Mason for language servers
+  - Treesitter for advanced syntax highlighting
+  - Telescope for fuzzy finding
+  - Git integration with Fugitive and Gitsigns
+  - Modern Lua-based configuration (422 lines)
+- **bin/** - Custom scripts and utilities
 
 ### Legacy Files (Maintained for Historical Purposes)
-- **vim/** - Vim configuration (legacy)
+- **vim/** - Old Vimscript configuration (legacy - use nvim/ instead)
 - **bash/** - Bash configuration (legacy)
 - **tmux.conf** - Terminal multiplexer configuration (legacy)
-- **gitconfig** - Git configuration (still useful, but not ZSH-specific)
+- **gitconfig** - Git configuration (still useful, but not ZSH/Neovim-specific)
 
 ### Key Tools Integration (ZSH-focused)
 - **NVM** - Node.js version manager with auto-switching
