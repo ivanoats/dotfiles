@@ -11,6 +11,8 @@ jobs:
   test-ubuntu:
     name: Test on Ubuntu
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -39,6 +41,8 @@ jobs:
   test-macos:
     name: Test on macOS
     runs-on: macos-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -62,6 +66,8 @@ jobs:
   validate-scripts:
     name: Validate Shell Scripts
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

@@ -15,6 +15,8 @@ jobs:
   markdown-lint:
     name: Lint Markdown Files
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -30,6 +32,8 @@ jobs:
   markdown-link-check:
     name: Check Markdown Links
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -45,6 +49,8 @@ jobs:
   spellcheck:
     name: Spell Check Documentation
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

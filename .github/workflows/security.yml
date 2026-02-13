@@ -14,6 +14,8 @@ jobs:
   secret-scanning:
     name: Scan for Secrets
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -30,6 +32,8 @@ jobs:
   shellcheck-security:
     name: ShellCheck Security Analysis
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
