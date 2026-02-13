@@ -27,8 +27,10 @@ ZSH_DISABLE_COMPFIX=true
 # ============================================================================
 # PLUGIN MANAGEMENT
 # ============================================================================
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-antidote load
+if [[ -f ${ZDOTDIR:-~}/.antidote/antidote.zsh ]]; then
+  source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+  antidote load
+fi
 
 # ============================================================================
 # SHELL OPTIONS & COMPLETION
@@ -69,7 +71,12 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
   export PATH="/usr/local/opt/openjdk/bin:$PATH"
   export PATH=$HOME/.cask/bin:$PATH
   export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-  export PATH="$(brew --prefix php)/bin:$PATH"
+  
+  # Only add brew-dependent paths if brew is available
+  if command -v brew &> /dev/null; then
+    export PATH="$(brew --prefix php)/bin:$PATH"
+  fi
+  
   export PATH="$HOME/.composer/vendor/bin:$PATH"
   export PATH="$HOME/Library/Python/3.10/bin:$PATH"
   export HOMEBREW_CASK_OPTS="--appdir=$HOME/Applications"
@@ -83,8 +90,8 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
 elif [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
   # Linux-specific paths and configurations
   
-  # chruby for Ruby version management
-  source /usr/local/share/chruby/chruby.sh
+  # chruby for Ruby version management (if installed)
+  [[ -f /usr/local/share/chruby/chruby.sh ]] && source /usr/local/share/chruby/chruby.sh
   
   # Java configuration
   if [[ -r /usr/local/java ]]; then
@@ -94,17 +101,19 @@ elif [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
   fi
   
   # Conda initialization
-  __conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-  if [ $? -eq 0 ]; then
-      eval "$__conda_setup"
-  else
-      if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
-          . "$HOME/miniconda3/etc/profile.d/conda.sh"
-      else
-          export PATH="$HOME/miniconda3/bin:$PATH"
-      fi
+  if [[ -f "$HOME/miniconda3/bin/conda" ]]; then
+    __conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+            . "$HOME/miniconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="$HOME/miniconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
   fi
-  unset __conda_setup
 fi
 
 # ============================================================================
@@ -128,8 +137,15 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # --- Node.js (NVM, Bun, pnpm) ---
 # NVM - Node Version Manager
 export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+  # macOS with Homebrew
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+else
+  # Linux or standard installation
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+fi
 
 # Bun runtime
 export BUN_INSTALL="$HOME/.bun"
@@ -137,7 +153,11 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # pnpm package manager
-export PNPM_HOME="$HOME/Library/pnpm"
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+  export PNPM_HOME="$HOME/Library/pnpm"
+else
+  export PNPM_HOME="$HOME/.local/share/pnpm"
+fi
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -182,10 +202,14 @@ iterm2_print_user_vars() {
 PATH=~/.console-ninja/.bin:$PATH
 
 # --- fzf (fuzzy finder) ---
-source <(fzf --zsh)
+if command -v fzf &> /dev/null; then
+  source <(fzf --zsh)
+fi
 
 # --- zoxide (smart cd) ---
-eval "$(zoxide init zsh)"
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init zsh)"
+fi
 
 # ============================================================================
 # CUSTOM FUNCTIONS
@@ -201,9 +225,9 @@ auto-switch-node-version
 # ============================================================================
 # CUSTOM ENVIRONMENT, ALIASES & PRIVATE KEYS
 # ============================================================================
-. ~/dotfiles/zsh/env
-. ~/dotfiles/zsh/aliases
-. ~/dotfiles/zsh/private_keys
+[[ -f ~/dotfiles/zsh/env ]] && . ~/dotfiles/zsh/env
+[[ -f ~/dotfiles/zsh/aliases ]] && . ~/dotfiles/zsh/aliases
+[[ -f ~/dotfiles/zsh/private_keys ]] && . ~/dotfiles/zsh/private_keys
 
 # Override oh-my-zsh ll alias with eza
 unalias ll
