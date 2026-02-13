@@ -1,0 +1,12 @@
+# Private keys and secrets
+# This file is for storing private API keys and secrets
+# 
+# Setup Instructions:
+# 1. Copy this file to private_keys: cp zsh/private_keys.template zsh/private_keys
+# 2. Add your private keys and secrets to the private_keys file
+# 3. The private_keys file is in .gitignore and will not be committed
+#
+# Example entries:
+# export AWS_ACCESS_KEY_ID="your-key-here"
+# export AWS_SECRET_ACCESS_KEY="your-secret-here"
+# export GITHUB_TOKEN="your-token-here"
