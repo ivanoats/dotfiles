@@ -15,4 +15,4 @@ ohmyzsh/ohmyzsh path:plugins/git-extras
 ohmyzsh/ohmyzsh path:plugins/npm
 ohmyzsh/ohmyzsh path:plugins/node
 ohmyzsh/ohmyzsh path:plugins/pip
-ohmyzsh/ohmyzsh path:plugins/macos
+$([[ "$OSTYPE" == darwin* ]] && echo "ohmyzsh/ohmyzsh path:plugins/macos")

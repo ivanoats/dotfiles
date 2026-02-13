@@ -51,7 +51,12 @@ auto-switch-node-version() {
       fi
 
       # Convert the .nvmrc path to a relative one (if possible) for readability
-      RELATIVE_NVMRC_PATH="$(realpath --relative-to=$(pwd) $NVMRC_PATH 2> /dev/null || echo $NVMRC_PATH)"
+      # Use different commands for macOS (BSD realpath) vs Linux (GNU realpath)
+      if command -v realpath &> /dev/null; then
+        RELATIVE_NVMRC_PATH="$(realpath --relative-to=$(pwd) $NVMRC_PATH 2> /dev/null || realpath $NVMRC_PATH 2> /dev/null || echo $NVMRC_PATH)"
+      else
+        RELATIVE_NVMRC_PATH="$NVMRC_PATH"
+      fi
 
       # Print a clear warning message
       echo ""

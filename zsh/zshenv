@@ -1,8 +1,8 @@
 
 # My env vars and aliases
-. ~/dotfiles/zsh/env
-. ~/dotfiles/zsh/aliases
-. ~/dotfiles/zsh/private_keys
+[[ -f ~/dotfiles/zsh/env ]] && . ~/dotfiles/zsh/env
+[[ -f ~/dotfiles/zsh/aliases ]] && . ~/dotfiles/zsh/aliases
+[[ -f ~/dotfiles/zsh/private_keys ]] && . ~/dotfiles/zsh/private_keys
 
 # Go language
 export GOPATH=$HOME/dev/go
