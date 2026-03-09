@@ -233,3 +233,6 @@ auto-switch-node-version
 unalias ll
 alias ll="eza -la -s modified"
 alias lo="eza -la -s modified"
+
+# bun completions
+[ -s "/home/ivan/.bun/_bun" ] && source "/home/ivan/.bun/_bun"

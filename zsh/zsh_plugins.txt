@@ -1,13 +1,9 @@
 romkatv/zsh-bench kind:path
 romkatv/powerlevel10k kind:fpath
-
 zsh-users/zsh-completions
 belak/zsh-utils path:completion
-
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
-ivanoats/zsh-auto-notify
-
 ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/gitfast
 ohmyzsh/ohmyzsh path:plugins/git-extras
