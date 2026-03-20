@@ -51,8 +51,8 @@ chsh -s $(which zsh)
 
 4. **Create symlinks**
    ```bash
-   # Run the setup script
-   ./makesymlinks.sh
+   # Run the setup script (creates ~/.zshrc symlink to dotfiles/zshrc, plus other dotfiles)
+   ./install.sh
    ```
 
 5. **Install optional tools (recommended)**
