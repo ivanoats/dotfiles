@@ -13,3 +13,4 @@ wordfile
 nvim/bundle
 .zcompdump*
 
+nvim/plugin/
