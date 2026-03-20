@@ -41,6 +41,7 @@ declare -A dotfiles=(
     ["gitignore_global"]=".gitignore_global"
     ["tmux.conf"]=".tmux.conf"
     ["zsh/zsh_plugins.txt"]=".zsh_plugins.txt"
+    ["zsh/zshenv"]=".zshenv"
 )
 
 # Create symlinks
