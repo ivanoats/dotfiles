@@ -208,12 +208,23 @@ Contributions are welcome! When making changes:
 
 See [LICENSE](LICENSE) file for details.
 
+## ❓ FAQ
+
+### Do I need to install Oh-My-Zsh?
+
+**No.** This repository uses [Antidote](https://github.com/mattmc3/antidote) as the plugin manager instead of the Oh-My-Zsh framework. Antidote automatically downloads and loads individual plugins directly from the [ohmyzsh/ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) repository (e.g. the `git`, `npm`, and `node` plugins), so you get the benefit of those plugins without needing to install Oh-My-Zsh itself.
+
+The only requirements for ZSH are:
+1. **zsh** shell
+2. **git** (to clone Antidote and plugins)
+3. **Antidote** — installed automatically by `install.sh`
+
 ## 🙏 Acknowledgments
 
 Built with these amazing projects:
 - [Powerlevel10k](https://github.com/romkatv/powerlevel10k) - The best ZSH theme
 - [Antidote](https://github.com/mattmc3/antidote) - Fast ZSH plugin manager
-- [Oh My Zsh](https://ohmyz.sh/) - Framework for managing ZSH configuration
+- [Oh My Zsh](https://ohmyz.sh/) - Plugin ecosystem (individual plugins used via Antidote — Oh-My-Zsh itself does not need to be installed)
 - [fzf](https://github.com/junegunn/fzf) - Command-line fuzzy finder
 
 ---

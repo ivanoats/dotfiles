@@ -15,9 +15,6 @@ export DEBUG=true
 # --- Powerlevel10k Theme ---
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Path to oh-my-zsh configuration
-ZSH=$HOME/.oh-my-zsh
-
 # Figure out OS type: Mac OS (darwin) or linux-gnu (strip version numbers)
 OSTYPE_REAL=${OSTYPE//[0-9.]/}
 
