@@ -48,10 +48,6 @@ set -o AUTO_CD
 # SSH agent configuration
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
-# Disable oh-my-zsh default aliases (we define our own)
-zstyle ':omz:plugins:*' aliases no
-zstyle ':omz:lib:*' aliases no
-
 # ============================================================================
 # PATH CONFIGURATION - BASE PATHS
 # ============================================================================
