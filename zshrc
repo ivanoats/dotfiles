@@ -11,7 +11,6 @@ fi
 # ============================================================================
 # CORE CONFIGURATION
 # ============================================================================
-export DEBUG=true
 # --- Powerlevel10k Theme ---
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -189,7 +188,7 @@ iterm2_print_user_vars() {
 }
 
 # --- Console Ninja ---
-PATH=~/.console-ninja/.bin:$PATH
+[[ -d ~/.console-ninja/.bin ]] && PATH=~/.console-ninja/.bin:$PATH
 
 # --- fzf (fuzzy finder) ---
 if command -v fzf &> /dev/null; then
@@ -218,11 +217,3 @@ auto-switch-node-version
 [[ -f ~/dotfiles/zsh/env ]] && . ~/dotfiles/zsh/env
 [[ -f ~/dotfiles/zsh/aliases ]] && . ~/dotfiles/zsh/aliases
 [[ -f ~/dotfiles/zsh/private_keys ]] && . ~/dotfiles/zsh/private_keys
-
-# Override oh-my-zsh ll alias with eza
-unalias ll
-alias ll="eza -la -s modified"
-alias lo="eza -la -s modified"
-
-# bun completions
-[ -s "/home/ivan/.bun/_bun" ] && source "/home/ivan/.bun/_bun"
