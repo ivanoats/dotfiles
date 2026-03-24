@@ -45,9 +45,6 @@ COMPLETION_WAITING_DOTS="true"
 # Enable auto-cd (type directory name to cd into it)
 set -o AUTO_CD
 
-# SSH agent configuration
-zstyle :omz:plugins:ssh-agent agent-forwarding on
-
 # ============================================================================
 # PATH CONFIGURATION - BASE PATHS
 # ============================================================================
