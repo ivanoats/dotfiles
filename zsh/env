@@ -13,7 +13,7 @@ if [[ ${OSTYPE//[0-9.]/} == 'darwin' ]]; then
   export VISUAL="code --wait"
 
   # python with tcl tk for turtle
-  export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
+  export PATH="$HOME/.local/bin:/usr/local/opt/tcl-tk/bin:$PATH"
   export LDFLAGS="-L/usr/local/opt/tcl-tk/lib"
   export CPPFLAGS="-I/usr/local/opt/tcl-tk/include"
   export PKG_CONFIG_PATH="/usr/local/opt/tcl-tk/lib/pkgconfig"
