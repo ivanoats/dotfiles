@@ -1,5 +1,6 @@
 
 # Activate Python venv if already set (e.g., by VS Code or parent process)
-if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
+# Only do this for interactive shells and if the venv bin dir isn't already on PATH
+if [[ -o interactive && -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" && ":$PATH:" != *":${VIRTUAL_ENV}/bin:"* ]]; then
   source "${VIRTUAL_ENV}/bin/activate"
 fi
