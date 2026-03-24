@@ -15,6 +15,7 @@ This repository contains carefully crafted **ZSH and Neovim configurations** tha
 ## ✨ Features
 
 ### ZSH Shell
+
 - 🎨 **Beautiful Theme** - [Powerlevel10k](https://github.com/romkatv/powerlevel10k) with instant prompt for blazing-fast startup
 - 🔌 **Smart Plugin Management** - Using [Antidote](https://github.com/mattmc3/antidote) for fast, reliable plugin loading
 - 🌍 **Cross-Platform** - Automatically detects OS and loads appropriate configurations
@@ -25,6 +26,7 @@ This repository contains carefully crafted **ZSH and Neovim configurations** tha
 - ⚡ **Fast Startup** - Optimized configuration with lazy loading and caching
 
 ### Neovim Editor
+
 - 📝 **Modern Lua Config** - Full Lua-based Neovim configuration (not legacy Vimscript)
 - 🔧 **LSP Support** - Language servers with Mason for intelligent code completion and diagnostics
 - 🌳 **Treesitter** - Advanced syntax highlighting and code understanding
@@ -35,6 +37,7 @@ This repository contains carefully crafted **ZSH and Neovim configurations** tha
 ## 📸 What You Get
 
 ### Terminal (ZSH)
+
 - **Syntax highlighting** as you type
 - **Auto-suggestions** from your command history
 - **Fuzzy search** for files, history, and directories
@@ -43,6 +46,7 @@ This repository contains carefully crafted **ZSH and Neovim configurations** tha
 - **Beautiful, informative prompt** showing git status, Node version, and more
 
 ### Editor (Neovim)
+
 - **LSP-powered completion** with intelligent code suggestions
 - **Go-to-definition** and symbol search across your codebase
 - **Inline diagnostics** showing errors and warnings as you type
@@ -61,6 +65,7 @@ This repository is fully compatible with **GitHub Codespaces**! Simply enable it
 4. Create any new Codespace - your dotfiles will be automatically installed! 🎉
 
 The `install.sh` script will automatically:
+
 - Install Antidote plugin manager
 - Create necessary symlinks
 - Set up your ZSH and Neovim configuration
@@ -68,6 +73,7 @@ The `install.sh` script will automatically:
 ### Manual Installation
 
 #### Prerequisites
+
 - **macOS** or **Ubuntu 24.04.3 LTS** (or GitHub Codespaces)
 - zsh shell
 - git
@@ -122,11 +128,13 @@ nvim
 ### Optional But Recommended Tools
 
 **macOS:**
+
 ```bash
 brew install fzf zoxide eza bat fd ripgrep neovim nvm
 ```
 
 **Ubuntu:**
+
 ```bash
 sudo apt-get install -y fzf eza bat fd-find ripgrep neovim
 # For zoxide, see SETUP.md for installation script
@@ -151,6 +159,7 @@ sudo apt-get install -y fzf eza bat fd-find ripgrep neovim
 ## 🔧 What's Included
 
 ### Primary: ZSH & Neovim Configuration
+
 - **zsh/** - Modern shell configuration, aliases, functions, and environment variables
 - **zshrc** - Main ZSH configuration file with cross-platform support
 - **nvim/** - Modern Neovim configuration with LSP, Treesitter, and Packer plugin manager
@@ -162,12 +171,14 @@ sudo apt-get install -y fzf eza bat fd-find ripgrep neovim
 - **bin/** - Custom scripts and utilities
 
 ### Legacy Files (Maintained for Historical Purposes)
+
 - **vim/** - Old Vimscript configuration (legacy - use nvim/ instead)
 - **bash/** - Bash configuration (legacy)
 - **tmux.conf** - Terminal multiplexer configuration (legacy)
 - **gitconfig** - Git configuration (still useful, but not ZSH/Neovim-specific)
 
 ### Key Tools Integration (ZSH-focused)
+
 - **NVM** - Node.js version manager with auto-switching
 - **fzf** - Fuzzy finder for files, history, and more
 - **zoxide** - Smart `cd` replacement that learns your habits
@@ -176,6 +187,7 @@ sudo apt-get install -y fzf eza bat fd-find ripgrep neovim
 - **ripgrep** - Ultra-fast grep alternative
 
 ### Plugin Highlights
+
 - Git enhancements (Oh-My-Zsh plugins)
 - Syntax highlighting and autosuggestions
 - Auto-notify for long-running commands
@@ -185,13 +197,17 @@ sudo apt-get install -y fzf eza bat fd-find ripgrep neovim
 ## 🎨 Customization
 
 ### Adding Your Own Aliases
+
 Edit `~/dotfiles/zsh/aliases` or create `~/.zsh_custom` for personal overrides.
 
 ### Private Environment Variables
+
 Add your API keys and secrets to `~/dotfiles/zsh/private_keys` (this file is gitignored).
 
 ### Theme Configuration
+
 Customize your prompt by running:
+
 ```bash
 p10k configure
 ```
@@ -199,6 +215,7 @@ p10k configure
 ## 🤝 Contributing
 
 Contributions are welcome! When making changes:
+
 1. Test on both macOS and Ubuntu if possible
 2. Use OS detection for platform-specific code
 3. Add existence checks for optional tools
@@ -211,6 +228,7 @@ See [LICENSE](LICENSE) file for details.
 ## 🙏 Acknowledgments
 
 Built with these amazing projects:
+
 - [Powerlevel10k](https://github.com/romkatv/powerlevel10k) - The best ZSH theme
 - [Antidote](https://github.com/mattmc3/antidote) - Fast ZSH plugin manager
 - [Oh My Zsh](https://ohmyz.sh/) - Framework for managing ZSH configuration
