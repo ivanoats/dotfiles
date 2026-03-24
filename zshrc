@@ -34,6 +34,11 @@ fi
 # Prompt initialization
 autoload -Uz promptinit && promptinit && prompt powerlevel10k
 
+# Auto-fix insecure compinit directories
+if [[ -n $(compaudit 2>/dev/null) ]]; then
+  compaudit 2>/dev/null | xargs chmod g-w 2>/dev/null
+fi
+
 # Enable completions
 autoload -U +X bashcompinit && bashcompinit
 autoload -U +X compinit && compinit
