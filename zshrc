@@ -15,9 +15,6 @@ export DEBUG=true
 # --- Powerlevel10k Theme ---
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Path to oh-my-zsh configuration
-ZSH=$HOME/.oh-my-zsh
-
 # Figure out OS type: Mac OS (darwin) or linux-gnu (strip version numbers)
 OSTYPE_REAL=${OSTYPE//[0-9.]/}
 
@@ -47,13 +44,6 @@ COMPLETION_WAITING_DOTS="true"
 
 # Enable auto-cd (type directory name to cd into it)
 set -o AUTO_CD
-
-# SSH agent configuration
-zstyle :omz:plugins:ssh-agent agent-forwarding on
-
-# Disable oh-my-zsh default aliases (we define our own)
-zstyle ':omz:plugins:*' aliases no
-zstyle ':omz:lib:*' aliases no
 
 # ============================================================================
 # PATH CONFIGURATION - BASE PATHS

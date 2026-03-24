@@ -101,9 +101,9 @@ chsh -s $(which zsh)
 - Graceful fallbacks for missing tools
 
 ### Plugin Management
-- Uses [Antidote](https://github.com/mattmc3/antidote) for plugin management
+- Uses [Antidote](https://github.com/mattmc3/antidote) for plugin management — **Oh-My-Zsh does not need to be installed**
+- Individual plugins from the [ohmyzsh/ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) repository are loaded directly by Antidote
 - Powerlevel10k theme
-- Oh-My-Zsh plugins
 - Syntax highlighting and autosuggestions
 
 ### Tools Integration
