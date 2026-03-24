@@ -37,13 +37,13 @@ function pvcp()
         DESTINATION=$2
     fi
     
-    pv ${SOURCE} | > ${DESTINATION}
+    pv "$SOURCE" > "$DESTINATION"
 }
 
 function newpass() {xkcd-password -s $(jot -r 1 1 9) -f ~/wordfile|pbcopy}
 
 # MAC OS X ONLY
-if [[ $OSTYPE != 'linux-gnu' ]]; then
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
     alias tu='top -o cpu' # sorted by cpu
     alias openports="sudo lsof -i -P | grep -i \"listen\""
     alias tm='top -o vsize' #sorted by memory
@@ -59,7 +59,7 @@ if [[ $OSTYPE != 'linux-gnu' ]]; then
     alias showinvisible="defaults write com.apple.finder AppleShowAllFiles TRUE"
     alias hideinvisible="defaults write com.apple.finder AppleShowAllFiles FALSE"
     alias marked="open -a Marked\ 2 "
-    alias growldone"grownlnotify -m 'done' && say done"
+    alias growldone="growlnotify -m 'done' && say done"
     alias arm="env /usr/bin/arch --arm64 /bin/zsh --login"
     alias intel="env /usr/bin/arch --x86_64 /bin/zsh --login"
 fi
@@ -68,10 +68,17 @@ alias retag="ctags --exclude=*.js --extra=+f -R *"
 alias zipr="zip -r" #directory.zip directory
 alias upstream="git rev-parse --abbrev-ref @{u}"
 alias ll="eza -la -s modified"
+alias lo="eza -la -s modified"
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias g="git status"
+alias gc="git commit"
+alias ga="git add"
+alias gp="git push"
+alias gco="git checkout"
+alias gl="git pull"
+alias gf="git fetch"
 alias gnb="git --no-pager branch"
 alias gbc="git --no-pager branch | ipt | xargs git checkout"
 alias h="history|tail -100"
@@ -103,8 +110,7 @@ alias vim='nvim'
 alias nvm_upgrade_lts="nvm install 'lts/*' --reinstall-packages-from=current"
 
 # LINUX ONLY
-if [[ -a /etc/issue ]];
-then
+if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
     # need a WSL only section
     alias win32yank='win32yank.exe'
     alias fd='fdfind'

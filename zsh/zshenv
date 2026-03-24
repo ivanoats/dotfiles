@@ -1,14 +1,5 @@
 
-# My env vars and aliases
-[[ -f ~/dotfiles/zsh/env ]] && . ~/dotfiles/zsh/env
-[[ -f ~/dotfiles/zsh/aliases ]] && . ~/dotfiles/zsh/aliases
-[[ -f ~/dotfiles/zsh/private_keys ]] && . ~/dotfiles/zsh/private_keys
-
-# Go language
-export GOPATH=$HOME/dev/go
-PATH=$PATH:$GOPATH/bin
-
-# Python venv
+# Activate Python venv if already set (e.g., by VS Code or parent process)
 if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
   source "${VIRTUAL_ENV}/bin/activate"
 fi
