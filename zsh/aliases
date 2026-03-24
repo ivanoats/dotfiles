@@ -110,6 +110,10 @@ alias vim='nvim'
 alias nvm_upgrade_lts="nvm install 'lts/*' --reinstall-packages-from=current"
 
 # LINUX ONLY
+# Ensure OSTYPE_REAL is available even if this file is sourced directly.
+if [[ -z "${OSTYPE_REAL-}" ]]; then
+    OSTYPE_REAL=$OSTYPE
+fi
 if [[ $OSTYPE_REAL == 'linux-gnu' ]]; then
     # need a WSL only section
     alias win32yank='win32yank.exe'
