@@ -59,7 +59,7 @@ if [[ $OSTYPE_REAL == 'darwin' ]]; then
     alias showinvisible="defaults write com.apple.finder AppleShowAllFiles TRUE"
     alias hideinvisible="defaults write com.apple.finder AppleShowAllFiles FALSE"
     alias marked="open -a Marked\ 2 "
-    alias growldone="growlnotify -m 'done' && say done"
+    alias growldone="terminal-notifier -message 'done' -title 'Terminal' && say done"
     alias arm="env /usr/bin/arch --arm64 /bin/zsh --login"
     alias intel="env /usr/bin/arch --x86_64 /bin/zsh --login"
 fi
