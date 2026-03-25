@@ -41,6 +41,8 @@ source ~/.zshrc
 
 `install.sh` will: clone Antidote, create symlinks, and scaffold `zsh/private_keys` from the template.
 
+Afterward, open Neovim (`nvim`) for the first time to automatically install all editor plugins.
+
 ### Install recommended CLI tools
 
 ```bash
