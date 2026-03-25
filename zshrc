@@ -34,12 +34,16 @@ fi
 # Prompt initialization
 autoload -Uz promptinit && promptinit && prompt powerlevel10k
 
-# Auto-fix insecure compinit directories
+# Auto-fix insecure compinit directories (restrict to $HOME only)
 autoload -Uz compaudit
 insecure_compdirs=$(compaudit 2>/dev/null)
 if [[ -n $insecure_compdirs ]]; then
-  printf '%s\n' "$insecure_compdirs" | xargs chmod go-w 2>/dev/null
+  printf '%s\n' "$insecure_compdirs" | while IFS= read -r dir; do
+    [[ $dir == "$HOME" || $dir == $HOME/* ]] || continue
+    chmod g-w "$dir" 2>/dev/null
+  done
 fi
+unset insecure_compdirs
 
 # Enable completions
 autoload -U +X bashcompinit && bashcompinit
