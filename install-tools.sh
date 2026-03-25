@@ -16,6 +16,19 @@ install_linux() {
   # bat is 'batcat' and fd is 'fdfind' on Debian/Ubuntu
   sudo apt-get install -y fzf bat fd-find ripgrep neovim zoxide
 
+  # Ensure bat/fd commands exist for consistency with macOS and docs
+  mkdir -p "$HOME/.local/bin"
+  if command -v batcat &>/dev/null && [ ! -e "$HOME/.local/bin/bat" ]; then
+    ln -s "$(command -v batcat)" "$HOME/.local/bin/bat"
+    echo "Created symlink: $HOME/.local/bin/bat -> $(command -v batcat)"
+  fi
+  if command -v fdfind &>/dev/null && [ ! -e "$HOME/.local/bin/fd" ]; then
+    ln -s "$(command -v fdfind)" "$HOME/.local/bin/fd"
+    echo "Created symlink: $HOME/.local/bin/fd -> $(command -v fdfind)"
+  fi
+  if ! printf '%s\n' "$PATH" | grep -q "$HOME/.local/bin"; then
+    echo "Note: $HOME/.local/bin is not in your PATH. Add it to use 'bat' and 'fd' directly."
+  fi
   # eza is not in default apt repos on Ubuntu 24.04 — install via cargo or deb
   if ! command -v eza &>/dev/null; then
     if command -v cargo &>/dev/null; then
