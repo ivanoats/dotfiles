@@ -29,12 +29,15 @@ install_linux() {
   if ! printf '%s\n' "$PATH" | grep -q "$HOME/.local/bin"; then
     echo "Note: $HOME/.local/bin is not in your PATH. Add it to use 'bat' and 'fd' directly."
   fi
-  # eza is not in default apt repos on Ubuntu 24.04 — install via cargo or deb
+  # Try apt first (available in some Ubuntu versions/added repos), then fall back to cargo
   if ! command -v eza &>/dev/null; then
-    if command -v cargo &>/dev/null; then
+    if sudo apt-get install -y eza; then
+      echo "eza installed via apt"
+    elif command -v cargo &>/dev/null; then
+      echo "eza not available via apt, installing via cargo..."
       cargo install eza
     else
-      echo "eza: install cargo (rustup) then re-run, or download from https://github.com/eza-community/eza/releases"
+      echo "eza: not available via apt. Install cargo (rustup) then re-run, or download from https://github.com/eza-community/eza/releases"
     fi
   fi
 }
