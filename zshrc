@@ -35,8 +35,10 @@ fi
 autoload -Uz promptinit && promptinit && prompt powerlevel10k
 
 # Auto-fix insecure compinit directories
-if [[ -n $(compaudit 2>/dev/null) ]]; then
-  compaudit 2>/dev/null | xargs chmod g-w 2>/dev/null
+autoload -Uz compaudit
+insecure_compdirs=$(compaudit 2>/dev/null)
+if [[ -n $insecure_compdirs ]]; then
+  printf '%s\n' "$insecure_compdirs" | xargs chmod go-w 2>/dev/null
 fi
 
 # Enable completions
