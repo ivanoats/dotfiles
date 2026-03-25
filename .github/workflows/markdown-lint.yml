@@ -19,7 +19,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Lint markdown files
         uses: DavidAnson/markdownlint-cli2-action@v22
@@ -36,7 +36,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Check links in markdown files
         uses: gaurav-nelson/github-action-markdown-link-check@v1
@@ -53,7 +53,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Spell check markdown files
         uses: rojopolis/spellcheck-github-actions@0.60.0
