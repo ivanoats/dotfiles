@@ -14,7 +14,7 @@ install_macos() {
 install_linux() {
   sudo apt-get update -y
   # bat is 'batcat' and fd is 'fdfind' on Debian/Ubuntu
-  sudo apt-get install -y fzf bat fd-find ripgrep neovim
+  sudo apt-get install -y fzf bat fd-find ripgrep neovim zoxide
 
   # eza is not in default apt repos on Ubuntu 24.04 — install via cargo or deb
   if ! command -v eza &>/dev/null; then
@@ -23,11 +23,6 @@ install_linux() {
     else
       echo "eza: install cargo (rustup) then re-run, or download from https://github.com/eza-community/eza/releases"
     fi
-  fi
-
-  # zoxide
-  if ! command -v zoxide &>/dev/null; then
-    curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
   fi
 }
 
