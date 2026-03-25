@@ -44,6 +44,7 @@ if [[ -n $insecure_compdirs ]]; then
   done
 fi
 unset insecure_compdirs
+unset insecure_compdirs
 
 # Enable completions
 autoload -U +X bashcompinit && bashcompinit
