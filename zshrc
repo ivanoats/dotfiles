@@ -26,6 +26,10 @@ ZSH_DISABLE_COMPFIX=true
 if [[ -f ${ZDOTDIR:-~}/.antidote/antidote.zsh ]]; then
   source ${ZDOTDIR:-~}/.antidote/antidote.zsh
   antidote load
+else
+  echo "Warning: Antidote plugin manager not found."
+  echo "  Install with: git clone --depth=1 https://github.com/mattmc3/antidote.git ~/.antidote"
+  echo "  Or run: ./install.sh"
 fi
 
 # ============================================================================
