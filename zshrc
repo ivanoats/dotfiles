@@ -39,7 +39,7 @@ autoload -Uz compaudit
 insecure_compdirs=$(compaudit 2>/dev/null)
 if [[ -n $insecure_compdirs ]]; then
   printf '%s\n' "$insecure_compdirs" | while IFS= read -r dir; do
-    [[ $dir == "$HOME" || $dir == "$HOME"/* ]] || continue
+    [[ $dir == "$HOME" || $dir == $HOME/* ]] || continue
     chmod g-w "$dir" 2>/dev/null
   done
 fi

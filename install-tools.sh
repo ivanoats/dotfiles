@@ -39,7 +39,7 @@ install_linux() {
         echo "Created symlink: $HOME/.local/bin/fd -> $(command -v fdfind)"
       fi
     fi
-    if ! printf '%s\n' "$PATH" | grep -q "$HOME/.local/bin"; then
+    if ! printf '%s\n' "$PATH" | grep -F -q -- "$HOME/.local/bin"; then
       echo "Note: $HOME/.local/bin is not in your PATH. Add it to use 'bat' and 'fd' directly."
     fi
     # Try apt first (available in some Ubuntu versions/added repos), then fall back to cargo
