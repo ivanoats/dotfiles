@@ -59,8 +59,9 @@ Add API keys and secrets to `~/dotfiles/zsh/private_keys` — this file is gitig
 
 ```bash
 cp zsh/private_keys.template zsh/private_keys
-# edit zsh/private_keys and add your exports
 ```
+
+Then, edit zsh/private_keys and add your exports
 
 ### Local overrides
 
