@@ -235,3 +235,4 @@ auto-switch-node-version
 [[ -f ~/dotfiles/zsh/env ]] && . ~/dotfiles/zsh/env
 [[ -f ~/dotfiles/zsh/aliases ]] && . ~/dotfiles/zsh/aliases
 [[ -f ~/dotfiles/zsh/private_keys ]] && . ~/dotfiles/zsh/private_keys
+[[ -f ~/.zshrc.local ]] && . ~/.zshrc.local
