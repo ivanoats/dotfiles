@@ -1,116 +1,72 @@
 # Suggestions for Dotfiles Configuration
 
-## Implemented Improvements ✅
+## Implemented Improvements
 
 ### 1. Cross-Platform Compatibility
-- ✅ Added OS detection and conditional configuration for macOS and Linux
-- ✅ NVM paths now work with both Homebrew (macOS) and standard installations (Linux)
-- ✅ pnpm uses OS-appropriate directories
-- ✅ All macOS-specific commands properly guarded with existence checks
+
+- Added OS detection and conditional configuration for macOS and Linux
+- NVM paths now work with both Homebrew (macOS) and standard installations (Linux)
+- pnpm uses OS-appropriate directories
+- All macOS-specific commands properly guarded with existence checks
 
 ### 2. Error Prevention
-- ✅ Added existence checks before sourcing files
-- ✅ Added existence checks for optional tools (fzf, zoxide, antidote)
-- ✅ Created private_keys.template to guide users
-- ✅ Graceful fallbacks for missing tools
+
+- Added existence checks before sourcing files
+- Added existence checks for optional tools (fzf, zoxide, antidote)
+- Created private_keys.template to guide users
+- Graceful fallbacks for missing tools
 
 ### 3. Documentation
-- ✅ Created comprehensive SETUP.md with installation instructions
-- ✅ Added private_keys.template with usage examples
-- ✅ Created test suite for validation
+
+- Created comprehensive SETUP.md with installation instructions
+- Added private_keys.template with usage examples
+- Created test suite for validation
+- Rewrote README.md to be user-focused (quick start, contributing, platform notes)
+- Added MIT LICENSE.md
 
 ### 4. Testing
-- ✅ Created automated test script (test-zsh-config.sh)
-- ✅ Tested on Ubuntu 24.04.3 LTS successfully
-- ✅ Created demo script to show working configuration
 
-## Additional Suggestions for Future Improvements 🚀
+- Created automated test script (test-zsh-config.sh)
+- Tested on Ubuntu 24.04.3 LTS successfully
+- Created demo script to show working configuration
 
-### 1. Plugin Manager Installation Automation
-**Priority: High**
-```bash
-# Add to makesymlinks.sh or create install.sh
-if [[ ! -d ${ZDOTDIR:-~}/.antidote ]]; then
-  echo "Installing antidote plugin manager..."
-  git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
-fi
-```
+### 5. Plugin Manager Installation Automation
 
-### 2. Conditional Tool Installation Helper
-**Priority: Medium**
-Create a script to install recommended tools based on OS:
-```bash
-# install-tools.sh
-if [[ $(uname) == "Darwin" ]]; then
-  brew install fzf zoxide eza bat fd ripgrep neovim
-elif [[ -f /etc/debian_version ]]; then
-  sudo apt-get install -y fzf eza bat fd-find ripgrep neovim
-fi
-```
+- install.sh clones antidote automatically if not present
+- Prints a clear warning with install instructions when antidote is missing at shell startup
 
-### 3. Improved Permission Handling
-**Priority: High**
-Add to zshrc to automatically fix compinit permissions:
-```zsh
-# Auto-fix insecure directories
-if [[ -n $(compaudit 2>/dev/null) ]]; then
-  compaudit 2>/dev/null | xargs chmod g-w 2>/dev/null
-fi
-```
+### 6. Conditional Tool Installation Helper
 
-### 4. Better Homebrew Detection on macOS
-**Priority: Medium**
-Handle both Intel and Apple Silicon Homebrew locations:
-```zsh
-if [[ $OSTYPE_REAL == 'darwin' ]]; then
-  # Check multiple Homebrew locations
-  if [[ -x /opt/homebrew/bin/brew ]]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-  elif [[ -x /usr/local/bin/brew ]]; then
-    eval "$(/usr/local/bin/brew shellenv)"
-  fi
-fi
-```
+- install-tools.sh installs fzf, zoxide, eza, bat, fd, ripgrep, neovim via Homebrew (macOS) or apt/cargo (Ubuntu)
 
-### 5. Lazy Loading for Slow Tools
-**Priority: Medium**
-For tools like NVM that slow down shell startup:
-```zsh
-# Lazy load NVM
-nvm() {
-  unset -f nvm
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-  nvm "$@"
-}
+### 7. Improved Permission Handling
 
-node() {
-  unset -f node
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-  node "$@"
-}
-```
+- zshrc auto-fixes insecure compinit directories via compaudit before loading completions
 
-### 6. Separate Local Customizations
+### 8. CI/CD Testing
+
+- GitHub Actions workflows test zsh config on Ubuntu and macOS
+- Markdown linting, link checking, spell check, and security scanning on every PR
+- Dependabot keeps Actions dependencies up to date
+- Auto-labeling of PRs based on changed files
+
+## Remaining Suggestions
+
+### 1. Separate Local Customizations
+
 **Priority: Low**
-Add support for local overrides:
+Add support for local overrides not committed to the repo:
+
 ```zsh
 # At end of zshrc
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 ```
 
-### 7. Better Error Messages
-**Priority: Low**
-Add informative messages for missing critical dependencies:
-```zsh
-if [[ ! -d ${ZDOTDIR:-~}/.antidote ]]; then
-  echo "⚠️  Antidote plugin manager not found."
-  echo "   Install with: git clone --depth=1 https://github.com/mattmc3/antidote.git ~/.antidote"
-fi
-```
+### 2. Version Management
 
-### 8. Version Management
 **Priority: Low**
 Add version checking for critical tools:
+
 ```zsh
 # Check minimum zsh version
 autoload -Uz is-at-least
@@ -119,10 +75,12 @@ if ! is-at-least 5.8; then
 fi
 ```
 
-### 9. Modular Configuration
+### 3. Modular Configuration
+
 **Priority: Medium**
 Break up large zshrc into smaller modules:
-```
+
+```text
 zsh/
   ├── 00-options.zsh
   ├── 10-path.zsh
@@ -132,31 +90,25 @@ zsh/
   └── 99-local.zsh
 ```
 
-### 10. CI/CD Testing
-**Priority: Medium**
-Add GitHub Actions to test configuration on both platforms:
-```yaml
-name: Test Dotfiles
-on: [push, pull_request]
-jobs:
-  test-ubuntu:
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v3
-      - name: Test configuration
-        run: ./test-zsh-config.sh
-  
-  test-macos:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Test configuration
-        run: ./test-zsh-config.sh
-```
+## Decided Against
 
-## Performance Optimization Suggestions 🚄
+### Lazy Loading NVM
+
+Lazy loading NVM conflicts with the `auto-switch-node-version` chpwd hook, which
+calls internal NVM functions (`nvm_find_nvmrc`, `nvm_match_version`) on every
+directory change. Lazy loading would break auto-switching silently. If startup
+time becomes a real issue, replacing NVM with `fnm` (a faster Rust-based
+alternative with built-in `.nvmrc` support) is the better path.
+
+### Better Homebrew Detection (Intel vs Apple Silicon)
+
+Not necessary — the repo is only used on Apple Silicon Macs. Intel Mac support
+is not a current requirement.
+
+## Performance Optimization Suggestions
 
 ### 1. Profile Startup Time
+
 ```bash
 # Add to beginning of zshrc for benchmarking
 # zmodload zsh/zprof
@@ -166,6 +118,7 @@ jobs:
 ```
 
 ### 2. Optimize Completions
+
 ```zsh
 # Cache completions for 24 hours
 autoload -Uz compinit
@@ -177,20 +130,25 @@ fi
 ```
 
 ### 3. Parallel Plugin Loading
+
 Consider using antidote's parallel loading features for faster startup.
 
-## Security Suggestions 🔒
+## Security Suggestions
 
 ### 1. Audit Sourced Files
-- ✅ Already checking file existence before sourcing
+
+- Already checking file existence before sourcing
 - Consider adding checksums for critical files
 
 ### 2. Secure Private Keys
-- ✅ private_keys is already in .gitignore
+
+- private_keys is already in .gitignore
 - Consider encrypting with git-crypt or similar
 
 ### 3. Update Dependencies Regularly
+
 Add a script to update antidote and plugins:
+
 ```bash
 #!/bin/bash
 # update-plugins.sh
@@ -198,32 +156,16 @@ cd ${ZDOTDIR:-~}/.antidote && git pull
 antidote update
 ```
 
-## Documentation Improvements 📚
+## Documentation Improvements
 
 ### 1. Add Troubleshooting Section
+
 - Common issues and solutions
 - Platform-specific gotchas
 - Performance tips
 
-### 2. Add Examples
-- Example workflows
-- Screenshots of working setup
-- Video tutorial links
+### 2. Migration Guide
 
-### 3. Migration Guide
 - From bash to zsh
 - From Oh-My-Zsh to antidote
 - From other dotfile managers
-
-## Next Steps
-
-1. ✅ **Completed**: Basic cross-platform compatibility
-2. ✅ **Completed**: Testing on Ubuntu 24.04.3 LTS
-3. ✅ **Completed**: Documentation
-4. **Recommended**: Implement auto-fixing of compinit permissions
-5. **Recommended**: Add tool installation helper script
-6. **Recommended**: Test on macOS
-7. **Optional**: Implement lazy loading for performance
-8. **Optional**: Add CI/CD testing
-
-All critical compatibility issues have been resolved. The configuration now works reliably on both macOS and Ubuntu 24.04.3 LTS!
