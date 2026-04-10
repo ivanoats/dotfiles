@@ -235,3 +235,9 @@ auto-switch-node-version
 [[ -f ~/dotfiles/zsh/env ]] && . ~/dotfiles/zsh/env
 [[ -f ~/dotfiles/zsh/aliases ]] && . ~/dotfiles/zsh/aliases
 [[ -f ~/dotfiles/zsh/private_keys ]] && . ~/dotfiles/zsh/private_keys
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ivan/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ivan/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ivan/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ivan/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
