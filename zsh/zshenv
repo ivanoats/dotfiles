@@ -2,8 +2,11 @@
 [[ -f ~/dotfiles/zsh/env ]] && . ~/dotfiles/zsh/env
 [[ -f ~/dotfiles/zsh/private_keys ]] && . ~/dotfiles/zsh/private_keys
 
+export UV_PYTHON_PREFERENCE=only-managed
+
 # Activate Python venv if already set (e.g., by VS Code or parent process)
 # Only do this for interactive shells and if the venv bin dir isn't already on PATH
 if [[ -o interactive && -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" && ":$PATH:" != *":${VIRTUAL_ENV}/bin:"* ]]; then
   source "${VIRTUAL_ENV}/bin/activate"
 fi
+. "$HOME/.cargo/env"
