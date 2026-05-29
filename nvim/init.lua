@@ -53,6 +53,17 @@ require('packer').startup(function(use)
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
+  -- File system browser / directory tree
+  use {
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v3.x',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'MunifTanjim/nui.nvim',
+      'nvim-tree/nvim-web-devicons', -- optional, but recommended for icons
+    },
+  }
+
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
@@ -208,6 +219,25 @@ vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
+
+-- [[ Configure Neo-tree ]]
+-- File system browser / directory tree
+require('neo-tree').setup {
+  close_if_last_window = true, -- close the tree if it is the only window left
+  enable_git_status = true,
+  enable_diagnostics = true,
+  window = {
+    position = 'left',
+    width = 40,
+  },
+  filesystem = {
+    follow_current_file = { enabled = true }, -- reveal the current file in the tree
+    use_libuv_file_watcher = true, -- update the tree as files change on disk
+  },
+}
+
+-- Toggle the directory tree (restores the old NERDTree muscle memory)
+vim.keymap.set('n', '<leader>n', '<cmd>Neotree toggle<CR>', { desc = 'Toggle [N]eo-tree' })
 
 -- [[ Configure Treesitter ]]
 -- nvim-treesitter v1.0+: highlight/indent are built-in to Neovim 0.12+.
