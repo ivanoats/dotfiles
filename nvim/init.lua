@@ -221,20 +221,25 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 
 -- [[ Configure Neo-tree ]]
--- File system browser / directory tree
-require('neo-tree').setup {
-  close_if_last_window = true, -- close the tree if it is the only window left
-  enable_git_status = true,
-  enable_diagnostics = true,
-  window = {
-    position = 'left',
-    width = 40,
-  },
-  filesystem = {
-    follow_current_file = { enabled = true }, -- reveal the current file in the tree
-    use_libuv_file_watcher = true, -- update the tree as files change on disk
-  },
-}
+-- File system browser / directory tree.
+-- Guard with pcall so a fresh checkout (before :PackerSync) doesn't break the
+-- rest of init.lua if the plugin isn't installed yet.
+local has_neotree, neotree = pcall(require, 'neo-tree')
+if has_neotree then
+  neotree.setup {
+    close_if_last_window = true, -- close the tree if it is the only window left
+    enable_git_status = true,
+    enable_diagnostics = true,
+    window = {
+      position = 'left',
+      width = 40,
+    },
+    filesystem = {
+      follow_current_file = { enabled = true }, -- reveal the current file in the tree
+      use_libuv_file_watcher = true, -- update the tree as files change on disk
+    },
+  }
+end
 
 -- Toggle the directory tree (restores the old NERDTree muscle memory)
 vim.keymap.set('n', '<leader>n', '<cmd>Neotree toggle<CR>', { desc = 'Toggle [N]eo-tree' })
