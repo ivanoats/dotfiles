@@ -68,7 +68,6 @@ set -o AUTO_CD
 # User's local bin directories
 export PATH="${PATH}:${HOME}/.local/bin"
 export PATH=$HOME/bin:$PATH
-export PATH=./bin:$PATH
 
 # ============================================================================
 # OS-SPECIFIC CONFIGURATION
@@ -235,3 +234,7 @@ auto-switch-node-version
 [[ -f ~/dotfiles/zsh/env ]] && . ~/dotfiles/zsh/env
 [[ -f ~/dotfiles/zsh/aliases ]] && . ~/dotfiles/zsh/aliases
 [[ -f ~/dotfiles/zsh/private_keys ]] && . ~/dotfiles/zsh/private_keys
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/ivan/.local/bin:$PATH"
