@@ -11,6 +11,11 @@ fi
 # ============================================================================
 # CORE CONFIGURATION
 # ============================================================================
+# Homebrew CLIs must also be available in interactive non-login shells.
+if [[ -d /opt/homebrew/bin ]]; then
+  export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+fi
+
 # --- Powerlevel10k Theme ---
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
