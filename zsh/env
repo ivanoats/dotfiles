@@ -1,9 +1,19 @@
 export CLICOLOR=1
-export HISTFILESIZE=3000
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=50000
+export SAVEHIST=50000
 export TERM=xterm-256color
 export LANG=en_US.UTF-8
 export NUXEO_HOME=$HOME/dev/nuxeo-server-tomcat-2025.0
 export NUXEO_ENVIRONMENT=local
+
+if [[ -o interactive ]]; then
+  setopt APPEND_HISTORY
+  setopt INC_APPEND_HISTORY
+  setopt SHARE_HISTORY
+  setopt HIST_IGNORE_ALL_DUPS
+  setopt HIST_REDUCE_BLANKS
+fi
 
 
 if [[ ${OSTYPE//[0-9.]/} == 'darwin' ]]; then

@@ -8,6 +8,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Keep PATH entries unique while preserving first-seen order.
+typeset -U path PATH
+
 # ============================================================================
 # CORE CONFIGURATION
 # ============================================================================
@@ -145,19 +148,6 @@ export PATH=$HOME/.cabal/bin:$PATH
 # --- Elixir ---
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-# --- Node.js (NVM, Bun, pnpm) ---
-# NVM - Node Version Manager
-export NVM_DIR="$HOME/.nvm"
-if [[ $OSTYPE_REAL == 'darwin' ]]; then
-  # macOS with Homebrew
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
-else
-  # Linux or standard installation
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-fi
-
 # Bun runtime
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
@@ -240,6 +230,18 @@ auto-switch-node-version
 [[ -f ~/dotfiles/zsh/aliases ]] && . ~/dotfiles/zsh/aliases
 [[ -f ~/dotfiles/zsh/private_keys ]] && . ~/dotfiles/zsh/private_keys
 
-
 # Added by Antigravity CLI installer
-export PATH="/Users/ivan/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# --- Node.js (NVM, Bun, pnpm) ---
+# NVM - Node Version Manager
+export NVM_DIR="$HOME/.nvm"
+if [[ $OSTYPE_REAL == 'darwin' ]]; then
+  # macOS with Homebrew
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+else
+  # Linux or standard installation
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+fi

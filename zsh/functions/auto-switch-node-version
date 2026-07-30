@@ -19,6 +19,11 @@
 ####
 
 auto-switch-node-version() {
+  # If nvm hasn't been loaded yet, skip quietly during early shell init.
+  if ! typeset -f nvm >/dev/null || ! typeset -f nvm_find_nvmrc >/dev/null || ! typeset -f nvm_match_version >/dev/null; then
+    return
+  fi
+
   NVMRC_PATH=$(nvm_find_nvmrc)
   CURRENT_NODE_VERSION=$(nvm version)
 
@@ -78,8 +83,9 @@ auto-switch-node-version() {
     # Clear any warning suppression
     unset AUTOSWITCH_NODE_SUPPRESS_WARNING
 
-    # Revert to default version, unless that's already the current version.
-    if [[ $CURRENT_NODE_VERSION != $(nvm version default)  ]]; then
+    # Revert to default version when it resolves; otherwise stay on current.
+    DEFAULT_NODE_VERSION=$(nvm version default)
+    if [[ $DEFAULT_NODE_VERSION != "N/A" && $CURRENT_NODE_VERSION != $DEFAULT_NODE_VERSION ]]; then
       nvm use default
     fi
   fi
