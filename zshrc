@@ -74,7 +74,7 @@ set -o AUTO_CD
 # PATH CONFIGURATION - BASE PATHS
 # ============================================================================
 # User's local bin directories
-export PATH="${PATH}:${HOME}/.local/bin"
+export PATH="${PATH:+$PATH:}${HOME}/.local/bin"
 export PATH=$HOME/bin:$PATH
 
 # ============================================================================
@@ -222,6 +222,9 @@ fpath=($HOME/.zsh/functions $HOME/dotfiles/zsh/functions $fpath)
 autoload -U add-zsh-hook
 add-zsh-hook chpwd auto-switch-node-version
 auto-switch-node-version
+
+# --- opencode ---
+export PATH="$HOME/.opencode/bin:$PATH"
 
 # ============================================================================
 # CUSTOM ENVIRONMENT, ALIASES & PRIVATE KEYS
