@@ -4,7 +4,8 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+# Skip prompt setup without a TTY (e.g. Claude Code's `zsh -ic`): gitstatus and zle need a terminal.
+if [[ -t 1 && -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
@@ -20,7 +21,7 @@ if [[ -d /opt/homebrew/bin ]]; then
 fi
 
 # --- Powerlevel10k Theme ---
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -t 1 || ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Figure out OS type: Mac OS (darwin) or linux-gnu (strip version numbers)
 OSTYPE_REAL=${OSTYPE//[0-9.]/}
@@ -46,7 +47,7 @@ fi
 # SHELL OPTIONS & COMPLETION
 # ============================================================================
 # Prompt initialization
-autoload -Uz promptinit && promptinit && prompt powerlevel10k
+[[ -t 1 ]] && autoload -Uz promptinit && promptinit && prompt powerlevel10k
 
 # Auto-fix insecure compinit directories (restrict to $HOME only)
 autoload -Uz compaudit
@@ -203,7 +204,7 @@ iterm2_print_user_vars() {
 [[ -d ~/.console-ninja/.bin ]] && PATH=~/.console-ninja/.bin:$PATH
 
 # --- fzf (fuzzy finder) ---
-if command -v fzf &> /dev/null; then
+if [[ -t 1 ]] && command -v fzf &> /dev/null; then
   source <(fzf --zsh)
 fi
 
