@@ -224,6 +224,35 @@ else
 fi
 echo ""
 
+# Test 14: Check interactive non-TTY initialization
+echo "📋 Test 14: Checking Interactive Non-TTY Initialization"
+TEST_HOME=$(mktemp -d)
+TEST_BIN="$TEST_HOME/bin"
+TEST_OUTPUT="$TEST_HOME/output"
+mkdir -p "$TEST_BIN" "$TEST_HOME/.cache"
+print -r -- 'print -r -- p10k_instant_initialized' > "$TEST_HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh"
+print -r -- 'print -r -- p10k_config_initialized' > "$TEST_HOME/.p10k.zsh"
+cat > "$TEST_BIN/fzf" <<'EOF'
+#!/bin/sh
+printf '%s\n' 'print -r -- fzf_initialized'
+EOF
+chmod +x "$TEST_BIN/fzf"
+HOME="$TEST_HOME" XDG_CACHE_HOME="$TEST_HOME/.cache" PATH="$TEST_BIN:$PATH" ZDOTDIR=$(pwd) \
+    zsh -ic 'source zshrc; print -r -- requested_command_ran' > "$TEST_OUTPUT" 2>&1
+
+if ! grep -q '^requested_command_ran$' "$TEST_OUTPUT"; then
+    echo "   ${RED}✗${NC} Requested command did not run in interactive non-TTY shell"
+    ((TESTS_FAILED++))
+elif grep -E '^(p10k_instant_initialized|p10k_config_initialized|fzf_initialized)$' "$TEST_OUTPUT" > /dev/null; then
+    echo "   ${RED}✗${NC} Prompt or fzf initialization ran without a TTY"
+    ((TESTS_FAILED++))
+else
+    echo "   ${GREEN}✓${NC} Prompt and fzf initialization skipped; requested command ran"
+    ((TESTS_PASSED++))
+fi
+rm -rf "$TEST_HOME"
+echo ""
+
 # Summary
 echo "╔═══════════════════════════════════════════════════════════════╗"
 echo "║                        TEST SUMMARY                           ║"
