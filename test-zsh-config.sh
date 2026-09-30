@@ -238,12 +238,12 @@ printf '%s\n' 'print -r -- fzf_initialized'
 EOF
 chmod +x "$TEST_BIN/fzf"
 HOME="$TEST_HOME" XDG_CACHE_HOME="$TEST_HOME/.cache" PATH="$TEST_BIN:$PATH" ZDOTDIR=$(pwd) \
-    zsh -ic 'source zshrc; print -r -- requested_command_ran' > "$TEST_OUTPUT" 2>&1
+    zsh -ic 'promptinit() { print -r -- promptinit_initialized; }; prompt() { print -r -- prompt_initialized; }; source zshrc; print -r -- requested_command_ran' > "$TEST_OUTPUT" 2>&1
 
 if ! grep -q '^requested_command_ran$' "$TEST_OUTPUT"; then
     echo "   ${RED}✗${NC} Requested command did not run in interactive non-TTY shell"
     ((TESTS_FAILED++))
-elif grep -E '^(p10k_instant_initialized|p10k_config_initialized|fzf_initialized)$' "$TEST_OUTPUT" > /dev/null; then
+elif grep -E '^(p10k_instant_initialized|p10k_config_initialized|promptinit_initialized|prompt_initialized|fzf_initialized)$' "$TEST_OUTPUT" > /dev/null; then
     echo "   ${RED}✗${NC} Prompt or fzf initialization ran without a TTY"
     ((TESTS_FAILED++))
 else
