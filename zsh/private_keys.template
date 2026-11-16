@@ -9,4 +9,6 @@
 # Example entries:
 # export AWS_ACCESS_KEY_ID="your-key-here"
 # export AWS_SECRET_ACCESS_KEY="your-secret-here"
-# export GITHUB_TOKEN="your-token-here"
+# use gh command for github token
+export GITHUB_TOKEN="$(env -u GITHUB_TOKEN -u GH_TOKEN gh auth token 2>/dev/null)"
+export HOMEBREW_GITHUB_API_TOKEN="$GITHUB_TOKEN"
